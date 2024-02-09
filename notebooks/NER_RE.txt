@@ -1,0 +1,2553 @@
+DATASET
+('an_em', 'an_em_bigbio_kb') - train - 250
+
+ENTITIES:
+Organism_subdivision
+Tissue
+Organism_substance
+Developing_anatomical_structure
+Pathological_formation
+Immaterial_anatomical_entity
+Cellular_component
+Multi-tissue_structure
+Organ
+Anatomical_system
+Cell
+
+RELATIONS:
+Multi-tissue_structure - FRAG - Multi-tissue_structure
+Organism_substance - PART-OF - Organism_substance
+Cell - FRAG - Cell
+Pathological_formation - PART-OF - Organ
+Organism_substance - PART-OF - Cell
+Cell - PART-OF - Multi-tissue_structure
+Cellular_component - FRAG - Cellular_component
+Tissue - PART-OF - Tissue
+Pathological_formation - PART-OF - Pathological_formation
+Organism_substance - FRAG - Organism_substance
+Cell - PART-OF - Pathological_formation
+Tissue - FRAG - Tissue
+Pathological_formation - FRAG - Pathological_formation
+Organ - FRAG - Organ
+Multi-tissue_structure - PART-OF - Multi-tissue_structure
+Cell - PART-OF - Cell
+Multi-tissue_structure - PART-OF - Organ
+Multi-tissue_structure - PART-OF - Developing_anatomical_structure
+Organ - PART-OF - Developing_anatomical_structure
+
+--------------------------------------------------------------------
+
+DATASET
+('anat_em', 'anat_em_bigbio_kb') - train - 606
+
+ENTITIES:
+Organism_subdivision
+Tissue
+Cancer
+Organism_substance
+Developing_anatomical_structure
+Pathological_formation
+Immaterial_anatomical_entity
+Cellular_component
+Multi-tissue_structure
+Organ
+Anatomical_system
+Cell
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('ask_a_patient', 'ask_a_patient_bigbio_kb') - train_9 - 15716
+
+ENTITIES:
+social_media_text
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bc5cdr', 'bc5cdr_bigbio_kb') - train - 500
+
+ENTITIES:
+Disease
+Chemical
+
+RELATIONS:
+Chemical - CID - Disease
+
+--------------------------------------------------------------------
+
+DATASET
+('bioinfer', 'bioinfer_bigbio_kb') - train - 894
+
+ENTITIES:
+DNA_family_or_group
+Protein_complex
+Gene
+Individual_protein
+Protein_family_or_group
+Gene/protein/RNA
+
+RELATIONS:
+Protein_complex - PPI - Individual_protein
+Individual_protein - PPI - Protein_complex
+Protein_family_or_group - PPI - Individual_protein
+Gene - PPI - Individual_protein
+Gene - PPI - Gene
+Individual_protein - PPI - Protein_family_or_group
+Gene - PPI - Protein_complex
+Individual_protein - PPI - Individual_protein
+Protein_complex - PPI - Gene
+Gene - PPI - DNA_family_or_group
+Protein_family_or_group - PPI - Gene
+Protein_family_or_group - PPI - Protein_family_or_group
+Individual_protein - PPI - Gene
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_shared_task_2009', 'bionlp_shared_task_2009_bigbio_kb') - train - 800
+
+ENTITIES:
+Protein
+Entity
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2011_epi', 'bionlp_st_2011_epi_bigbio_kb') - train - 600
+
+ENTITIES:
+Protein
+Entity
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2011_ge', 'bionlp_st_2011_ge_bigbio_kb') - train - 908
+
+ENTITIES:
+Protein
+Entity
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2011_id', 'bionlp_st_2011_id_bigbio_kb') - train - 152
+
+ENTITIES:
+Two-component-system
+Chemical
+Protein
+Regulon-operon
+Entity
+Organism
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2011_rel', 'bionlp_st_2011_rel_bigbio_kb') - train - 800
+
+ENTITIES:
+Protein
+Entity
+
+RELATIONS:
+Protein - SUBUNIT-COMPLEX - Entity
+Protein - PROTEIN-COMPONENT - Entity
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2013_cg', 'bionlp_st_2013_cg_bigbio_kb') - train - 300
+
+ENTITIES:
+Organism_subdivision
+Tissue
+Cancer
+Organism_substance
+Developing_anatomical_structure
+Pathological_formation
+Immaterial_anatomical_entity
+Multi-tissue_structure
+Cellular_component
+Organ
+Simple_chemical
+Protein_domain_or_region
+DNA_domain_or_region
+Anatomical_system
+Amino_acid
+Cell
+Gene_or_gene_product
+Organism
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2013_ge', 'bionlp_st_2013_ge_bigbio_kb') - test - 305
+
+ENTITIES:
+Protein
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2013_gro', 'bionlp_st_2013_gro_bigbio_kb') - train - 150
+
+ENTITIES:
+EukaryoticCell
+SmallInterferingRNA
+SequenceHomologyAnalysis
+DNABindingDomainOfProtein
+NucleicAcid
+Enhancer
+DNABindingSite
+ThreeDimensionalMolecularStructure
+ZincCoordinatingDomainTF
+SecondMessenger
+MolecularFunction
+DoubleStrandDNA
+MutantProtein
+GeneProduct
+TranscriptionCofactor
+NuclearReceptor
+OpenReadingFrame
+ComplexMolecularEntity
+TranscriptionFactorComplex
+Chromosome
+TranscriptionCoactivator
+RNA
+PrimaryStructure
+Ligand
+bHLHTF
+ProteinCodingRegion
+FusionGene
+PhysicalContinuant
+BasicDomain
+TranscriptionRepressorActivity
+Eukaryote
+OxidativeStress
+ExpressionProfiling
+ProteinDomain
+RibosomalRNA
+AminoAcid
+OrganicChemical
+AntisenseRNA
+Promoter
+TranscriptionFactorBindingSiteOfDNA
+Sequence
+ForkheadWingedHelixTF
+ProteinSubunit
+RegulatoryDNARegion
+Substrate
+ForkheadWingedHelix
+ReporterGene
+HomeoBox
+Lipid
+Intron
+Cell
+Polymerase
+TranscriptionActivator
+Ion
+TranscriptionActivatorActivity
+Function
+Conformation
+Prokaryote
+Nucleus
+TranscriptionFactorActivity
+DNAFragment
+ProteinComplex
+PositiveTranscriptionRegulator
+TranslationFactor
+Enzyme
+InorganicChemical
+FusionOfGeneWithReporterGene
+UpstreamRegulatorySequence
+Chemical
+TranscriptionCorepressor
+Protein
+bHLH
+PhysicalContact
+Gene
+TATAbox
+MolecularEntity
+Stress
+Exon
+Attenuator
+ZincCoordinatingDomain
+Histone
+TranscriptionRegulator
+MutatedProtein
+BindingSiteOfProtein
+DNARegion
+CatalyticActivity
+MessengerRNA
+bZIP
+bZIPTF
+Locus
+Holoenzyme
+CellComponent
+LivingEntity
+Nucleotide
+Ribosome
+ProteinCodingDNARegion
+Chromatin
+HMGTF
+RNAPolymerase
+Operon
+tRNA
+Phenotype
+RuntLikeDomain
+HomeoboxTF
+FusionProtein
+CpGIsland
+HMG
+ProteinBindingSiteOfDNA
+ComplexOfProteinAndDNA
+Microorganism
+BindingAssay
+RNAPolymeraseII
+TranscriptionRepressor
+DNA
+ReporterGeneConstruction
+Virus
+Peptide
+ProteinIdentification
+ExperimentalMethod
+ChromosomalDNA
+TranscriptionFactor
+DNAMolecule
+Heterochromatin
+AP2EREBPRelatedDomain
+ProteinBindingSiteOfProtein
+MolecularStructure
+Transcript
+Tissue
+
+RELATIONS:
+ComplexOfProteinAndDNA - HASPART - DNA
+Protein - HASPART - Peptide
+DNAFragment - HASPART - DNARegion
+Protein - HASPART - PrimaryStructure
+Enzyme - LOCATEDIN - Tissue
+Protein - LOCATEDIN - Tissue
+TranscriptionFactor - FROMSPECIES - Eukaryote
+MolecularEntity - HASPART - ProteinDomain
+Exon - HASPART - Attenuator
+Gene - ENCODES - ProteinSubunit
+DNARegion - LOCATEDIN - Gene
+TranscriptionFactor - HASPART - DNABindingDomainOfProtein
+Substrate - LOCATEDIN - CellComponent
+Protein - HASPART - ProteinBindingSiteOfProtein
+Exon - HASPART - Nucleotide
+DNA - HASPART - Promoter
+Transcript - ENCODES - Ligand
+Enzyme - HASPART - Protein
+Gene - HASPART - Enhancer
+UpstreamRegulatorySequence - HASPART - Promoter
+ProteinComplex - HASPART - TranscriptionFactor
+Gene - ENCODES - AminoAcid
+Promoter - HASPART - TATAbox
+MessengerRNA - LOCATEDIN - CellComponent
+Gene - ENCODES - Peptide
+ProteinComplex - HASFUNCTION - Function
+TranscriptionFactor - HASPART - AminoAcid
+Sequence - FROMSPECIES - Eukaryote
+Phenotype - LOCATEDIN - Cell
+Protein - LOCATEDIN - Nucleus
+ProteinComplex - HASPART - Peptide
+Peptide - FROMSPECIES - Eukaryote
+Transcript - ENCODES - Protein
+DNA - ENCODES - TranscriptionFactor
+ProteinComplex - HASPART - Protein
+ExperimentalMethod - LOCATEDIN - Cell
+Gene - HASFUNCTION - Function
+Exon - FROMSPECIES - Eukaryote
+Protein - LOCATEDIN - Cell
+Gene - ENCODES - Protein
+TranscriptionActivator - HASPART - Peptide
+ProteinDomain - LOCATEDIN - CellComponent
+ProteinDomain - HASPART - MolecularStructure
+DNARegion - LOCATEDIN - Chromosome
+Protein - HASFUNCTION - CatalyticActivity
+TranscriptionFactor - HASPART - bZIPTF
+Gene - LOCATEDIN - Cell
+Exon - HASPART - Exon
+Sequence - FROMSPECIES - Virus
+DNA - ENCODES - ProteinSubunit
+Gene - HASPART - Intron
+TranscriptionRepressor - FROMSPECIES - Eukaryote
+Protein - LOCATEDIN - Ribosome
+Enzyme - HASPART - ProteinSubunit
+Enhancer - HASPART - RegulatoryDNARegion
+MessengerRNA - LOCATEDIN - Nucleus
+Gene - HASPART - Promoter
+Enzyme - FROMSPECIES - Prokaryote
+ProteinDomain - HASFUNCTION - TranscriptionRepressorActivity
+HMGTF - HASPART - DNARegion
+ProteinComplex - HASPART - ProteinSubunit
+TranscriptionFactor - HASPART - ProteinSubunit
+Peptide - HASPART - Enhancer
+MessengerRNA - FROMSPECIES - Eukaryote
+TranscriptionActivator - FROMSPECIES - Virus
+TranscriptionCoactivator - LOCATEDIN - Cell
+Gene - HASPART - Sequence
+GeneProduct - FROMSPECIES - Eukaryote
+TranscriptionFactor - HASPART - Promoter
+Sequence - ENCODES - ProteinDomain
+Protein - HASPART - bZIP
+Promoter - HASPART - RegulatoryDNARegion
+Gene - ENCODES - TranscriptionFactor
+Locus - LOCATEDIN - Cell
+CellComponent - LOCATEDIN - Cell
+TranscriptionFactorComplex - HASPART - ProteinSubunit
+Gene - LOCATEDIN - Chromosome
+Gene - ENCODES - TranscriptionRegulator
+ProteinSubunit - LOCATEDIN - Cell
+Enzyme - HASPART - ProteinDomain
+Transcript - ENCODES - Enzyme
+Enzyme - FROMSPECIES - Eukaryote
+Chromosome - ENCODES - RNA
+Gene - LOCATEDIN - ChromosomalDNA
+Gene - FROMSPECIES - Eukaryote
+Gene - ENCODES - HMG
+OrganicChemical - FROMSPECIES - Prokaryote
+TranscriptionFactor - HASPART - HMG
+TranscriptionFactor - HASPART - Protein
+Protein - FROMSPECIES - Eukaryote
+Enzyme - HASPART - Peptide
+Gene - ENCODES - GeneProduct
+Protein - HASPART - TranscriptionFactor
+Protein - HASFUNCTION - PositiveTranscriptionRegulator
+Transcript - LOCATEDIN - Cell
+ProteinSubunit - HASPART - PrimaryStructure
+Promoter - HASFUNCTION - Function
+Nucleus - HASPART - TranscriptionFactor
+TranscriptionFactor - LOCATEDIN - Nucleus
+Gene - ENCODES - RibosomalRNA
+Protein - HASPART - ProteinDomain
+ProteinDomain - HASPART - Sequence
+Promoter - HASPART - DNARegion
+DNARegion - HASPART - Promoter
+TranscriptionRepressor - HASPART - ZincCoordinatingDomain
+Peptide - HASPART - AminoAcid
+ProteinDomain - HASPART - Peptide
+Tissue - FROMSPECIES - Eukaryote
+ProteinSubunit - HASPART - AminoAcid
+Gene - LOCATEDIN - DNARegion
+RNA - LOCATEDIN - Cell
+ProteinBindingSiteOfProtein - HASPART - AminoAcid
+bHLHTF - LOCATEDIN - Tissue
+Promoter - LOCATEDIN - Cell
+Protein - FROMSPECIES - Prokaryote
+tRNA - ENCODES - Transcript
+DNA - ENCODES - MessengerRNA
+Enhancer - HASPART - TranscriptionFactorBindingSiteOfDNA
+Protein - HASFUNCTION - Function
+Protein - HASPART - AminoAcid
+HomeoboxTF - FROMSPECIES - Eukaryote
+OpenReadingFrame - LOCATEDIN - Transcript
+TranscriptionCoactivator - HASPART - ProteinDomain
+TranslationFactor - HASFUNCTION - CatalyticActivity
+ProteinDomain - FROMSPECIES - Eukaryote
+Protein - HASPART - DNABindingDomainOfProtein
+Virus - HASPART - Virus
+LivingEntity - FROMSPECIES - Eukaryote
+ProteinComplex - HASPART - TranscriptionActivator
+DNABindingDomainOfProtein - HASPART - ProteinDomain
+ProteinCodingRegion - FROMSPECIES - Eukaryote
+Protein - LOCATEDIN - DNA
+Cell - HASFUNCTION - Function
+Promoter - HASPART - Sequence
+ReporterGeneConstruction - HASPART - ReporterGene
+TranscriptionRegulator - FROMSPECIES - Eukaryote
+ProteinSubunit - FROMSPECIES - Eukaryote
+Ion - LOCATEDIN - Cell
+MutantProtein - LOCATEDIN - Cell
+Gene - HASPART - DNARegion
+TranscriptionRepressor - LOCATEDIN - CellComponent
+Protein - HASPART - Sequence
+Protein - HASFUNCTION - TranscriptionRepressorActivity
+ReporterGene - LOCATEDIN - Prokaryote
+Gene - HASPART - DNA
+FusionGene - ENCODES - Protein
+Nucleotide - HASPART - Nucleotide
+Enhancer - HASPART - DNARegion
+DNA - LOCATEDIN - Cell
+Protein - HASPART - ZincCoordinatingDomain
+Peptide - HASPART - Peptide
+Chemical - LOCATEDIN - Cell
+HMGTF - HASPART - DNABindingDomainOfProtein
+ReporterGene - HASPART - DNARegion
+ReporterGene - HASPART - Promoter
+Transcript - HASPART - OpenReadingFrame
+Protein - HASFUNCTION - TranscriptionActivatorActivity
+ProteinDomain - HASFUNCTION - Function
+Function - LOCATEDIN - Cell
+ProteinComplex - HASFUNCTION - CatalyticActivity
+AminoAcid - HASPART - ProteinDomain
+CellComponent - HASPART - CellComponent
+Promoter - HASPART - Attenuator
+DNAFragment - ENCODES - Protein
+Protein - HASPART - ForkheadWingedHelix
+Gene - FROMSPECIES - Virus
+TranscriptionRepressor - HASPART - ProteinDomain
+ProteinBindingSiteOfDNA - FROMSPECIES - Virus
+FusionProtein - HASPART - Protein
+Chromosome - HASPART - ChromosomalDNA
+Protein - HASPART - HomeoBox
+Gene - HASPART - RuntLikeDomain
+Transcript - LOCATEDIN - Tissue
+RNAPolymerase - FROMSPECIES - Eukaryote
+Promoter - FROMSPECIES - Virus
+TranscriptionFactor - LOCATEDIN - Cell
+TranscriptionFactor - HASPART - Gene
+Protein - HASPART - Exon
+TranscriptionFactor - HASFUNCTION - TranscriptionActivatorActivity
+ReporterGene - HASFUNCTION - Function
+Gene - ENCODES - bHLHTF
+Transcript - LOCATEDIN - Nucleus
+RNAPolymeraseII - HASPART - ProteinSubunit
+Gene - HASPART - ProteinBindingSiteOfDNA
+DNA - ENCODES - Enzyme
+Gene - ENCODES - Transcript
+Protein - HASPART - BasicDomain
+ProteinDomain - HASPART - ProteinDomain
+Sequence - LOCATEDIN - ChromosomalDNA
+ProteinComplex - HASFUNCTION - TranscriptionCorepressor
+DNA - FROMSPECIES - Eukaryote
+ProteinBindingSiteOfDNA - LOCATEDIN - Cell
+Promoter - HASPART - ProteinBindingSiteOfDNA
+HomeoboxTF - LOCATEDIN - Chromosome
+Enhancer - LOCATEDIN - Virus
+Nucleus - LOCATEDIN - Cell
+ProteinDomain - HASPART - ZincCoordinatingDomain
+Ligand - LOCATEDIN - Cell
+Gene - ENCODES - TranscriptionRepressor
+RegulatoryDNARegion - FROMSPECIES - Virus
+ProteinComplex - HASPART - MutatedProtein
+DNARegion - HASPART - Enhancer
+ProteinSubunit - HASPART - DNABindingDomainOfProtein
+ProteinComplex - HASPART - Enzyme
+DNAFragment - LOCATEDIN - Cell
+ProteinDomain - HASPART - AminoAcid
+TranscriptionRegulator - HASPART - AminoAcid
+AminoAcid - LOCATEDIN - CellComponent
+Chemical - LOCATEDIN - Tissue
+DNA - HASPART - Nucleotide
+Protein - LOCATEDIN - Chromosome
+TranscriptionFactor - HASPART - ForkheadWingedHelix
+DNA - ENCODES - Protein
+TranscriptionFactor - LOCATEDIN - CellComponent
+Chemical - LOCATEDIN - Eukaryote
+Gene - HASPART - UpstreamRegulatorySequence
+Locus - LOCATEDIN - Chromosome
+Cell - LOCATEDIN - Tissue
+Transcript - ENCODES - TranscriptionFactor
+Enhancer - LOCATEDIN - Cell
+ProteinSubunit - HASPART - Peptide
+DNARegion - HASPART - ProteinBindingSiteOfDNA
+DNA - LOCATEDIN - Tissue
+Chromosome - FROMSPECIES - Eukaryote
+OpenReadingFrame - FROMSPECIES - Eukaryote
+MessengerRNA - ENCODES - Protein
+CellComponent - LOCATEDIN - Tissue
+GeneProduct - LOCATEDIN - Tissue
+TranscriptionFactor - HASPART - ProteinDomain
+DNA - HASPART - DNARegion
+ProteinComplex - LOCATEDIN - Cell
+CellComponent - FROMSPECIES - Eukaryote
+TranslationFactor - FROMSPECIES - Eukaryote
+Peptide - LOCATEDIN - CellComponent
+Locus - FROMSPECIES - Eukaryote
+Protein - HASFUNCTION - Enzyme
+Lipid - HASFUNCTION - Function
+MutantProtein - FROMSPECIES - Eukaryote
+Enzyme - HASFUNCTION - CatalyticActivity
+Enzyme - LOCATEDIN - Cell
+RNAPolymerase - HASPART - ProteinSubunit
+ComplexOfProteinAndDNA - HASPART - Protein
+Gene - ENCODES - Enzyme
+MessengerRNA - LOCATEDIN - Cell
+MessengerRNA - ENCODES - ProteinSubunit
+Cell - FROMSPECIES - Eukaryote
+FusionGene - HASPART - Gene
+ProteinComplex - LOCATEDIN - CellComponent
+DNA - ENCODES - MutatedProtein
+ReporterGene - FROMSPECIES - Virus
+Protein - LOCATEDIN - CellComponent
+ProteinComplex - HASPART - ProteinDomain
+MessengerRNA - ENCODES - TranscriptionFactor
+Protein - HASPART - ProteinSubunit
+DNABindingDomainOfProtein - HASPART - PrimaryStructure
+Gene - ENCODES - MessengerRNA
+TranscriptionFactor - HASPART - Sequence
+ProteinSubunit - HASFUNCTION - CatalyticActivity
+Protein - HASPART - Enzyme
+Protein - HASFUNCTION - TranscriptionRegulator
+TranscriptionRegulator - FROMSPECIES - Virus
+Promoter - FROMSPECIES - Eukaryote
+DNA - HASPART - OpenReadingFrame
+Stress - LOCATEDIN - Tissue
+Promoter - FROMSPECIES - Cell
+ProteinSubunit - FROMSPECIES - Prokaryote
+Chromosome - LOCATEDIN - Cell
+ProteinDomain - HASFUNCTION - TranscriptionActivatorActivity
+Locus - LOCATEDIN - ChromosomalDNA
+Enhancer - FROMSPECIES - Virus
+tRNA - HASPART - Intron
+Protein - HASPART - Protein
+Gene - ENCODES - tRNA
+Cell - HASPART - CellComponent
+MutatedProtein - LOCATEDIN - Eukaryote
+NuclearReceptor - LOCATEDIN - Tissue
+ProteinComplex - FROMSPECIES - Eukaryote
+Gene - LOCATEDIN - CellComponent
+TranscriptionCoactivator - HASPART - MolecularStructure
+TranscriptionRegulator - HASPART - Sequence
+Enzyme - LOCATEDIN - CellComponent
+MutatedProtein - HASPART - ProteinDomain
+DNA - ENCODES - TranscriptionRegulator
+Protein - FROMSPECIES - Virus
+Protein - LOCATEDIN - Microorganism
+MessengerRNA - LOCATEDIN - Tissue
+GeneProduct - HASPART - DNABindingDomainOfProtein
+TranscriptionFactor - HASPART - Enzyme
+CellComponent - LOCATEDIN - Nucleus
+Protein - HASPART - ProteinBindingSiteOfDNA
+Gene - HASPART - Exon
+Protein - HASPART - bHLH
+ProteinSubunit - HASPART - ProteinDomain
+Transcript - LOCATEDIN - CellComponent
+ProteinComplex - HASPART - Gene
+tRNA - FROMSPECIES - Eukaryote
+TranscriptionRegulator - HASFUNCTION - Function
+MessengerRNA - ENCODES - Enzyme
+OpenReadingFrame - ENCODES - Protein
+Gene - HASPART - ProteinCodingDNARegion
+ProteinSubunit - LOCATEDIN - Chromosome
+TranscriptionFactor - LOCATEDIN - Chromosome
+DNARegion - FROMSPECIES - Virus
+bZIPTF - HASPART - TranscriptionFactor
+Gene - LOCATEDIN - Tissue
+Sequence - LOCATEDIN - Cell
+Virus - HASPART - DNARegion
+ChromosomalDNA - LOCATEDIN - Cell
+DNA - HASPART - Chromosome
+Enzyme - LOCATEDIN - Prokaryote
+FusionGene - HASPART - Exon
+Protein - HASPART - BindingSiteOfProtein
+Exon - HASPART - TranscriptionFactorBindingSiteOfDNA
+TranscriptionFactor - HASFUNCTION - TranscriptionFactorActivity
+Gene - ENCODES - NuclearReceptor
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2013_pc', 'bionlp_st_2013_pc_bigbio_kb') - train - 260
+
+ENTITIES:
+Complex
+Cellular_component
+Gene_or_gene_product
+Simple_chemical
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('bionlp_st_2019_bb', 'bionlp_st_2019_bb_bigbio_kb') - train - 133
+
+ENTITIES:
+Habitat
+Phenotype
+Microorganism
+
+RELATIONS:
+Microorganism - LIVES_IN - Microorganism
+Microorganism - LIVES_IN - Habitat
+Microorganism - EXHIBITS - Phenotype
+
+--------------------------------------------------------------------
+
+DATASET
+('biored', 'biored_bigbio_kb') - train - 400
+
+ENTITIES:
+GeneOrGeneProduct
+SequenceVariant
+OrganismTaxon
+DiseaseOrPhenotypicFeature
+CellLine
+ChemicalEntity
+
+RELATIONS:
+ChemicalEntity - POSITIVE_CORRELATION - SequenceVariant
+DiseaseOrPhenotypicFeature - ASSOCIATION - SequenceVariant
+ChemicalEntity - ASSOCIATION - DiseaseOrPhenotypicFeature
+SequenceVariant - ASSOCIATION - GeneOrGeneProduct
+DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - GeneOrGeneProduct
+DiseaseOrPhenotypicFeature - ASSOCIATION - GeneOrGeneProduct
+ChemicalEntity - NEGATIVE_CORRELATION - ChemicalEntity
+ChemicalEntity - NEGATIVE_CORRELATION - GeneOrGeneProduct
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - GeneOrGeneProduct
+GeneOrGeneProduct - ASSOCIATION - DiseaseOrPhenotypicFeature
+GeneOrGeneProduct - NEGATIVE_CORRELATION - GeneOrGeneProduct
+DiseaseOrPhenotypicFeature - ASSOCIATION - ChemicalEntity
+ChemicalEntity - POSITIVE_CORRELATION - GeneOrGeneProduct
+GeneOrGeneProduct - BIND - GeneOrGeneProduct
+ChemicalEntity - COMPARISON - ChemicalEntity
+ChemicalEntity - DRUG_INTERACTION - ChemicalEntity
+GeneOrGeneProduct - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
+GeneOrGeneProduct - NEGATIVE_CORRELATION - ChemicalEntity
+ChemicalEntity - CONVERSION - ChemicalEntity
+ChemicalEntity - ASSOCIATION - GeneOrGeneProduct
+ChemicalEntity - POSITIVE_CORRELATION - ChemicalEntity
+SequenceVariant - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
+GeneOrGeneProduct - ASSOCIATION - ChemicalEntity
+ChemicalEntity - BIND - GeneOrGeneProduct
+SequenceVariant - NEGATIVE_CORRELATION - ChemicalEntity
+GeneOrGeneProduct - ASSOCIATION - GeneOrGeneProduct
+GeneOrGeneProduct - POSITIVE_CORRELATION - GeneOrGeneProduct
+GeneOrGeneProduct - BIND - ChemicalEntity
+SequenceVariant - ASSOCIATION - DiseaseOrPhenotypicFeature
+ChemicalEntity - ASSOCIATION - SequenceVariant
+ChemicalEntity - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - ChemicalEntity
+SequenceVariant - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
+DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - ChemicalEntity
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - SequenceVariant
+ChemicalEntity - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
+GeneOrGeneProduct - POSITIVE_CORRELATION - ChemicalEntity
+SequenceVariant - ASSOCIATION - SequenceVariant
+ChemicalEntity - ASSOCIATION - ChemicalEntity
+SequenceVariant - POSITIVE_CORRELATION - ChemicalEntity
+SequenceVariant - ASSOCIATION - ChemicalEntity
+ChemicalEntity - COTREATMENT - ChemicalEntity
+GeneOrGeneProduct - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
+
+--------------------------------------------------------------------
+
+DATASET
+('biorelex', 'biorelex_bigbio_kb') - train - 1405
+
+ENTITIES:
+organism
+protein-complex
+chemical
+gene
+process
+organelle
+protein-isoform
+reagent
+protein-motif
+parameter
+amino-acid
+protein-family
+cell
+drug
+brand
+DNA
+protein-DNA-complex
+experiment-tag
+tissue
+assay
+mutation
+disease
+protein
+protein-domain
+peptide
+protein-region
+fusion-protein
+RNA
+protein-RNA-complex
+experimental-construct
+RNA-family
+
+RELATIONS:
+fusion-protein - BIND - protein
+DNA - BIND - protein-family
+experiment-tag - BIND - protein-domain
+RNA-family - BIND - protein-family
+protein-family - BIND - protein-motif
+protein-DNA-complex - BIND - protein
+reagent - BIND - chemical
+protein-isoform - BIND - protein
+protein-family - BIND - DNA
+protein - BIND - protein-DNA-complex
+DNA - BIND - protein-domain
+protein-complex - BIND - chemical
+chemical - BIND - DNA
+reagent - BIND - experimental-construct
+experiment-tag - BIND - reagent
+protein-domain - BIND - protein-complex
+organelle - BIND - experimental-construct
+experimental-construct - BIND - protein-family
+protein-family - BIND - organelle
+DNA - BIND - fusion-protein
+drug - BIND - protein-family
+protein-complex - BIND - protein-isoform
+protein-family - BIND - protein-family
+protein-region - BIND - chemical
+protein-family - BIND - protein
+protein-complex - BIND - reagent
+protein-complex - BIND - protein-complex
+experiment-tag - BIND - protein
+experimental-construct - BIND - experiment-tag
+protein-isoform - BIND - protein-complex
+protein-family - BIND - peptide
+protein-family - BIND - chemical
+experimental-construct - BIND - protein-region
+RNA - BIND - protein-RNA-complex
+experiment-tag - BIND - protein-family
+protein-family - BIND - RNA
+chemical - BIND - protein-isoform
+chemical - BIND - protein-domain
+experimental-construct - BIND - protein
+protein-motif - BIND - protein
+protein-region - BIND - experiment-tag
+DNA - BIND - protein-motif
+peptide - BIND - chemical
+protein-domain - BIND - RNA
+experiment-tag - BIND - experimental-construct
+RNA - BIND - RNA
+protein - BIND - reagent
+protein - BIND - protein-domain
+amino-acid - BIND - chemical
+reagent - BIND - protein
+protein-family - BIND - protein-isoform
+protein-family - BIND - fusion-protein
+DNA - BIND - drug
+protein-complex - BIND - DNA
+protein-region - BIND - protein-region
+protein - BIND - RNA
+experimental-construct - BIND - reagent
+RNA - BIND - protein-motif
+protein - BIND - gene
+chemical - BIND - protein-complex
+protein-complex - BIND - organelle
+protein-region - BIND - protein-complex
+experimental-construct - BIND - experimental-construct
+protein - BIND - experimental-construct
+DNA - BIND - protein
+protein-domain - BIND - DNA
+protein-domain - BIND - protein-family
+protein - BIND - chemical
+protein-motif - BIND - protein-motif
+DNA - BIND - protein-complex
+protein - BIND - DNA
+protein-domain - BIND - protein
+protein - BIND - protein-complex
+protein-family - BIND - reagent
+protein-complex - BIND - protein-family
+protein-isoform - BIND - chemical
+drug - BIND - DNA
+protein-family - BIND - protein-domain
+protein-complex - BIND - RNA
+chemical - BIND - protein
+chemical - BIND - peptide
+protein-domain - BIND - chemical
+protein - BIND - peptide
+fusion-protein - BIND - fusion-protein
+protein - BIND - protein-region
+protein - BIND - protein
+gene - BIND - DNA
+protein-family - BIND - protein-complex
+organelle - BIND - protein-complex
+protein-motif - BIND - protein-family
+protein-isoform - BIND - protein-family
+protein-RNA-complex - BIND - DNA
+protein-family - BIND - protein-DNA-complex
+chemical - BIND - fusion-protein
+RNA - BIND - protein
+chemical - BIND - protein-family
+DNA - BIND - protein-region
+protein - BIND - experiment-tag
+protein-family - BIND - experiment-tag
+protein-complex - BIND - protein
+peptide - BIND - protein-complex
+protein-region - BIND - protein
+protein-RNA-complex - BIND - RNA
+protein - BIND - protein-motif
+protein-motif - BIND - DNA
+peptide - BIND - protein-family
+protein - BIND - organelle
+protein-family - BIND - protein-region
+protein - BIND - protein-isoform
+protein - BIND - amino-acid
+protein-motif - BIND - protein-domain
+RNA - BIND - protein-complex
+protein-region - BIND - DNA
+protein - BIND - protein-family
+peptide - BIND - protein
+protein-family - BIND - experimental-construct
+RNA - BIND - protein-domain
+protein - BIND - fusion-protein
+protein-domain - BIND - protein-domain
+
+--------------------------------------------------------------------
+
+DATASET
+('cantemist', 'cantemist_bigbio_kb') - train - 501
+
+ENTITIES:
+MORFOLOGIA_NEOPLASIA
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('cellfinder', 'cellfinder_bigbio_kb') - train - 5
+
+ENTITIES:
+GeneProtein
+CellType
+Anatomy
+CellComponent
+CellLine
+Species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('cellfinder', 'cellfinder_splits_bigbio_kb') - test - 27
+
+ENTITIES:
+GeneProtein
+CellType
+Anatomy
+CellComponent
+CellLine
+Species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('chebi_nactem', 'chebi_nactem_abstr_ann1_bigbio_kb') - train - 199
+
+ENTITIES:
+Chemical
+Protein
+Biological_Activity
+Spectral_Data
+Metabolite
+Species
+
+RELATIONS:
+Metabolite - ASSOCIATED_WITH - Biological_Activity
+Metabolite - METABOLITE_OF - Chemical
+Chemical - ASSOCIATED_WITH - Spectral_Data
+Chemical - BINDS_WITH - Protein
+Chemical - ISOLATED_FROM - Species
+Metabolite - BINDS_WITH - Protein
+Metabolite - ASSOCIATED_WITH - Spectral_Data
+Metabolite - ISOLATED_FROM - Species
+Chemical - ASSOCIATED_WITH - Biological_Activity
+
+--------------------------------------------------------------------
+
+DATASET
+('chebi_nactem', 'chebi_nactem_abstr_ann2_bigbio_kb') - train - 199
+
+ENTITIES:
+Chemical
+Protein
+Biological_Activity
+Spectral_Data
+Metabolite
+Species
+
+RELATIONS:
+Chemical - HAS_STRUCTURE - Biological_Activity
+Metabolite - ASSOCIATED_WITH - Biological_Activity
+Metabolite - METABOLITE_OF - Chemical
+Chemical - ASSOCIATED_WITH - Spectral_Data
+Chemical - BINDS_WITH - Protein
+Chemical - ISOLATED_FROM - Species
+Metabolite - BINDS_WITH - Protein
+Metabolite - ASSOCIATED_WITH - Spectral_Data
+Chemical - ASSOCIATED_WITH - Chemical
+Metabolite - ISOLATED_FROM - Species
+Chemical - ASSOCIATED_WITH - Biological_Activity
+
+--------------------------------------------------------------------
+
+DATASET
+('chebi_nactem', 'chebi_nactem_fullpaper_bigbio_kb') - train - 100
+
+ENTITIES:
+Chemical
+Protein
+Biological_Activity
+Spectral_Data
+Metabolite
+Chemical_Structure
+Species
+
+RELATIONS:
+Metabolite - ASSOCIATED_WITH - Biological_Activity
+Chemical - ASSOCIATED_WITH - Spectral_Data
+Chemical - BINDS_WITH - Protein
+Chemical - ISOLATED_FROM - Species
+Metabolite - BINDS_WITH - Protein
+Metabolite - ASSOCIATED_WITH - Spectral_Data
+Metabolite - ISOLATED_FROM - Species
+Metabolite - METABOLITE_OF - Chemical
+Chemical - ASSOCIATED_WITH - Biological_Activity
+
+--------------------------------------------------------------------
+
+DATASET
+('chemdner', 'chemdner_bigbio_kb') - train - 3500
+
+ENTITIES:
+Chemical
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('chemprot', 'chemprot_bigbio_kb') - train - 1020
+
+ENTITIES:
+CHEMICAL
+GENE-Y
+GENE-N
+
+RELATIONS:
+CHEMICAL - COFACTOR - GENE-N
+CHEMICAL - NOT - GENE-N
+CHEMICAL - UPREGULATOR - GENE-N
+CHEMICAL - DOWNREGULATOR - GENE-N
+CHEMICAL - MODULATOR - GENE-Y
+CHEMICAL - PART_OF - GENE-N
+CHEMICAL - UNDEFINED - GENE-Y
+CHEMICAL - SUBSTRATE - GENE-N
+CHEMICAL - SUBSTRATE - GENE-Y
+CHEMICAL - PART_OF - GENE-Y
+CHEMICAL - ANTAGONIST - GENE-N
+CHEMICAL - COFACTOR - GENE-Y
+CHEMICAL - DOWNREGULATOR - GENE-Y
+CHEMICAL - AGONIST - GENE-N
+CHEMICAL - ANTAGONIST - GENE-Y
+CHEMICAL - AGONIST - GENE-Y
+CHEMICAL - REGULATOR - GENE-Y
+CHEMICAL - NOT - GENE-Y
+CHEMICAL - REGULATOR - GENE-N
+CHEMICAL - UPREGULATOR - GENE-Y
+CHEMICAL - MODULATOR - GENE-N
+
+--------------------------------------------------------------------
+
+DATASET
+('chia', 'chia_bigbio_kb') - train - 2000
+
+ENTITIES:
+Drug
+Scope
+Qualifier
+Condition
+Visit
+Mood
+Observation
+Measurement
+Temporal
+Device
+Multiplier
+Value
+Procedure
+Reference_point
+Negation
+Person
+
+RELATIONS:
+Measurement - AND - Drug
+Drug - AND - Drug
+Value - HAS_INDEX - Reference_point
+Negation - HAS_SCOPE - Scope
+Person - AND - Measurement
+Person - AND - Device
+Drug - HAS_MOOD - Observation
+Scope - AND - Drug
+Value - SUBSUMES - Measurement
+Multiplier - HAS_QUALIFIER - Qualifier
+Scope - AND - Visit
+Condition - AND - Visit
+Observation - HAS_QUALIFIER - Qualifier
+Scope - HAS_MOOD - Mood
+Qualifier - HAS_MULTIPLIER - Multiplier
+Multiplier - AND - Person
+Procedure - AND - Visit
+Scope - SUBSUMES - Temporal
+Measurement - HAS_MULTIPLIER - Multiplier
+Scope - AND - Device
+Observation - HAS_TEMPORAL - Temporal
+Device - AND - Device
+Qualifier - HAS_VALUE - Value
+Condition - AND - Measurement
+Multiplier - AND - Condition
+Drug - AND - Device
+Condition - AND - Device
+Visit - HAS_TEMPORAL - Temporal
+Observation - HAS_MULTIPLIER - Multiplier
+Person - HAS_SCOPE - Scope
+Drug - HAS_MULTIPLIER - Multiplier
+Drug - SUBSUMES - Drug
+Measurement - AND - Device
+Observation - SUBSUMES - Scope
+Observation - SUBSUMES - Qualifier
+Drug - HAS_NEGATION - Negation
+Reference_point - SUBSUMES - Reference_point
+Scope - HAS_INDEX - Reference_point
+Value - HAS_VALUE - Value
+Device - HAS_MOOD - Mood
+Scope - HAS_NEGATION - Negation
+Temporal - HAS_MOOD - Mood
+Qualifier - AND - Condition
+Negation - AND - Condition
+Visit - HAS_SCOPE - Scope
+Scope - AND - Procedure
+Device - SUBSUMES - Scope
+Measurement - HAS_TEMPORAL - Temporal
+Procedure - HAS_MULTIPLIER - Multiplier
+Measurement - SUBSUMES - Measurement
+Condition - HAS_SCOPE - Scope
+Temporal - HAS_VALUE - Value
+Procedure - SUBSUMES - Condition
+Scope - SUBSUMES - Drug
+Device - HAS_MULTIPLIER - Multiplier
+Mood - HAS_MULTIPLIER - Multiplier
+Qualifier - SUBSUMES - Value
+Procedure - AND - Condition
+Value - HAS_NEGATION - Negation
+Condition - AND - Procedure
+Mood - HAS_SCOPE - Scope
+Qualifier - AND - Device
+Scope - SUBSUMES - Multiplier
+Condition - SUBSUMES - Procedure
+Observation - HAS_SCOPE - Scope
+Multiplier - HAS_MULTIPLIER - Multiplier
+Measurement - AND - Measurement
+Scope - SUBSUMES - Condition
+Mood - HAS_QUALIFIER - Qualifier
+Measurement - SUBSUMES - Value
+Observation - SUBSUMES - Condition
+Drug - AND - Visit
+Drug - AND - Procedure
+Scope - SUBSUMES - Measurement
+Condition - HAS_MOOD - Observation
+Value - HAS_MULTIPLIER - Multiplier
+Scope - HAS_VALUE - Value
+Observation - AND - Visit
+Measurement - AND - Procedure
+Temporal - HAS_SCOPE - Scope
+Temporal - SUBSUMES - Scope
+Observation - AND - Person
+Temporal - HAS_INDEX - Reference_point
+Scope - HAS_MOOD - Observation
+Qualifier - HAS_TEMPORAL - Temporal
+Procedure - OR - Procedure
+Qualifier - SUBSUMES - Condition
+Person - SUBSUMES - Scope
+Scope - SUBSUMES - Device
+Device - HAS_SCOPE - Scope
+Condition - AND - Drug
+Measurement - HAS_NEGATION - Negation
+Mood - HAS_NEGATION - Negation
+Visit - HAS_MULTIPLIER - Multiplier
+Person - HAS_MULTIPLIER - Multiplier
+Drug - SUBSUMES - Condition
+Value - HAS_TEMPORAL - Temporal
+Condition - HAS_TEMPORAL - Observation
+Measurement - SUBSUMES - Procedure
+Scope - HAS_TEMPORAL - Temporal
+Value - AND - Measurement
+Condition - HAS_MOOD - Mood
+Qualifier - AND - Drug
+Multiplier - HAS_VALUE - Value
+Measurement - AND - Person
+Procedure - HAS_SCOPE - Scope
+Reference_point - AND - Drug
+Multiplier - HAS_TEMPORAL - Temporal
+Value - AND - Person
+Person - AND - Procedure
+Condition - AND - Person
+Visit - AND - Measurement
+Temporal - HAS_TEMPORAL - Temporal
+Device - AND - Condition
+Visit - AND - Drug
+Reference_point - AND - Procedure
+Measurement - SUBSUMES - Scope
+Value - AND - Drug
+Observation - AND - Drug
+Person - HAS_MOOD - Mood
+Procedure - HAS_TEMPORAL - Temporal
+Condition - HAS_MULTIPLIER - Multiplier
+Value - AND - Condition
+Measurement - HAS_VALUE - Value
+Procedure - SUBSUMES - Scope
+Procedure - HAS_NEGATION - Negation
+Measurement - HAS_TEMPORAL - Observation
+Procedure - HAS_QUALIFIER - Qualifier
+Value - HAS_SCOPE - Scope
+Device - HAS_VALUE - Value
+Observation - AND - Device
+Person - HAS_TEMPORAL - Temporal
+Person - HAS_VALUE - Value
+Multiplier - SUBSUMES - Multiplier
+Condition - SUBSUMES - Scope
+Scope - AND - Person
+Device - HAS_TEMPORAL - Observation
+Temporal - SUBSUMES - Temporal
+Value - AND - Procedure
+Value - SUBSUMES - Scope
+Procedure - OR - Scope
+Condition - SUBSUMES - Value
+Qualifier - SUBSUMES - Procedure
+Condition - SUBSUMES - Temporal
+Procedure - AND - Procedure
+Device - HAS_NEGATION - Negation
+Drug - AND - Measurement
+Visit - AND - Visit
+Scope - AND - Measurement
+Measurement - AND - Condition
+Visit - AND - Condition
+Condition - HAS_NEGATION - Negation
+Temporal - AND - Procedure
+Visit - SUBSUMES - Visit
+Condition - SUBSUMES - Observation
+Drug - HAS_QUALIFIER - Qualifier
+Procedure - HAS_VALUE - Value
+Device - AND - Drug
+Procedure - AND - Device
+Temporal - HAS_QUALIFIER - Qualifier
+Observation - AND - Condition
+Qualifier - SUBSUMES - Temporal
+Temporal - AND - Visit
+Temporal - HAS_MOOD - Observation
+Visit - HAS_MOOD - Mood
+Scope - SUBSUMES - Observation
+Device - HAS_TEMPORAL - Temporal
+Qualifier - AND - Procedure
+Scope - HAS_SCOPE - Scope
+Observation - HAS_NEGATION - Negation
+Temporal - AND - Drug
+Procedure - HAS_MOOD - Mood
+Scope - HAS_TEMPORAL - Observation
+Qualifier - HAS_SCOPE - Scope
+Device - HAS_QUALIFIER - Qualifier
+Observation - AND - Procedure
+Procedure - SUBSUMES - Procedure
+Drug - HAS_VALUE - Value
+Device - SUBSUMES - Device
+Multiplier - SUBSUMES - Value
+Scope - HAS_QUALIFIER - Qualifier
+Observation - SUBSUMES - Temporal
+Qualifier - HAS_INDEX - Reference_point
+Procedure - AND - Drug
+Observation - HAS_TEMPORAL - Observation
+Scope - AND - Condition
+Qualifier - SUBSUMES - Multiplier
+Person - AND - Condition
+Value - SUBSUMES - Qualifier
+Qualifier - AND - Measurement
+Procedure - SUBSUMES - Measurement
+Multiplier - HAS_NEGATION - Negation
+Qualifier - HAS_QUALIFIER - Qualifier
+Device - AND - Procedure
+Visit - HAS_QUALIFIER - Qualifier
+Condition - SUBSUMES - Measurement
+Qualifier - SUBSUMES - Qualifier
+Multiplier - HAS_MOOD - Mood
+Procedure - HAS_INDEX - Reference_point
+Qualifier - HAS_NEGATION - Negation
+Drug - AND - Condition
+Drug - SUBSUMES - Scope
+Drug - HAS_TEMPORAL - Observation
+Procedure - AND - Measurement
+Value - SUBSUMES - Condition
+Drug - HAS_MOOD - Mood
+Condition - HAS_QUALIFIER - Qualifier
+Drug - HAS_SCOPE - Scope
+Condition - SUBSUMES - Condition
+Measurement - HAS_MOOD - Mood
+Observation - AND - Measurement
+Person - HAS_QUALIFIER - Qualifier
+Person - AND - Person
+Scope - HAS_MULTIPLIER - Multiplier
+Procedure - HAS_TEMPORAL - Observation
+Observation - HAS_MOOD - Mood
+Value - SUBSUMES - Value
+Multiplier - SUBSUMES - Scope
+Condition - OR - Condition
+Reference_point - AND - Condition
+Observation - HAS_VALUE - Value
+Person - SUBSUMES - Person
+Procedure - SUBSUMES - Device
+Multiplier - AND - Measurement
+Temporal - SUBSUMES - Value
+Temporal - HAS_MULTIPLIER - Multiplier
+Qualifier - SUBSUMES - Scope
+Condition - SUBSUMES - Qualifier
+Negation - HAS_QUALIFIER - Qualifier
+Measurement - HAS_SCOPE - Scope
+Procedure - HAS_MOOD - Observation
+Drug - HAS_TEMPORAL - Temporal
+Condition - HAS_VALUE - Value
+Condition - OR - Procedure
+Negation - HAS_MULTIPLIER - Multiplier
+Scope - SUBSUMES - Scope
+Multiplier - AND - Procedure
+Condition - SUBSUMES - Drug
+Scope - SUBSUMES - Person
+Value - HAS_QUALIFIER - Qualifier
+Person - HAS_NEGATION - Negation
+Condition - AND - Condition
+Observation - SUBSUMES - Observation
+Procedure - SUBSUMES - Drug
+Temporal - AND - Condition
+Condition - HAS_INDEX - Reference_point
+Qualifier - SUBSUMES - Measurement
+Measurement - SUBSUMES - Qualifier
+Person - AND - Visit
+Condition - HAS_TEMPORAL - Temporal
+Measurement - HAS_QUALIFIER - Qualifier
+Mood - HAS_TEMPORAL - Temporal
+Scope - SUBSUMES - Qualifier
+
+--------------------------------------------------------------------
+
+DATASET
+('citation_gia_test_collection', 'citation_gia_test_collection_bigbio_kb') - test - 151
+
+ENTITIES:
+DomainMotif
+Gene
+FamilyName
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('codiesp', 'codiesp_X_bigbio_kb') - train - 500
+
+ENTITIES:
+PROCEDIMIENTO
+DIAGNOSTICO
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('ctebmsp', 'ctebmsp_abstracts_bigbio_kb') - train - 300
+
+ENTITIES:
+CHEM
+PROC
+DISO
+ANAT
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('ctebmsp', 'ctebmsp_eudract_bigbio_kb') - train - 420
+
+ENTITIES:
+CHEM
+PROC
+DISO
+ANAT
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('ddi_corpus', 'ddi_corpus_bigbio_kb') - train - 714
+
+ENTITIES:
+GROUP
+BRAND
+DRUG
+DRUG_N
+
+RELATIONS:
+BRAND - INT - GROUP
+DRUG - EFFECT - BRAND
+GROUP - MECHANISM - DRUG
+DRUG - INT - DRUG
+DRUG - ADVISE - BRAND
+GROUP - EFFECT - GROUP
+DRUG_N - EFFECT - DRUG
+BRAND - MECHANISM - DRUG
+BRAND - ADVISE - DRUG
+DRUG - ADVISE - GROUP
+GROUP - INT - GROUP
+BRAND - EFFECT - GROUP
+GROUP - EFFECT - DRUG_N
+DRUG - MECHANISM - DRUG_N
+GROUP - ADVISE - GROUP
+DRUG - MECHANISM - GROUP
+GROUP - INT - DRUG
+DRUG_N - EFFECT - GROUP
+GROUP - EFFECT - DRUG
+BRAND - INT - DRUG
+GROUP - EFFECT - BRAND
+DRUG - ADVISE - DRUG
+BRAND - ADVISE - BRAND
+GROUP - MECHANISM - DRUG_N
+DRUG - EFFECT - DRUG
+BRAND - MECHANISM - GROUP
+BRAND - MECHANISM - BRAND
+GROUP - ADVISE - BRAND
+DRUG_N - EFFECT - BRAND
+BRAND - EFFECT - BRAND
+DRUG - INT - BRAND
+DRUG_N - MECHANISM - GROUP
+DRUG_N - EFFECT - DRUG_N
+DRUG - MECHANISM - BRAND
+GROUP - MECHANISM - GROUP
+BRAND - EFFECT - DRUG
+BRAND - ADVISE - GROUP
+GROUP - MECHANISM - BRAND
+DRUG - EFFECT - DRUG_N
+DRUG_N - MECHANISM - DRUG
+DRUG - INT - DRUG_N
+DRUG - INT - GROUP
+DRUG - MECHANISM - DRUG
+DRUG - EFFECT - GROUP
+GROUP - ADVISE - DRUG
+
+--------------------------------------------------------------------
+
+DATASET
+('distemist', 'distemist_entities_bigbio_kb') - train - 750
+
+ENTITIES:
+ENFERMEDAD
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('distemist', 'distemist_linking_bigbio_kb') - train - 583
+
+ENTITIES:
+ENFERMEDAD
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('ebm_pico', 'ebm_pico_bigbio_kb') - train - 4746
+
+ENTITIES:
+Outcome_Physical
+Outcome_Mental
+Outcome_Other
+Intervention_Pharmacological
+Intervention_Control
+Participant_Sex
+Intervention_Educational
+Intervention_Physical
+Outcome_Adverse-effects
+Intervention_Surgical
+Intervention_Other
+Intervention_Psychological
+Outcome_Pain
+Participant_Condition
+Participant_Age
+Participant_Sample-size
+Outcome_Mortality
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('euadr', 'euadr_bigbio_kb') - train - 300
+
+ENTITIES:
+
+Diseases & Disorders
+Genes & Molecular Sequences
+SNP & Sequence variations
+Chemicals & Drugs
+
+RELATIONS:
+ - PA - 
+ - SA - 
+ - NA - 
+
+--------------------------------------------------------------------
+
+DATASET
+('genetag', 'genetagcorrect_bigbio_kb') - train - 7500
+
+ENTITIES:
+NEWGENE
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('genetag', 'genetaggold_bigbio_kb') - train - 7500
+
+ENTITIES:
+NEWGENE
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('genia_ptm_event_corpus', 'genia_ptm_event_corpus_bigbio_kb') - train - 112
+
+ENTITIES:
+Protein
+Entity
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('genia_relation_corpus', 'genia_relation_corpus_bigbio_kb') - train - 800
+
+ENTITIES:
+Protein
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('genia_term_corpus', 'genia_term_corpus_bigbio_kb') - train - 2000
+
+ENTITIES:
+
+DNA_substructure
+(BUT_NOT protein_family_or_group protein_family_or_group)
+(OR polynucleotide polynucleotide)
+(AND cell_line cell_line)
+(OR other_organic_compound other_organic_compound other_organic_compound)
+protein_molecule
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
+(AND virus virus)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AND amino_acid_monomer amino_acid_monomer)
+RNA_substructure
+(BUT_NOT DNA_domain_or_region DNA_domain_or_region)
+DNA_N/A
+(AND amino_acid_monomer amino_acid_monomer amino_acid_monomer)
+(AS_WELL_AS DNA_domain_or_region DNA_domain_or_region)
+(AND protein_substructure protein_substructure)
+(OR cell_line cell_line cell_line)
+(AND cell_line cell_line cell_line cell_line cell_line cell_line)
+RNA_domain_or_region
+(AND peptide peptide)
+(OR tissue tissue)
+DNA_domain_or_region
+(AND protein_subunit protein_subunit)
+lipid
+(AND (OR other_name other_name) (OR other_name other_name))
+virus
+(AND peptide peptide peptide)
+RNA_N/A
+(AND/OR other_name other_name)
+(OR RNA_molecule RNA_molecule)
+(AND DNA_family_or_group DNA_family_or_group)
+(OR virus virus)
+(AND other_name other_name other_name other_name)
+cell_component
+(AND atom atom)
+(AND carbohydrate carbohydrate)
+(OR RNA_family_or_group RNA_family_or_group)
+(OR other_name other_name other_name other_name)
+(AND nucleotide nucleotide nucleotide nucleotide nucleotide)
+(OR DNA_family_or_group DNA_family_or_group)
+(AND cell_type cell_type cell_type cell_type)
+(AND cell_line (OR cell_line cell_line))
+inorganic
+(AND multi_cell multi_cell)
+(BUT_NOT other_name (OR other_name other_name other_name))
+(OR DNA_molecule DNA_molecule DNA_molecule DNA_molecule DNA_molecule)
+(AND other_organic_compound other_organic_compound)
+(OR other_organic_compound other_organic_compound)
+(AND protein_N/A protein_N/A)
+nucleotide
+(AND protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
+(AND_NOT cell_line cell_line)
+RNA_family_or_group
+(AND RNA_family_or_group RNA_family_or_group)
+(AND/OR RNA_molecule RNA_molecule)
+body_part
+(AND protein_family_or_group protein_family_or_group)
+(AND RNA_molecule RNA_molecule RNA_molecule)
+(AND DNA_domain_or_region DNA_domain_or_region)
+(AND other_name other_name other_name)
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
+(AND DNA_molecule DNA_molecule)
+(AND nucleotide nucleotide nucleotide nucleotide)
+(OR cell_type cell_type)
+(OR nucleotide nucleotide nucleotide)
+(AND cell_type cell_type cell_type cell_type cell_type cell_type)
+other_organic_compound
+(TO other_name other_name)
+(AND protein_complex protein_complex protein_complex protein_complex)
+polynucleotide
+(VERSUS protein_subunit protein_subunit)
+peptide
+(OR DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(OR DNA_domain_or_region DNA_domain_or_region)
+(AND other_name other_name)
+cell_line
+(OR cell_line cell_line)
+DNA_molecule
+(NOT_ONLY_BUT_ALSO (OR other_name other_name) other_name)
+DNA_family_or_group
+(OR other_name other_name other_name)
+(AND RNA_molecule RNA_molecule)
+other_name
+(OR inorganic inorganic)
+(AS_WELL_AS other_name other_name)
+(BUT_NOT protein_molecule protein_molecule)
+(TO cell_type cell_type)
+(AND protein_domain_or_region protein_domain_or_region)
+RNA_molecule
+(AND cell_type cell_type)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(OR protein_subunit protein_subunit)
+(BUT_NOT cell_type cell_type)
+carbohydrate
+(OR protein_molecule protein_molecule protein_molecule)
+(AND body_part body_part body_part)
+(OR DNA_substructure DNA_substructure)
+(OR DNA_molecule DNA_molecule DNA_molecule)
+(AND tissue tissue)
+(AND cell_component cell_component cell_component)
+(AND polynucleotide polynucleotide)
+amino_acid_monomer
+tissue
+(AND DNA_family_or_group DNA_family_or_group DNA_family_or_group)
+(AND protein_domain_or_region protein_domain_or_region protein_domain_or_region protein_domain_or_region)
+(AND protein_molecule protein_molecule protein_molecule protein_molecule)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(OR other_name other_name)
+(AND other_artificial_source other_artificial_source)
+(AND RNA_N/A RNA_N/A)
+(OR (AND protein_complex protein_complex) (AND protein_complex protein_complex))
+protein_domain_or_region
+(OR protein_complex protein_complex)
+atom
+(AND cell_type cell_type cell_type)
+protein_substructure
+(OR protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
+protein_subunit
+(AND protein_family_or_group protein_family_or_group protein_family_or_group)
+(AND (AND other_name other_name) (AND other_name other_name))
+(OR DNA_molecule DNA_molecule)
+protein_N/A
+(BUT_NOT (AND cell_type cell_type) (OR cell_type cell_type))
+(OR protein_molecule protein_molecule)
+(AND protein_molecule protein_molecule protein_molecule)
+(OR multi_cell multi_cell)
+(OR protein_family_or_group protein_family_or_group)
+(AND other_name other_name other_name other_name other_name)
+(AND/OR DNA_domain_or_region DNA_domain_or_region)
+(BUT_NOT RNA_molecule RNA_molecule)
+(AND cell_line cell_line cell_line cell_line)
+mono_cell
+multi_cell
+(AND multi_cell multi_cell multi_cell)
+(AND cell_type cell_type cell_type cell_type cell_type)
+(OR protein_domain_or_region protein_domain_or_region protein_domain_or_region)
+(AND cell_line cell_line cell_line)
+(NEITHER_NOR RNA_molecule RNA_molecule)
+(BUT_NOT other_name other_name)
+protein_family_or_group
+other_artificial_source
+(BUT_NOT protein_molecule (OR protein_molecule protein_molecule))
+(AND protein_complex protein_complex)
+(THAN cell_type cell_type)
+(OR lipid lipid lipid)
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
+protein_complex
+(BUT_NOT cell_line cell_line)
+(AND_NOT cell_type cell_type)
+(OR protein_domain_or_region protein_domain_or_region)
+cell_type
+(AND body_part body_part)
+(BUT_NOT cell_line (AND cell_line cell_line cell_line))
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AND/OR protein_family_or_group protein_family_or_group)
+(AND lipid lipid)
+(AND/OR cell_type cell_type)
+(AND protein_molecule protein_molecule)
+(AND cell_component cell_component)
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('gnormplus', 'gnormplus_bigbio_kb') - train - 432
+
+ENTITIES:
+DomainMotif
+Gene
+FamilyName
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('hprd50', 'hprd50_bigbio_kb') - train - 34
+
+ENTITIES:
+protein
+
+RELATIONS:
+protein - PPI - protein
+
+--------------------------------------------------------------------
+
+DATASET
+('iepa', 'iepa_bigbio_kb') - train - 160
+
+ENTITIES:
+
+
+RELATIONS:
+ - PPI - 
+
+--------------------------------------------------------------------
+
+DATASET
+('jnlpba', 'jnlpba_bigbio_kb') - train - 18546
+
+ENTITIES:
+8
+6
+4
+5
+9
+2
+0
+3
+7
+10
+1
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('linnaeus', 'linnaeus_bigbio_kb') - train - 95
+
+ENTITIES:
+species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('linnaeus', 'linnaeus_filtered_bigbio_kb') - train - 84
+
+ENTITIES:
+species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('lll', 'lll_bigbio_kb') - test - 87
+
+ENTITIES:
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('meddocan', 'meddocan_bigbio_kb') - train - 500
+
+ENTITIES:
+NOMBRE_PERSONAL_SANITARIO
+FAMILIARES_SUJETO_ASISTENCIA
+SEXO_SUJETO_ASISTENCIA
+ID_CONTACTO_ASISTENCIAL
+NUMERO_FAX
+ID_ASEGURAMIENTO
+HOSPITAL
+CALLE
+CORREO_ELECTRONICO
+OTROS_SUJETO_ASISTENCIA
+NUMERO_TELEFONO
+CENTRO_SALUD
+EDAD_SUJETO_ASISTENCIA
+INSTITUCION
+NOMBRE_SUJETO_ASISTENCIA
+ID_TITULACION_PERSONAL_SANITARIO
+FECHAS
+PROFESION
+PAIS
+TERRITORIO
+ID_SUJETO_ASISTENCIA
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('medmentions', 'medmentions_full_bigbio_kb') - train - 2635
+
+ENTITIES:
+T097
+T109
+T051
+T099
+T200
+T055
+T192
+T007
+T021
+T053
+T030
+T010
+T047
+T090
+T012
+T031
+T002
+T067
+T014
+T054
+T168
+T126
+T025
+T042
+T091
+T101
+T203
+T196
+T080
+T083
+T098
+T201
+T185
+T038
+T037
+T093
+T085
+T121
+T096
+T197
+T005
+T195
+T081
+T087
+T011
+T122
+T167
+T074
+T082
+T028
+T114
+T023
+T015
+T062
+T024
+T125
+T169
+T060
+T184
+T130
+T001
+T104
+T029
+T073
+T078
+T044
+T045
+T032
+T063
+T033
+T050
+T075
+T086
+T052
+T077
+T170
+T039
+T103
+T019
+T194
+T066
+T171
+T064
+T046
+T048
+T116
+T204
+T065
+T079
+T049
+T071
+UnknownType
+T191
+T127
+T100
+T056
+T089
+T058
+T092
+T057
+T059
+T131
+T043
+T061
+T070
+T120
+T013
+T040
+T016
+T008
+T095
+T022
+T190
+T034
+T123
+T102
+T018
+T004
+T129
+T068
+T017
+T094
+T020
+T041
+T072
+T069
+T026
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('medmentions', 'medmentions_st21pv_bigbio_kb') - train - 2635
+
+ENTITIES:
+T098
+T097
+T038
+T201
+T037
+T007
+T005
+T092
+T058
+T074
+T082
+T033
+T031
+T022
+T062
+T168
+T017
+T170
+T103
+T091
+T204
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('mirna', 'mirna_bigbio_kb') - train - 201
+
+ENTITIES:
+Genes/Proteins
+Specific_miRNAs
+Relation_Trigger
+Non-Specific_miRNAs
+Diseases
+Species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('mlee', 'mlee_bigbio_kb') - train - 131
+
+ENTITIES:
+Organism_subdivision
+Tissue
+Organism_substance
+Developing_anatomical_structure
+Pathological_formation
+Immaterial_anatomical_entity
+Cellular_component
+Multi-tissue_structure
+Organ
+Protein_domain_or_region
+DNA_domain_or_region
+Drug_or_compound
+Anatomical_system
+Cell
+Gene_or_gene_product
+Organism
+
+RELATIONS:
+Multi-tissue_structure - FRAG - Multi-tissue_structure
+Tissue - FRAG - Tissue
+Organism - FRAG - Organism
+Pathological_formation - FRAG - Pathological_formation
+Cell - FRAG - Cell
+Cellular_component - FRAG - Cellular_component
+Gene_or_gene_product - FRAG - Gene_or_gene_product
+Drug_or_compound - FRAG - Drug_or_compound
+Organism_subdivision - FRAG - Organism_subdivision
+
+--------------------------------------------------------------------
+
+DATASET
+('muchmore', 'muchmore_bigbio_kb') - train - 15630
+
+ENTITIES:
+umlsterm
+
+RELATIONS:
+umlsterm - EVALUATION_OF - umlsterm
+umlsterm - AFFECTS - umlsterm
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
+umlsterm - MANIFESTATION_OF - umlsterm
+umlsterm - PRECEDES - umlsterm
+umlsterm - PART_OF - umlsterm
+umlsterm - ADJACENT_TO - umlsterm
+umlsterm - ASSOCIATED_WITH - umlsterm
+umlsterm - CONSISTS_OF - umlsterm
+umlsterm - MEASUREMENT_OF - umlsterm
+umlsterm - CAUSES - umlsterm
+umlsterm - ANALYZES - umlsterm
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
+umlsterm - DISRUPTS - umlsterm
+umlsterm - ISSUE_IN - umlsterm
+umlsterm - DERIVATIVE_OF - umlsterm
+umlsterm - INGREDIENT_OF - umlsterm
+umlsterm - CONCEPTUAL_PART_OF - umlsterm
+umlsterm - INTERACTS_WITH - umlsterm
+umlsterm - CONTAINS - umlsterm
+umlsterm - USES - umlsterm
+umlsterm - DIAGNOSES - umlsterm
+umlsterm - LOCATION_OF - umlsterm
+umlsterm - CONNECTED_TO - umlsterm
+umlsterm - DEGREE_OF - umlsterm
+umlsterm - ISA - umlsterm
+umlsterm - OCCURS_IN - umlsterm
+umlsterm - EXHIBITS - umlsterm
+umlsterm - MEASURES - umlsterm
+umlsterm - PRODUCES - umlsterm
+umlsterm - METHOD_OF - umlsterm
+umlsterm - CARRIES_OUT - umlsterm
+umlsterm - RESULT_OF - umlsterm
+umlsterm - INDICATES - umlsterm
+umlsterm - PROPERTY_OF - umlsterm
+umlsterm - ASSESSES_EFFECT_OF - umlsterm
+umlsterm - TREATS - umlsterm
+umlsterm - MANAGES - umlsterm
+umlsterm - PERFORMS - umlsterm
+umlsterm - CO-OCCURS_WITH - umlsterm
+umlsterm - COMPLICATES - umlsterm
+umlsterm - SURROUNDS - umlsterm
+umlsterm - INTERCONNECTS - umlsterm
+
+--------------------------------------------------------------------
+
+DATASET
+('muchmore', 'muchmore_de_bigbio_kb') - train - 7808
+
+ENTITIES:
+umlsterm
+
+RELATIONS:
+umlsterm - EVALUATION_OF - umlsterm
+umlsterm - AFFECTS - umlsterm
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
+umlsterm - MANIFESTATION_OF - umlsterm
+umlsterm - PRECEDES - umlsterm
+umlsterm - PART_OF - umlsterm
+umlsterm - ADJACENT_TO - umlsterm
+umlsterm - ASSOCIATED_WITH - umlsterm
+umlsterm - CONSISTS_OF - umlsterm
+umlsterm - MEASUREMENT_OF - umlsterm
+umlsterm - CAUSES - umlsterm
+umlsterm - ANALYZES - umlsterm
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
+umlsterm - DISRUPTS - umlsterm
+umlsterm - ISSUE_IN - umlsterm
+umlsterm - DERIVATIVE_OF - umlsterm
+umlsterm - CONCEPTUAL_PART_OF - umlsterm
+umlsterm - INTERACTS_WITH - umlsterm
+umlsterm - CONTAINS - umlsterm
+umlsterm - USES - umlsterm
+umlsterm - DIAGNOSES - umlsterm
+umlsterm - LOCATION_OF - umlsterm
+umlsterm - CONNECTED_TO - umlsterm
+umlsterm - DEGREE_OF - umlsterm
+umlsterm - ISA - umlsterm
+umlsterm - OCCURS_IN - umlsterm
+umlsterm - EXHIBITS - umlsterm
+umlsterm - MEASURES - umlsterm
+umlsterm - PRODUCES - umlsterm
+umlsterm - METHOD_OF - umlsterm
+umlsterm - CARRIES_OUT - umlsterm
+umlsterm - RESULT_OF - umlsterm
+umlsterm - INDICATES - umlsterm
+umlsterm - PROPERTY_OF - umlsterm
+umlsterm - ASSESSES_EFFECT_OF - umlsterm
+umlsterm - TREATS - umlsterm
+umlsterm - MANAGES - umlsterm
+umlsterm - PERFORMS - umlsterm
+umlsterm - CO-OCCURS_WITH - umlsterm
+umlsterm - COMPLICATES - umlsterm
+umlsterm - SURROUNDS - umlsterm
+umlsterm - INTERCONNECTS - umlsterm
+
+--------------------------------------------------------------------
+
+DATASET
+('muchmore', 'muchmore_en_bigbio_kb') - train - 7822
+
+ENTITIES:
+umlsterm
+
+RELATIONS:
+umlsterm - EVALUATION_OF - umlsterm
+umlsterm - AFFECTS - umlsterm
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
+umlsterm - MANIFESTATION_OF - umlsterm
+umlsterm - PRECEDES - umlsterm
+umlsterm - PART_OF - umlsterm
+umlsterm - ADJACENT_TO - umlsterm
+umlsterm - ASSOCIATED_WITH - umlsterm
+umlsterm - CONSISTS_OF - umlsterm
+umlsterm - MEASUREMENT_OF - umlsterm
+umlsterm - CAUSES - umlsterm
+umlsterm - ANALYZES - umlsterm
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
+umlsterm - DISRUPTS - umlsterm
+umlsterm - ISSUE_IN - umlsterm
+umlsterm - DERIVATIVE_OF - umlsterm
+umlsterm - INGREDIENT_OF - umlsterm
+umlsterm - CONCEPTUAL_PART_OF - umlsterm
+umlsterm - INTERACTS_WITH - umlsterm
+umlsterm - CONTAINS - umlsterm
+umlsterm - USES - umlsterm
+umlsterm - DIAGNOSES - umlsterm
+umlsterm - LOCATION_OF - umlsterm
+umlsterm - CONNECTED_TO - umlsterm
+umlsterm - DEGREE_OF - umlsterm
+umlsterm - ISA - umlsterm
+umlsterm - OCCURS_IN - umlsterm
+umlsterm - EXHIBITS - umlsterm
+umlsterm - MEASURES - umlsterm
+umlsterm - PRODUCES - umlsterm
+umlsterm - METHOD_OF - umlsterm
+umlsterm - CARRIES_OUT - umlsterm
+umlsterm - RESULT_OF - umlsterm
+umlsterm - INDICATES - umlsterm
+umlsterm - PROPERTY_OF - umlsterm
+umlsterm - ASSESSES_EFFECT_OF - umlsterm
+umlsterm - TREATS - umlsterm
+umlsterm - MANAGES - umlsterm
+umlsterm - PERFORMS - umlsterm
+umlsterm - CO-OCCURS_WITH - umlsterm
+umlsterm - COMPLICATES - umlsterm
+umlsterm - SURROUNDS - umlsterm
+umlsterm - INTERCONNECTS - umlsterm
+
+--------------------------------------------------------------------
+
+DATASET
+('ncbi_disease', 'ncbi_disease_bigbio_kb') - train - 592
+
+ENTITIES:
+SpecificDisease
+CompositeMention
+Modifier
+DiseaseClass
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('nlm_gene', 'nlm_gene_bigbio_kb') - train - 450
+
+ENTITIES:
+Domain
+STARGENE
+Gene
+Other
+GENERIF
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('nlmchem', 'nlmchem_bigbio_kb') - train - 80
+
+ENTITIES:
+Chemical
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('osiris', 'osiris_bigbio_kb') - train - 105
+
+ENTITIES:
+gene
+variant
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('pdr', 'pdr_bigbio_kb') - train - 179
+
+ENTITIES:
+Disease
+Plant
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('pharmaconer', 'pharmaconer_bigbio_kb') - train - 500
+
+ENTITIES:
+NO_NORMALIZABLES
+PROTEINAS
+UNCLEAR
+NORMALIZABLES
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('pico_extraction', 'pico_extraction_bigbio_kb') - train - 421
+
+ENTITIES:
+intervention
+outcome
+participant
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('progene', 'progene_bigbio_kb') - split_1_train - 31007
+
+ENTITIES:
+progene_text
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('quaero', 'quaero_emea_bigbio_kb') - test - 15
+
+ENTITIES:
+GEOG
+PHEN
+ANAT
+OBJC
+LIVB
+CHEM
+DEVI
+PROC
+DISO
+PHYS
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('quaero', 'quaero_medline_bigbio_kb') - train - 833
+
+ENTITIES:
+GEOG
+PHEN
+ANAT
+OBJC
+LIVB
+PROC
+DEVI
+CHEM
+DISO
+PHYS
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('scai_chemical', 'scai_chemical_bigbio_kb') - train - 100
+
+ENTITIES:
+
+IUPAC
+SUM
+ABBREVIATION
+TRIVIAL
+PARTIUPAC
+TRIVIALVAR
+MODIFIER
+FAMILY
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('scai_disease', 'scai_disease_bigbio_kb') - train - 400
+
+ENTITIES:
+ADVERSE
+DISEASE
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('seth_corpus', 'seth_corpus_bigbio_kb') - train - 630
+
+ENTITIES:
+RS
+SNP
+Gene
+
+RELATIONS:
+Gene - EQUALS - Gene
+SNP - ASSOCIATEDTO - Gene
+
+--------------------------------------------------------------------
+
+DATASET
+('spl_adr_200db', 'spl_adr_200db_train_bigbio_kb') - train - 101
+
+ENTITIES:
+Factor
+Animal
+DrugClass
+AdverseReaction
+Severity
+Negation
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('spl_adr_200db', 'spl_adr_200db_unannotated_bigbio_kb') - train - 2208
+
+ENTITIES:
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('swedish_medical_ner', 'swedish_medical_ner_1177_bigbio_kb') - train - 926
+
+ENTITIES:
+body_structure
+disorder_finding
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('swedish_medical_ner', 'swedish_medical_ner_lt_bigbio_kb') - train - 745753
+
+ENTITIES:
+body_structure
+disorder_finding
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('swedish_medical_ner', 'swedish_medical_ner_wiki_bigbio_kb') - train - 48720
+
+ENTITIES:
+disorder_finding
+body_structure
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('tmvar_v1', 'tmvar_v1_bigbio_kb') - train - 334
+
+ENTITIES:
+DNAMutation
+SNP
+ProteinMutation
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('tmvar_v2', 'tmvar_v2_bigbio_kb') - train - 158
+
+ENTITIES:
+DNAMutation
+SNP
+ProteinMutation
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('tmvar_v3', 'tmvar_v3_bigbio_kb') - test - 500
+
+ENTITIES:
+DNAAllele
+OtherMutation
+SNP
+Gene
+ProteinAllele
+AcidChange
+ProteinMutation
+DNAMutation
+CellLine
+Species
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('twadrl', 'twadrl_bigbio_kb') - train_6 - 4819
+
+ENTITIES:
+social_media_text
+
+RELATIONS:
+
+--------------------------------------------------------------------
+
+DATASET
+('verspoor_2013', 'verspoor_2013_bigbio_kb') - train - 120
+
+ENTITIES:
+ethnicity
+gender
+Concepts_Ideas
+gene
+cohort-patient
+size
+mutation
+body-part
+Phenomena
+Disorder
+disease
+age
+Physiology
+
+RELATIONS:
+Concepts_Ideas - HAS - disease
+mutation - HAS - size
+cohort-patient - HAS - ethnicity
+Phenomena - HAS - disease
+mutation - HAS - cohort-patient
+Concepts_Ideas - HAS - mutation
+cohort-patient - HAS - cohort-patient
+body-part - HAS - Concepts_Ideas
+age - HAS - Concepts_Ideas
+mutation - HAS - disease
+Physiology - HAS - size
+disease - RELATEDTO - mutation
+Disorder - HAS - mutation
+disease - RELATEDTO - gene
+Physiology - HAS - cohort-patient
+body-part - HAS - disease
+gene - HAS - mutation
+cohort-patient - HAS - mutation
+Concepts_Ideas - HAS - gender
+mutation - HAS - gene
+body-part - HAS - cohort-patient
+Disorder - HAS - gene
+Physiology - HAS - mutation
+cohort-patient - HAS - disease
+cohort-patient - HAS - gender
+cohort-patient - HAS - size
+body-part - HAS - Disorder
+Disorder - HAS - disease
+Phenomena - HAS - mutation
+Phenomena - HAS - cohort-patient
+Concepts_Ideas - HAS - cohort-patient
+Physiology - HAS - gene
+Concepts_Ideas - HAS - gene
+Disorder - HAS - cohort-patient
+Phenomena - HAS - gene
+age - HAS - cohort-patient
+Physiology - HAS - disease
+body-part - RELATEDTO - disease
+
+--------------------------------------------------------------------
+

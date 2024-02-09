@@ -1,0 +1,7 @@
+diann_iber_eval diann_iber_eval_bigbio_t2t
+meqsum meqsum_bigbio_t2t
+muchmore muchmore_bigbio_t2t
+multi_xscience multi_xscience_bigbio_t2t
+paramed paramed_bigbio_t2t
+scielo scielo_en_es_bigbio_t2t
+scielo scielo_en_pt_bigbio_t2t
