@@ -2,38 +2,38 @@ DATASET
 ('an_em', 'an_em_bigbio_kb') - train - 250
 
 ENTITIES:
-Organism_subdivision
-Tissue
-Organism_substance
-Developing_anatomical_structure
-Pathological_formation
-Immaterial_anatomical_entity
-Cellular_component
 Multi-tissue_structure
-Organ
-Anatomical_system
+Tissue
+Immaterial_anatomical_entity
 Cell
+Cellular_component
+Developing_anatomical_structure
+Anatomical_system
+Organ
+Pathological_formation
+Organism_substance
+Organism_subdivision
 
 RELATIONS:
-Multi-tissue_structure - FRAG - Multi-tissue_structure
-Organism_substance - PART-OF - Organism_substance
-Cell - FRAG - Cell
-Pathological_formation - PART-OF - Organ
-Organism_substance - PART-OF - Cell
-Cell - PART-OF - Multi-tissue_structure
-Cellular_component - FRAG - Cellular_component
-Tissue - PART-OF - Tissue
-Pathological_formation - PART-OF - Pathological_formation
-Organism_substance - FRAG - Organism_substance
-Cell - PART-OF - Pathological_formation
-Tissue - FRAG - Tissue
-Pathological_formation - FRAG - Pathological_formation
-Organ - FRAG - Organ
-Multi-tissue_structure - PART-OF - Multi-tissue_structure
-Cell - PART-OF - Cell
-Multi-tissue_structure - PART-OF - Organ
-Multi-tissue_structure - PART-OF - Developing_anatomical_structure
-Organ - PART-OF - Developing_anatomical_structure
+Cell - FRAG - Cell ---------- PAM212 - FRAG - mKSA) cell lines
+Cell - PART-OF - Cell ---------- slices - PART-OF - cells
+Cell - PART-OF - Multi-tissue_structure ---------- endothelial cells - PART-OF - ventral
+Cell - PART-OF - Pathological_formation ---------- cells - PART-OF - inflammation
+Cellular_component - FRAG - Cellular_component ---------- conjugative - FRAG - nonconjugative plasmids
+Multi-tissue_structure - FRAG - Multi-tissue_structure ---------- internal thoracic - FRAG - radial artery
+Multi-tissue_structure - PART-OF - Developing_anatomical_structure ---------- liver slices - PART-OF - fetal
+Multi-tissue_structure - PART-OF - Multi-tissue_structure ---------- ventral part - PART-OF - gray matter
+Multi-tissue_structure - PART-OF - Organ ---------- lateral white matter - PART-OF - spinal cord
+Organ - FRAG - Organ ---------- vascular - FRAG - non-vascular smooth muscle
+Organ - PART-OF - Developing_anatomical_structure ---------- liver - PART-OF - fetal
+Organism_substance - FRAG - Organism_substance ---------- cytosolic - FRAG - membrane subcellular fractions
+Organism_substance - PART-OF - Cell ---------- cytoplasm - PART-OF - phagocytic microglia
+Organism_substance - PART-OF - Organism_substance ---------- samples - PART-OF - nasopharyngeal aspirates
+Pathological_formation - FRAG - Pathological_formation ---------- primary - FRAG - metastatic carcinomas
+Pathological_formation - PART-OF - Organ ---------- metastatic carcinomas - PART-OF - liver
+Pathological_formation - PART-OF - Pathological_formation ---------- fragment - PART-OF - tumour
+Tissue - FRAG - Tissue ---------- eye muscle - FRAG - thyroid membranes
+Tissue - PART-OF - Tissue ---------- sections - PART-OF - liver tissue
 
 --------------------------------------------------------------------
 
@@ -41,18 +41,18 @@ DATASET
 ('anat_em', 'anat_em_bigbio_kb') - train - 606
 
 ENTITIES:
-Organism_subdivision
 Tissue
-Cancer
-Organism_substance
-Developing_anatomical_structure
-Pathological_formation
 Immaterial_anatomical_entity
 Cellular_component
-Multi-tissue_structure
-Organ
-Anatomical_system
 Cell
+Pathological_formation
+Developing_anatomical_structure
+Anatomical_system
+Organ
+Cancer
+Multi-tissue_structure
+Organism_substance
+Organism_subdivision
 
 RELATIONS:
 
@@ -76,7 +76,7 @@ Disease
 Chemical
 
 RELATIONS:
-Chemical - CID - Disease
+Chemical - CID - Disease ---------- alpha-methyldopa - CID - hypotensive
 
 --------------------------------------------------------------------
 
@@ -84,27 +84,27 @@ DATASET
 ('bioinfer', 'bioinfer_bigbio_kb') - train - 894
 
 ENTITIES:
-DNA_family_or_group
 Protein_complex
 Gene
-Individual_protein
+DNA_family_or_group
 Protein_family_or_group
 Gene/protein/RNA
+Individual_protein
 
 RELATIONS:
-Protein_complex - PPI - Individual_protein
-Individual_protein - PPI - Protein_complex
-Protein_family_or_group - PPI - Individual_protein
-Gene - PPI - Individual_protein
-Gene - PPI - Gene
-Individual_protein - PPI - Protein_family_or_group
-Gene - PPI - Protein_complex
-Individual_protein - PPI - Individual_protein
-Protein_complex - PPI - Gene
-Gene - PPI - DNA_family_or_group
-Protein_family_or_group - PPI - Gene
-Protein_family_or_group - PPI - Protein_family_or_group
-Individual_protein - PPI - Gene
+Gene - PPI - DNA_family_or_group ---------- BCK1 - PPI - MEKK
+Gene - PPI - Gene ---------- BCK1 - PPI - BCK1-20
+Gene - PPI - Individual_protein ---------- rad52 - PPI - RAD51
+Gene - PPI - Protein_complex ---------- p21 - PPI - SAGA
+Individual_protein - PPI - Gene ---------- DNA-PK - PPI - RAD51
+Individual_protein - PPI - Individual_protein ---------- T-cell factor - PPI - alpha-catenin
+Individual_protein - PPI - Protein_complex ---------- PRT1 - PPI - eIF3
+Individual_protein - PPI - Protein_family_or_group ---------- gelsolin - PPI - Actin-binding proteins
+Protein_complex - PPI - Gene ---------- SAGA - PPI - waf1
+Protein_complex - PPI - Individual_protein ---------- helicase-primase - PPI - UL5
+Protein_family_or_group - PPI - Gene ---------- cofilin/ADF - PPI - twinstar
+Protein_family_or_group - PPI - Individual_protein ---------- profilins - PPI - actin
+Protein_family_or_group - PPI - Protein_family_or_group ---------- class II myosins - PPI - myosin heavy chains
 
 --------------------------------------------------------------------
 
@@ -145,12 +145,12 @@ DATASET
 ('bionlp_st_2011_id', 'bionlp_st_2011_id_bigbio_kb') - train - 152
 
 ENTITIES:
-Two-component-system
-Chemical
 Protein
-Regulon-operon
 Entity
 Organism
+Two-component-system
+Chemical
+Regulon-operon
 
 RELATIONS:
 
@@ -164,8 +164,8 @@ Protein
 Entity
 
 RELATIONS:
-Protein - SUBUNIT-COMPLEX - Entity
-Protein - PROTEIN-COMPONENT - Entity
+Protein - PROTEIN-COMPONENT - Entity ---------- PU.1 - PROTEIN-COMPONENT - domains
+Protein - SUBUNIT-COMPLEX - Entity ---------- p50 - SUBUNIT-COMPLEX - homodimers
 
 --------------------------------------------------------------------
 
@@ -173,24 +173,24 @@ DATASET
 ('bionlp_st_2013_cg', 'bionlp_st_2013_cg_bigbio_kb') - train - 300
 
 ENTITIES:
-Organism_subdivision
 Tissue
-Cancer
-Organism_substance
-Developing_anatomical_structure
-Pathological_formation
-Immaterial_anatomical_entity
-Multi-tissue_structure
-Cellular_component
-Organ
-Simple_chemical
-Protein_domain_or_region
-DNA_domain_or_region
-Anatomical_system
 Amino_acid
-Cell
 Gene_or_gene_product
+Immaterial_anatomical_entity
 Organism
+Cell
+Cellular_component
+Protein_domain_or_region
+Pathological_formation
+Developing_anatomical_structure
+Anatomical_system
+DNA_domain_or_region
+Organ
+Cancer
+Multi-tissue_structure
+Organism_substance
+Organism_subdivision
+Simple_chemical
 
 RELATIONS:
 
@@ -210,451 +210,451 @@ DATASET
 ('bionlp_st_2013_gro', 'bionlp_st_2013_gro_bigbio_kb') - train - 150
 
 ENTITIES:
-EukaryoticCell
-SmallInterferingRNA
-SequenceHomologyAnalysis
-DNABindingDomainOfProtein
-NucleicAcid
-Enhancer
-DNABindingSite
-ThreeDimensionalMolecularStructure
-ZincCoordinatingDomainTF
-SecondMessenger
-MolecularFunction
-DoubleStrandDNA
-MutantProtein
-GeneProduct
-TranscriptionCofactor
-NuclearReceptor
-OpenReadingFrame
-ComplexMolecularEntity
-TranscriptionFactorComplex
-Chromosome
-TranscriptionCoactivator
-RNA
-PrimaryStructure
-Ligand
-bHLHTF
-ProteinCodingRegion
-FusionGene
-PhysicalContinuant
-BasicDomain
-TranscriptionRepressorActivity
-Eukaryote
-OxidativeStress
-ExpressionProfiling
-ProteinDomain
-RibosomalRNA
-AminoAcid
-OrganicChemical
+BindingAssay
+ProteinCodingDNARegion
 AntisenseRNA
 Promoter
-TranscriptionFactorBindingSiteOfDNA
-Sequence
-ForkheadWingedHelixTF
-ProteinSubunit
-RegulatoryDNARegion
-Substrate
-ForkheadWingedHelix
-ReporterGene
-HomeoBox
-Lipid
-Intron
-Cell
-Polymerase
-TranscriptionActivator
-Ion
-TranscriptionActivatorActivity
-Function
-Conformation
-Prokaryote
-Nucleus
-TranscriptionFactorActivity
-DNAFragment
+GeneProduct
 ProteinComplex
-PositiveTranscriptionRegulator
-TranslationFactor
-Enzyme
-InorganicChemical
-FusionOfGeneWithReporterGene
-UpstreamRegulatorySequence
-Chemical
-TranscriptionCorepressor
-Protein
-bHLH
-PhysicalContact
-Gene
-TATAbox
-MolecularEntity
-Stress
-Exon
-Attenuator
-ZincCoordinatingDomain
+TranscriptionRepressorActivity
+ThreeDimensionalMolecularStructure
 Histone
-TranscriptionRegulator
-MutatedProtein
-BindingSiteOfProtein
-DNARegion
-CatalyticActivity
-MessengerRNA
-bZIP
-bZIPTF
-Locus
-Holoenzyme
-CellComponent
-LivingEntity
-Nucleotide
-Ribosome
-ProteinCodingDNARegion
-Chromatin
-HMGTF
-RNAPolymerase
-Operon
-tRNA
-Phenotype
-RuntLikeDomain
-HomeoboxTF
-FusionProtein
-CpGIsland
-HMG
-ProteinBindingSiteOfDNA
-ComplexOfProteinAndDNA
-Microorganism
-BindingAssay
-RNAPolymeraseII
-TranscriptionRepressor
-DNA
-ReporterGeneConstruction
-Virus
-Peptide
-ProteinIdentification
-ExperimentalMethod
-ChromosomalDNA
-TranscriptionFactor
-DNAMolecule
-Heterochromatin
+Ion
+TATAbox
+ProteinDomain
+MolecularEntity
+ZincCoordinatingDomainTF
 AP2EREBPRelatedDomain
+ZincCoordinatingDomain
+Eukaryote
+bZIP
+tRNA
+OrganicChemical
+ExpressionProfiling
+PositiveTranscriptionRegulator
+DNA
+Chromatin
+ForkheadWingedHelixTF
+TranscriptionActivator
+ReporterGeneConstruction
+Conformation
+NucleicAcid
+DNABindingSite
+TranscriptionFactor
+SequenceHomologyAnalysis
+ProteinCodingRegion
+BasicDomain
+Sequence
+PhysicalContact
+Chemical
+Locus
+PhysicalContinuant
 ProteinBindingSiteOfProtein
-MolecularStructure
-Transcript
+Protein
+BindingSiteOfProtein
+DoubleStrandDNA
+ProteinIdentification
+Ribosome
+Enhancer
+OxidativeStress
+TranscriptionCorepressor
+Chromosome
+CatalyticActivity
+MutantProtein
+CpGIsland
+HomeoBox
+ProteinBindingSiteOfDNA
+FusionGene
+Polymerase
+TranscriptionRegulator
+ChromosomalDNA
+NuclearReceptor
+OpenReadingFrame
+ExperimentalMethod
+Holoenzyme
+Lipid
+RuntLikeDomain
+TranslationFactor
+Virus
+FusionProtein
+RNAPolymeraseII
+DNABindingDomainOfProtein
 Tissue
+MutatedProtein
+Microorganism
+CellComponent
+TranscriptionFactorActivity
+ProteinSubunit
+AminoAcid
+SecondMessenger
+Prokaryote
+EukaryoticCell
+TranscriptionActivatorActivity
+RNA
+Operon
+RegulatoryDNARegion
+RNAPolymerase
+bZIPTF
+bHLHTF
+DNARegion
+Intron
+InorganicChemical
+Enzyme
+TranscriptionCoactivator
+ComplexMolecularEntity
+TranscriptionFactorComplex
+Phenotype
+Ligand
+Attenuator
+ReporterGene
+LivingEntity
+PrimaryStructure
+ForkheadWingedHelix
+Transcript
+MessengerRNA
+Gene
+bHLH
+UpstreamRegulatorySequence
+Exon
+Nucleus
+MolecularFunction
+Heterochromatin
+TranscriptionFactorBindingSiteOfDNA
+Stress
+SmallInterferingRNA
+Function
+DNAMolecule
+Nucleotide
+Peptide
+TranscriptionRepressor
+HMGTF
+Substrate
+Cell
+TranscriptionCofactor
+MolecularStructure
+FusionOfGeneWithReporterGene
+ComplexOfProteinAndDNA
+HMG
+HomeoboxTF
+DNAFragment
+RibosomalRNA
 
 RELATIONS:
-ComplexOfProteinAndDNA - HASPART - DNA
-Protein - HASPART - Peptide
-DNAFragment - HASPART - DNARegion
-Protein - HASPART - PrimaryStructure
-Enzyme - LOCATEDIN - Tissue
-Protein - LOCATEDIN - Tissue
-TranscriptionFactor - FROMSPECIES - Eukaryote
-MolecularEntity - HASPART - ProteinDomain
-Exon - HASPART - Attenuator
-Gene - ENCODES - ProteinSubunit
-DNARegion - LOCATEDIN - Gene
-TranscriptionFactor - HASPART - DNABindingDomainOfProtein
-Substrate - LOCATEDIN - CellComponent
-Protein - HASPART - ProteinBindingSiteOfProtein
-Exon - HASPART - Nucleotide
-DNA - HASPART - Promoter
-Transcript - ENCODES - Ligand
-Enzyme - HASPART - Protein
-Gene - HASPART - Enhancer
-UpstreamRegulatorySequence - HASPART - Promoter
-ProteinComplex - HASPART - TranscriptionFactor
-Gene - ENCODES - AminoAcid
-Promoter - HASPART - TATAbox
-MessengerRNA - LOCATEDIN - CellComponent
-Gene - ENCODES - Peptide
-ProteinComplex - HASFUNCTION - Function
-TranscriptionFactor - HASPART - AminoAcid
-Sequence - FROMSPECIES - Eukaryote
-Phenotype - LOCATEDIN - Cell
-Protein - LOCATEDIN - Nucleus
-ProteinComplex - HASPART - Peptide
-Peptide - FROMSPECIES - Eukaryote
-Transcript - ENCODES - Protein
-DNA - ENCODES - TranscriptionFactor
-ProteinComplex - HASPART - Protein
-ExperimentalMethod - LOCATEDIN - Cell
-Gene - HASFUNCTION - Function
-Exon - FROMSPECIES - Eukaryote
-Protein - LOCATEDIN - Cell
-Gene - ENCODES - Protein
-TranscriptionActivator - HASPART - Peptide
-ProteinDomain - LOCATEDIN - CellComponent
-ProteinDomain - HASPART - MolecularStructure
-DNARegion - LOCATEDIN - Chromosome
-Protein - HASFUNCTION - CatalyticActivity
-TranscriptionFactor - HASPART - bZIPTF
-Gene - LOCATEDIN - Cell
-Exon - HASPART - Exon
-Sequence - FROMSPECIES - Virus
-DNA - ENCODES - ProteinSubunit
-Gene - HASPART - Intron
-TranscriptionRepressor - FROMSPECIES - Eukaryote
-Protein - LOCATEDIN - Ribosome
-Enzyme - HASPART - ProteinSubunit
-Enhancer - HASPART - RegulatoryDNARegion
-MessengerRNA - LOCATEDIN - Nucleus
-Gene - HASPART - Promoter
-Enzyme - FROMSPECIES - Prokaryote
-ProteinDomain - HASFUNCTION - TranscriptionRepressorActivity
-HMGTF - HASPART - DNARegion
-ProteinComplex - HASPART - ProteinSubunit
-TranscriptionFactor - HASPART - ProteinSubunit
-Peptide - HASPART - Enhancer
-MessengerRNA - FROMSPECIES - Eukaryote
-TranscriptionActivator - FROMSPECIES - Virus
-TranscriptionCoactivator - LOCATEDIN - Cell
-Gene - HASPART - Sequence
-GeneProduct - FROMSPECIES - Eukaryote
-TranscriptionFactor - HASPART - Promoter
-Sequence - ENCODES - ProteinDomain
-Protein - HASPART - bZIP
-Promoter - HASPART - RegulatoryDNARegion
-Gene - ENCODES - TranscriptionFactor
-Locus - LOCATEDIN - Cell
-CellComponent - LOCATEDIN - Cell
-TranscriptionFactorComplex - HASPART - ProteinSubunit
-Gene - LOCATEDIN - Chromosome
-Gene - ENCODES - TranscriptionRegulator
-ProteinSubunit - LOCATEDIN - Cell
-Enzyme - HASPART - ProteinDomain
-Transcript - ENCODES - Enzyme
-Enzyme - FROMSPECIES - Eukaryote
-Chromosome - ENCODES - RNA
-Gene - LOCATEDIN - ChromosomalDNA
-Gene - FROMSPECIES - Eukaryote
-Gene - ENCODES - HMG
-OrganicChemical - FROMSPECIES - Prokaryote
-TranscriptionFactor - HASPART - HMG
-TranscriptionFactor - HASPART - Protein
-Protein - FROMSPECIES - Eukaryote
-Enzyme - HASPART - Peptide
-Gene - ENCODES - GeneProduct
-Protein - HASPART - TranscriptionFactor
-Protein - HASFUNCTION - PositiveTranscriptionRegulator
-Transcript - LOCATEDIN - Cell
-ProteinSubunit - HASPART - PrimaryStructure
-Promoter - HASFUNCTION - Function
-Nucleus - HASPART - TranscriptionFactor
-TranscriptionFactor - LOCATEDIN - Nucleus
-Gene - ENCODES - RibosomalRNA
-Protein - HASPART - ProteinDomain
-ProteinDomain - HASPART - Sequence
-Promoter - HASPART - DNARegion
-DNARegion - HASPART - Promoter
-TranscriptionRepressor - HASPART - ZincCoordinatingDomain
-Peptide - HASPART - AminoAcid
-ProteinDomain - HASPART - Peptide
-Tissue - FROMSPECIES - Eukaryote
-ProteinSubunit - HASPART - AminoAcid
-Gene - LOCATEDIN - DNARegion
-RNA - LOCATEDIN - Cell
-ProteinBindingSiteOfProtein - HASPART - AminoAcid
-bHLHTF - LOCATEDIN - Tissue
-Promoter - LOCATEDIN - Cell
-Protein - FROMSPECIES - Prokaryote
-tRNA - ENCODES - Transcript
-DNA - ENCODES - MessengerRNA
-Enhancer - HASPART - TranscriptionFactorBindingSiteOfDNA
-Protein - HASFUNCTION - Function
-Protein - HASPART - AminoAcid
-HomeoboxTF - FROMSPECIES - Eukaryote
-OpenReadingFrame - LOCATEDIN - Transcript
-TranscriptionCoactivator - HASPART - ProteinDomain
-TranslationFactor - HASFUNCTION - CatalyticActivity
-ProteinDomain - FROMSPECIES - Eukaryote
-Protein - HASPART - DNABindingDomainOfProtein
-Virus - HASPART - Virus
-LivingEntity - FROMSPECIES - Eukaryote
-ProteinComplex - HASPART - TranscriptionActivator
-DNABindingDomainOfProtein - HASPART - ProteinDomain
-ProteinCodingRegion - FROMSPECIES - Eukaryote
-Protein - LOCATEDIN - DNA
-Cell - HASFUNCTION - Function
-Promoter - HASPART - Sequence
-ReporterGeneConstruction - HASPART - ReporterGene
-TranscriptionRegulator - FROMSPECIES - Eukaryote
-ProteinSubunit - FROMSPECIES - Eukaryote
-Ion - LOCATEDIN - Cell
-MutantProtein - LOCATEDIN - Cell
-Gene - HASPART - DNARegion
-TranscriptionRepressor - LOCATEDIN - CellComponent
-Protein - HASPART - Sequence
-Protein - HASFUNCTION - TranscriptionRepressorActivity
-ReporterGene - LOCATEDIN - Prokaryote
-Gene - HASPART - DNA
-FusionGene - ENCODES - Protein
-Nucleotide - HASPART - Nucleotide
-Enhancer - HASPART - DNARegion
-DNA - LOCATEDIN - Cell
-Protein - HASPART - ZincCoordinatingDomain
-Peptide - HASPART - Peptide
-Chemical - LOCATEDIN - Cell
-HMGTF - HASPART - DNABindingDomainOfProtein
-ReporterGene - HASPART - DNARegion
-ReporterGene - HASPART - Promoter
-Transcript - HASPART - OpenReadingFrame
-Protein - HASFUNCTION - TranscriptionActivatorActivity
-ProteinDomain - HASFUNCTION - Function
-Function - LOCATEDIN - Cell
-ProteinComplex - HASFUNCTION - CatalyticActivity
-AminoAcid - HASPART - ProteinDomain
-CellComponent - HASPART - CellComponent
-Promoter - HASPART - Attenuator
-DNAFragment - ENCODES - Protein
-Protein - HASPART - ForkheadWingedHelix
-Gene - FROMSPECIES - Virus
-TranscriptionRepressor - HASPART - ProteinDomain
-ProteinBindingSiteOfDNA - FROMSPECIES - Virus
-FusionProtein - HASPART - Protein
-Chromosome - HASPART - ChromosomalDNA
-Protein - HASPART - HomeoBox
-Gene - HASPART - RuntLikeDomain
-Transcript - LOCATEDIN - Tissue
-RNAPolymerase - FROMSPECIES - Eukaryote
-Promoter - FROMSPECIES - Virus
-TranscriptionFactor - LOCATEDIN - Cell
-TranscriptionFactor - HASPART - Gene
-Protein - HASPART - Exon
-TranscriptionFactor - HASFUNCTION - TranscriptionActivatorActivity
-ReporterGene - HASFUNCTION - Function
-Gene - ENCODES - bHLHTF
-Transcript - LOCATEDIN - Nucleus
-RNAPolymeraseII - HASPART - ProteinSubunit
-Gene - HASPART - ProteinBindingSiteOfDNA
-DNA - ENCODES - Enzyme
-Gene - ENCODES - Transcript
-Protein - HASPART - BasicDomain
-ProteinDomain - HASPART - ProteinDomain
-Sequence - LOCATEDIN - ChromosomalDNA
-ProteinComplex - HASFUNCTION - TranscriptionCorepressor
-DNA - FROMSPECIES - Eukaryote
-ProteinBindingSiteOfDNA - LOCATEDIN - Cell
-Promoter - HASPART - ProteinBindingSiteOfDNA
-HomeoboxTF - LOCATEDIN - Chromosome
-Enhancer - LOCATEDIN - Virus
-Nucleus - LOCATEDIN - Cell
-ProteinDomain - HASPART - ZincCoordinatingDomain
-Ligand - LOCATEDIN - Cell
-Gene - ENCODES - TranscriptionRepressor
-RegulatoryDNARegion - FROMSPECIES - Virus
-ProteinComplex - HASPART - MutatedProtein
-DNARegion - HASPART - Enhancer
-ProteinSubunit - HASPART - DNABindingDomainOfProtein
-ProteinComplex - HASPART - Enzyme
-DNAFragment - LOCATEDIN - Cell
-ProteinDomain - HASPART - AminoAcid
-TranscriptionRegulator - HASPART - AminoAcid
-AminoAcid - LOCATEDIN - CellComponent
-Chemical - LOCATEDIN - Tissue
-DNA - HASPART - Nucleotide
-Protein - LOCATEDIN - Chromosome
-TranscriptionFactor - HASPART - ForkheadWingedHelix
-DNA - ENCODES - Protein
-TranscriptionFactor - LOCATEDIN - CellComponent
-Chemical - LOCATEDIN - Eukaryote
-Gene - HASPART - UpstreamRegulatorySequence
-Locus - LOCATEDIN - Chromosome
-Cell - LOCATEDIN - Tissue
-Transcript - ENCODES - TranscriptionFactor
-Enhancer - LOCATEDIN - Cell
-ProteinSubunit - HASPART - Peptide
-DNARegion - HASPART - ProteinBindingSiteOfDNA
-DNA - LOCATEDIN - Tissue
-Chromosome - FROMSPECIES - Eukaryote
-OpenReadingFrame - FROMSPECIES - Eukaryote
-MessengerRNA - ENCODES - Protein
-CellComponent - LOCATEDIN - Tissue
-GeneProduct - LOCATEDIN - Tissue
-TranscriptionFactor - HASPART - ProteinDomain
-DNA - HASPART - DNARegion
-ProteinComplex - LOCATEDIN - Cell
-CellComponent - FROMSPECIES - Eukaryote
-TranslationFactor - FROMSPECIES - Eukaryote
-Peptide - LOCATEDIN - CellComponent
-Locus - FROMSPECIES - Eukaryote
-Protein - HASFUNCTION - Enzyme
-Lipid - HASFUNCTION - Function
-MutantProtein - FROMSPECIES - Eukaryote
-Enzyme - HASFUNCTION - CatalyticActivity
-Enzyme - LOCATEDIN - Cell
-RNAPolymerase - HASPART - ProteinSubunit
-ComplexOfProteinAndDNA - HASPART - Protein
-Gene - ENCODES - Enzyme
-MessengerRNA - LOCATEDIN - Cell
-MessengerRNA - ENCODES - ProteinSubunit
-Cell - FROMSPECIES - Eukaryote
-FusionGene - HASPART - Gene
-ProteinComplex - LOCATEDIN - CellComponent
-DNA - ENCODES - MutatedProtein
-ReporterGene - FROMSPECIES - Virus
-Protein - LOCATEDIN - CellComponent
-ProteinComplex - HASPART - ProteinDomain
-MessengerRNA - ENCODES - TranscriptionFactor
-Protein - HASPART - ProteinSubunit
-DNABindingDomainOfProtein - HASPART - PrimaryStructure
-Gene - ENCODES - MessengerRNA
-TranscriptionFactor - HASPART - Sequence
-ProteinSubunit - HASFUNCTION - CatalyticActivity
-Protein - HASPART - Enzyme
-Protein - HASFUNCTION - TranscriptionRegulator
-TranscriptionRegulator - FROMSPECIES - Virus
-Promoter - FROMSPECIES - Eukaryote
-DNA - HASPART - OpenReadingFrame
-Stress - LOCATEDIN - Tissue
-Promoter - FROMSPECIES - Cell
-ProteinSubunit - FROMSPECIES - Prokaryote
-Chromosome - LOCATEDIN - Cell
-ProteinDomain - HASFUNCTION - TranscriptionActivatorActivity
-Locus - LOCATEDIN - ChromosomalDNA
-Enhancer - FROMSPECIES - Virus
-tRNA - HASPART - Intron
-Protein - HASPART - Protein
-Gene - ENCODES - tRNA
-Cell - HASPART - CellComponent
-MutatedProtein - LOCATEDIN - Eukaryote
-NuclearReceptor - LOCATEDIN - Tissue
-ProteinComplex - FROMSPECIES - Eukaryote
-Gene - LOCATEDIN - CellComponent
-TranscriptionCoactivator - HASPART - MolecularStructure
-TranscriptionRegulator - HASPART - Sequence
-Enzyme - LOCATEDIN - CellComponent
-MutatedProtein - HASPART - ProteinDomain
-DNA - ENCODES - TranscriptionRegulator
-Protein - FROMSPECIES - Virus
-Protein - LOCATEDIN - Microorganism
-MessengerRNA - LOCATEDIN - Tissue
-GeneProduct - HASPART - DNABindingDomainOfProtein
-TranscriptionFactor - HASPART - Enzyme
-CellComponent - LOCATEDIN - Nucleus
-Protein - HASPART - ProteinBindingSiteOfDNA
-Gene - HASPART - Exon
-Protein - HASPART - bHLH
-ProteinSubunit - HASPART - ProteinDomain
-Transcript - LOCATEDIN - CellComponent
-ProteinComplex - HASPART - Gene
-tRNA - FROMSPECIES - Eukaryote
-TranscriptionRegulator - HASFUNCTION - Function
-MessengerRNA - ENCODES - Enzyme
-OpenReadingFrame - ENCODES - Protein
-Gene - HASPART - ProteinCodingDNARegion
-ProteinSubunit - LOCATEDIN - Chromosome
-TranscriptionFactor - LOCATEDIN - Chromosome
-DNARegion - FROMSPECIES - Virus
-bZIPTF - HASPART - TranscriptionFactor
-Gene - LOCATEDIN - Tissue
-Sequence - LOCATEDIN - Cell
-Virus - HASPART - DNARegion
-ChromosomalDNA - LOCATEDIN - Cell
-DNA - HASPART - Chromosome
-Enzyme - LOCATEDIN - Prokaryote
-FusionGene - HASPART - Exon
-Protein - HASPART - BindingSiteOfProtein
-Exon - HASPART - TranscriptionFactorBindingSiteOfDNA
-TranscriptionFactor - HASFUNCTION - TranscriptionFactorActivity
-Gene - ENCODES - NuclearReceptor
+AminoAcid - HASPART - ProteinDomain ---------- amino-acid - HASPART - transmembrane domains
+AminoAcid - LOCATEDIN - CellComponent ---------- charged amino acid lysine - LOCATEDIN - transmembrane region
+Cell - FROMSPECIES - Eukaryote ---------- cells - FROMSPECIES - mammalian
+Cell - HASFUNCTION - Function ---------- T cell - HASFUNCTION - function
+Cell - HASPART - CellComponent ---------- T cells - HASPART - cytoplasm
+Cell - LOCATEDIN - Tissue ---------- cells - LOCATEDIN - breast
+CellComponent - FROMSPECIES - Eukaryote ---------- ER - FROMSPECIES - mammalian
+CellComponent - HASPART - CellComponent ---------- cytoskeleton - HASPART - microtubule
+CellComponent - LOCATEDIN - Cell ---------- plasma membrane - LOCATEDIN - HeLa
+CellComponent - LOCATEDIN - Nucleus ---------- components - LOCATEDIN - nuclear
+CellComponent - LOCATEDIN - Tissue ---------- mitochondrial - LOCATEDIN - brain
+Chemical - LOCATEDIN - Cell ---------- mitogens - LOCATEDIN - T-cell
+Chemical - LOCATEDIN - Eukaryote ---------- antioxidants - LOCATEDIN - human
+Chemical - LOCATEDIN - Tissue ---------- HA - LOCATEDIN - skin
+ChromosomalDNA - LOCATEDIN - Cell ---------- chromosomal DNA - LOCATEDIN - liver cells
+Chromosome - ENCODES - RNA ---------- der(11) chromosome - ENCODES - fusion RNA
+Chromosome - FROMSPECIES - Eukaryote ---------- chromosome - FROMSPECIES - human
+Chromosome - HASPART - ChromosomalDNA ---------- chromosome 2 - HASPART - region cen--q33
+Chromosome - LOCATEDIN - Cell ---------- chromosome 1p35-pter - LOCATEDIN - somatic cell
+ComplexOfProteinAndDNA - HASPART - DNA ---------- complex - HASPART - DNA
+ComplexOfProteinAndDNA - HASPART - Protein ---------- complex - HASPART - TFIIIB
+DNA - ENCODES - Enzyme ---------- cDNA - ENCODES - geranylgeranyl diphosphate synthase
+DNA - ENCODES - MessengerRNA ---------- cDNA - ENCODES - mRNA
+DNA - ENCODES - MutatedProtein ---------- construct - ENCODES - kinase-defective ActR-IIB
+DNA - ENCODES - Protein ---------- cDNA - ENCODES - angiopoietin
+DNA - ENCODES - ProteinSubunit ---------- cDNA - ENCODES - PP4R1
+DNA - ENCODES - TranscriptionFactor ---------- plasmids - ENCODES - SOX9
+DNA - ENCODES - TranscriptionRegulator ---------- cDNA clone - ENCODES - NF-E1
+DNA - FROMSPECIES - Eukaryote ---------- cDNA - FROMSPECIES - human
+DNA - HASPART - Chromosome ---------- genome - HASPART - 19q13.3-19q13.4
+DNA - HASPART - DNARegion ---------- DNA sequence - HASPART - A/T-rich sequence
+DNA - HASPART - Nucleotide ---------- cDNA - HASPART - nucleotide
+DNA - HASPART - OpenReadingFrame ---------- cDNAs - HASPART - open reading frame
+DNA - HASPART - Promoter ---------- DNA - HASPART - promoter
+DNA - LOCATEDIN - Cell ---------- cDNAs - LOCATEDIN - ES
+DNA - LOCATEDIN - Tissue ---------- cDNA - LOCATEDIN - heart
+DNABindingDomainOfProtein - HASPART - PrimaryStructure ---------- DNA-binding domain - HASPART - tryptophan repeats
+DNABindingDomainOfProtein - HASPART - ProteinDomain ---------- DNA-binding domain - HASPART - P box
+DNAFragment - ENCODES - Protein ---------- genomic fragment - ENCODES - FREAC-4
+DNAFragment - HASPART - DNARegion ---------- This fragment - HASPART - cis-element
+DNAFragment - LOCATEDIN - Cell ---------- genomic fragment - LOCATEDIN - cells
+DNARegion - FROMSPECIES - Virus ---------- region - FROMSPECIES - HIV-1
+DNARegion - HASPART - Enhancer ---------- region - HASPART - enhancer
+DNARegion - HASPART - Promoter ---------- region - HASPART - promoter
+DNARegion - HASPART - ProteinBindingSiteOfDNA ---------- region - HASPART - Oct
+DNARegion - LOCATEDIN - Chromosome ---------- HOX3 cluster - LOCATEDIN - chromosome 12
+DNARegion - LOCATEDIN - Gene ---------- nCaREs - LOCATEDIN - gene
+Enhancer - FROMSPECIES - Virus ---------- kappa B enhancer - FROMSPECIES - human immunodeficiency virus type 1
+Enhancer - HASPART - DNARegion ---------- enhancer - HASPART - purine-rich motifs
+Enhancer - HASPART - RegulatoryDNARegion ---------- kappa E3' enhancer - HASPART - negative-acting segment
+Enhancer - HASPART - TranscriptionFactorBindingSiteOfDNA ---------- enhancer - HASPART - MARE
+Enhancer - LOCATEDIN - Cell ---------- enhancer - LOCATEDIN - chondrocyte
+Enhancer - LOCATEDIN - Virus ---------- enhancer elements - LOCATEDIN - viral
+Enzyme - FROMSPECIES - Eukaryote ---------- XPG protein - FROMSPECIES - human
+Enzyme - FROMSPECIES - Prokaryote ---------- enzyme - FROMSPECIES - T. thermophilus
+Enzyme - HASFUNCTION - CatalyticActivity ---------- isolated XPG - HASFUNCTION - endonuclease activity
+Enzyme - HASPART - Peptide ---------- XPG - HASPART - polypeptides
+Enzyme - HASPART - Protein ---------- histone deacetylase complex - HASPART - Ski
+Enzyme - HASPART - ProteinDomain ---------- mitotic prolyl isomerase - HASPART - WW domains
+Enzyme - HASPART - ProteinSubunit ---------- protein serine/threonine phosphatase 4 - HASPART - subunit
+Enzyme - LOCATEDIN - Cell ---------- eIF-2alpha kinase - LOCATEDIN - islet delta cells
+Enzyme - LOCATEDIN - CellComponent ---------- ARF6 - LOCATEDIN - plasma membrane
+Enzyme - LOCATEDIN - Prokaryote ---------- beta-galactosidase - LOCATEDIN - tester strain
+Enzyme - LOCATEDIN - Tissue ---------- eIF-2alpha kinase - LOCATEDIN - pancreatic
+Exon - FROMSPECIES - Eukaryote ---------- exon - FROMSPECIES - primate species
+Exon - HASPART - Attenuator ---------- exon - HASPART - attenuator region
+Exon - HASPART - Exon ---------- 3' exonic sequences - HASPART - exon
+Exon - HASPART - Nucleotide ---------- exon X - HASPART - splice acceptor sites
+Exon - HASPART - TranscriptionFactorBindingSiteOfDNA ---------- exon1 - HASPART - X box (RFX) binding sites
+ExperimentalMethod - LOCATEDIN - Cell ---------- transfected - LOCATEDIN - cell lines
+Function - LOCATEDIN - Cell ---------- function - LOCATEDIN - PC-3 cells
+FusionGene - ENCODES - Protein ---------- lyt-10-C alpha 1 fusion gene - ENCODES - protein
+FusionGene - HASPART - Exon ---------- fusing - HASPART - exon
+FusionGene - HASPART - Gene ---------- fusion product - HASPART - MLL
+FusionProtein - HASPART - Protein ---------- RLF-L-myc fusions - HASPART - RLF
+Gene - ENCODES - AminoAcid ---------- gene - ENCODES - amino acids
+Gene - ENCODES - Enzyme ---------- gene - ENCODES - ornithine decarboxylase
+Gene - ENCODES - GeneProduct ---------- Spi-1/PU.1 - ENCODES - oncogene product
+Gene - ENCODES - HMG ---------- TCF genes - ENCODES - HMG boxes
+Gene - ENCODES - MessengerRNA ---------- GPR34 - ENCODES - mRNA transcripts
+Gene - ENCODES - NuclearReceptor ---------- Rev-Erb - ENCODES - hormone receptor isoform
+Gene - ENCODES - Peptide ---------- gene - ENCODES - heavy
+Gene - ENCODES - Protein ---------- gene - ENCODES - latrophilin
+Gene - ENCODES - ProteinSubunit ---------- gene - ENCODES - hsRPB7
+Gene - ENCODES - RibosomalRNA ---------- gene - ENCODES - ribosomal RNA
+Gene - ENCODES - Transcript ---------- DCAMKL1 gene - ENCODES - transcript
+Gene - ENCODES - TranscriptionFactor ---------- SRY - ENCODES - transcription factor
+Gene - ENCODES - TranscriptionRegulator ---------- gene - ENCODES - NF-E1
+Gene - ENCODES - TranscriptionRepressor ---------- BCL6 - ENCODES - transcriptional repressor
+Gene - ENCODES - bHLHTF ---------- lyl-1 - ENCODES - helix-loop-helix proteins
+Gene - ENCODES - tRNA ---------- Leu (CAA) genes - ENCODES - pre-tRNA
+Gene - FROMSPECIES - Eukaryote ---------- hyperplastic discs - FROMSPECIES - Drosophila
+Gene - FROMSPECIES - Virus ---------- metallothionein - FROMSPECIES - SV40
+Gene - HASFUNCTION - Function ---------- PU.1 - HASFUNCTION - function
+Gene - HASPART - DNA ---------- p120 - HASPART - complementary DNA
+Gene - HASPART - DNARegion ---------- Cbfa3 - HASPART - regions
+Gene - HASPART - Enhancer ---------- beta-globin - HASPART - enhancer
+Gene - HASPART - Exon ---------- GPR56 gene - HASPART - exons
+Gene - HASPART - Intron ---------- gene - HASPART - intron
+Gene - HASPART - Promoter ---------- TNF-alpha - HASPART - promoter
+Gene - HASPART - ProteinBindingSiteOfDNA ---------- blk - HASPART - Ets binding sites
+Gene - HASPART - ProteinCodingDNARegion ---------- RP1 - HASPART - protein-coding region
+Gene - HASPART - RuntLikeDomain ---------- Cbfa3 - HASPART - runt domain
+Gene - HASPART - Sequence ---------- tal - HASPART - sequences
+Gene - HASPART - UpstreamRegulatorySequence ---------- homeobox gene HOX3D - HASPART - upstream region
+Gene - LOCATEDIN - Cell ---------- genes - LOCATEDIN - T-47D
+Gene - LOCATEDIN - CellComponent ---------- dynein intermediate chain genes - LOCATEDIN - cytoplasmic
+Gene - LOCATEDIN - ChromosomalDNA ---------- genes - LOCATEDIN - chromosomal DNA
+Gene - LOCATEDIN - Chromosome ---------- EDD - LOCATEDIN - chromosome 8q22
+Gene - LOCATEDIN - DNARegion ---------- HOX3D - LOCATEDIN - HOX3 cluster
+Gene - LOCATEDIN - Tissue ---------- Dnci2 - LOCATEDIN - limb bud
+GeneProduct - FROMSPECIES - Eukaryote ---------- gene product - FROMSPECIES - mouse
+GeneProduct - HASPART - DNABindingDomainOfProtein ---------- oncogene product - HASPART - DNA-binding domain
+GeneProduct - LOCATEDIN - Tissue ---------- gene products - LOCATEDIN - kidney
+HMGTF - HASPART - DNABindingDomainOfProtein ---------- HMG - HASPART - DNA binding domains
+HMGTF - HASPART - DNARegion ---------- high-mobility-group proteins - HASPART - "AT-hook" motif
+HomeoboxTF - FROMSPECIES - Eukaryote ---------- homeogenes - FROMSPECIES - mammalian
+HomeoboxTF - LOCATEDIN - Chromosome ---------- Dlx-2/Tes-1 - LOCATEDIN - chromosome 2
+Ion - LOCATEDIN - Cell ---------- Ca2+ - LOCATEDIN - B cells
+Ligand - LOCATEDIN - Cell ---------- ligand - LOCATEDIN - Sertoli cell
+Lipid - HASFUNCTION - Function ---------- glucocorticoids - HASFUNCTION - effects
+LivingEntity - FROMSPECIES - Eukaryote ---------- embryos - FROMSPECIES - mouse
+Locus - FROMSPECIES - Eukaryote ---------- loci - FROMSPECIES - human
+Locus - LOCATEDIN - Cell ---------- genetic locus - LOCATEDIN - T cell
+Locus - LOCATEDIN - ChromosomalDNA ---------- loci - LOCATEDIN - region cen--q33
+Locus - LOCATEDIN - Chromosome ---------- loci - LOCATEDIN - chromosome 2
+MessengerRNA - ENCODES - Enzyme ---------- mRNA - ENCODES - PEK
+MessengerRNA - ENCODES - Protein ---------- mRNA - ENCODES - Ang3
+MessengerRNA - ENCODES - ProteinSubunit ---------- mRNA - ENCODES - alpha-subunit
+MessengerRNA - ENCODES - TranscriptionFactor ---------- mRNA - ENCODES - Nrf3
+MessengerRNA - FROMSPECIES - Eukaryote ---------- mRNAs - FROMSPECIES - murine
+MessengerRNA - LOCATEDIN - Cell ---------- mRNA - LOCATEDIN - oocytes
+MessengerRNA - LOCATEDIN - CellComponent ---------- mRNAs - LOCATEDIN - cytoplasmic
+MessengerRNA - LOCATEDIN - Nucleus ---------- mRNAs - LOCATEDIN - nuclear
+MessengerRNA - LOCATEDIN - Tissue ---------- mRNA - LOCATEDIN - adrenal gland
+MolecularEntity - HASPART - ProteinDomain ---------- molecules - HASPART - (SH)2 domain
+MutantProtein - FROMSPECIES - Eukaryote ---------- NF-kappa B p65 mutants - FROMSPECIES - human
+MutantProtein - LOCATEDIN - Cell ---------- mutants of I kappa B alpha - LOCATEDIN - T lymphocytes
+MutatedProtein - HASPART - ProteinDomain ---------- truncated ALK4 - HASPART - extracellular domain
+MutatedProtein - LOCATEDIN - Eukaryote ---------- BRCA1 mutant - LOCATEDIN - mice
+NuclearReceptor - LOCATEDIN - Tissue ---------- hormone receptor isoform - LOCATEDIN - thyroid
+Nucleotide - HASPART - Nucleotide ---------- oligonucleotide - HASPART - consensus nucleotide
+Nucleus - HASPART - TranscriptionFactor ---------- nuclear extracts - HASPART - Elf-1
+Nucleus - LOCATEDIN - Cell ---------- nucleus - LOCATEDIN - cell
+OpenReadingFrame - ENCODES - Protein ---------- open reading frame - ENCODES - protein
+OpenReadingFrame - FROMSPECIES - Eukaryote ---------- open reading frame - FROMSPECIES - human
+OpenReadingFrame - LOCATEDIN - Transcript ---------- open reading frame - LOCATEDIN - transcript
+OrganicChemical - FROMSPECIES - Prokaryote ---------- flavodoxins - FROMSPECIES - bacterial
+Peptide - FROMSPECIES - Eukaryote ---------- prepeptide - FROMSPECIES - Hominidae
+Peptide - HASPART - AminoAcid ---------- carboxyl-terminal - HASPART - prolines
+Peptide - HASPART - Enhancer ---------- heavy - HASPART - enhancers
+Peptide - HASPART - Peptide ---------- NOS - HASPART - peptide
+Peptide - LOCATEDIN - CellComponent ---------- prepeptide - LOCATEDIN - mitochondrial
+Phenotype - LOCATEDIN - Cell ---------- phenotype - LOCATEDIN - cell
+Promoter - FROMSPECIES - Cell ---------- promoter elements - FROMSPECIES - cellular
+Promoter - FROMSPECIES - Eukaryote ---------- promoter - FROMSPECIES - mouse
+Promoter - FROMSPECIES - Virus ---------- P5 promoter - FROMSPECIES - adeno-associated virus
+Promoter - HASFUNCTION - Function ---------- promoter - HASFUNCTION - activity
+Promoter - HASPART - Attenuator ---------- P2 - HASPART - attenuator region
+Promoter - HASPART - DNARegion ---------- promoter - HASPART - AP-1 site
+Promoter - HASPART - ProteinBindingSiteOfDNA ---------- promoter - HASPART - NF-kappaB binding sites
+Promoter - HASPART - RegulatoryDNARegion ---------- promoter - HASPART - cis-acting regions
+Promoter - HASPART - Sequence ---------- P2 promoter - HASPART - GA box sequence (GGGAGGG)
+Promoter - HASPART - TATAbox ---------- promoter - HASPART - TATA element
+Promoter - LOCATEDIN - Cell ---------- promoter - LOCATEDIN - 3T3 cells
+Protein - FROMSPECIES - Eukaryote ---------- uncoupling protein - FROMSPECIES - human
+Protein - FROMSPECIES - Prokaryote ---------- lipoproteins - FROMSPECIES - bacterial
+Protein - FROMSPECIES - Virus ---------- regulatory proteins - FROMSPECIES - HIV-1
+Protein - HASFUNCTION - CatalyticActivity ---------- ActR-IIB - HASFUNCTION - kinase activity
+Protein - HASFUNCTION - Enzyme ---------- HECT family proteins - HASFUNCTION - E3 ubiquitin-protein ligases
+Protein - HASFUNCTION - Function ---------- enhancer of polycomb - HASFUNCTION - functions
+Protein - HASFUNCTION - PositiveTranscriptionRegulator ---------- 14-3-3 eta - HASFUNCTION - positive regulator
+Protein - HASFUNCTION - TranscriptionActivatorActivity ---------- EPC - HASFUNCTION - transactivating activities
+Protein - HASFUNCTION - TranscriptionRegulator ---------- GR - HASFUNCTION - transcriptional activity
+Protein - HASFUNCTION - TranscriptionRepressorActivity ---------- RFP - HASFUNCTION - repressive activity
+Protein - HASPART - AminoAcid ---------- protein - HASPART - amino-acid
+Protein - HASPART - BasicDomain ---------- proteins - HASPART - zinc finger
+Protein - HASPART - BindingSiteOfProtein ---------- protein - HASPART - site
+Protein - HASPART - DNABindingDomainOfProtein ---------- interleukin enhancer binding factor 1 - HASPART - DNA-binding domain
+Protein - HASPART - Enzyme ---------- BMP type I - HASPART - serine/threonine kinase complexes
+Protein - HASPART - Exon ---------- SMAD5 - HASPART - exon
+Protein - HASPART - ForkheadWingedHelix ---------- protein - HASPART - DNA binding forkhead domain
+Protein - HASPART - HomeoBox ---------- ATBF1 - HASPART - homeodomains
+Protein - HASPART - Peptide ---------- protein - HASPART - peptides
+Protein - HASPART - PrimaryStructure ---------- IRF proteins - HASPART - structural motif
+Protein - HASPART - Protein ---------- protein - HASPART - NBD-LRR configuration
+Protein - HASPART - ProteinBindingSiteOfDNA ---------- immunoglobulin H genes - HASPART - Ets binding sites
+Protein - HASPART - ProteinBindingSiteOfProtein ---------- type I receptor ALK4 - HASPART - binding site
+Protein - HASPART - ProteinDomain ---------- Ang-3 - HASPART - coiled-coil domain
+Protein - HASPART - ProteinSubunit ---------- PP2A - HASPART - A subunit
+Protein - HASPART - Sequence ---------- ARA160 - HASPART - sequence
+Protein - HASPART - TranscriptionFactor ---------- Sp1 family - HASPART - transcription factors
+Protein - HASPART - ZincCoordinatingDomain ---------- MAZ - HASPART - zinc fingers of the Cys2His2 type
+Protein - HASPART - bHLH ---------- proteins - HASPART - helix-loop-helix motifs
+Protein - HASPART - bZIP ---------- protein - HASPART - leucine zipper domain
+Protein - LOCATEDIN - Cell ---------- mitogen - LOCATEDIN - endothelial cells
+Protein - LOCATEDIN - CellComponent ---------- protein - LOCATEDIN - mitochondrial
+Protein - LOCATEDIN - Chromosome ---------- UCP4 - LOCATEDIN - chromosome
+Protein - LOCATEDIN - DNA ---------- DAMS - LOCATEDIN - cDNA
+Protein - LOCATEDIN - Microorganism ---------- lipoproteins - LOCATEDIN - microbial
+Protein - LOCATEDIN - Nucleus ---------- RPS25 - LOCATEDIN - nucleus
+Protein - LOCATEDIN - Ribosome ---------- protein - LOCATEDIN - ribosomal
+Protein - LOCATEDIN - Tissue ---------- RYR1 - LOCATEDIN - skeletal muscle type
+ProteinBindingSiteOfDNA - FROMSPECIES - Virus ---------- kappa B site - FROMSPECIES - HIV
+ProteinBindingSiteOfDNA - LOCATEDIN - Cell ---------- PU.1 site - LOCATEDIN - myeloid cells
+ProteinBindingSiteOfProtein - HASPART - AminoAcid ---------- binding surface - HASPART - residues
+ProteinCodingRegion - FROMSPECIES - Eukaryote ---------- coding region - FROMSPECIES - human
+ProteinComplex - FROMSPECIES - Eukaryote ---------- Sin3p-Rpd3p corepressor complex - FROMSPECIES - Saccharomyces cerevisiae
+ProteinComplex - HASFUNCTION - CatalyticActivity ---------- mSin3A complex - HASFUNCTION - enzymatic activity
+ProteinComplex - HASFUNCTION - Function ---------- complexes - HASFUNCTION - functions
+ProteinComplex - HASFUNCTION - TranscriptionCorepressor ---------- mSin3A - HASFUNCTION - corepressor
+ProteinComplex - HASPART - Enzyme ---------- complexes - HASPART - PP4
+ProteinComplex - HASPART - Gene ---------- protein complexes - HASPART - EZH1
+ProteinComplex - HASPART - MutatedProtein ---------- complex - HASPART - kinase-deleted version of ALK4
+ProteinComplex - HASPART - Peptide ---------- mSin3A corepressor complex - HASPART - polypeptides
+ProteinComplex - HASPART - Protein ---------- complexes - HASPART - PDZ-RhoGEF
+ProteinComplex - HASPART - ProteinDomain ---------- mSin3A - HASPART - HDAC-interaction domain
+ProteinComplex - HASPART - ProteinSubunit ---------- complex - HASPART - PP4C
+ProteinComplex - HASPART - TranscriptionActivator ---------- complexes - HASPART - Stat2
+ProteinComplex - HASPART - TranscriptionFactor ---------- complex - HASPART - ATF4
+ProteinComplex - LOCATEDIN - Cell ---------- mSin3A complex - LOCATEDIN - K562 erythroleukemia cells
+ProteinComplex - LOCATEDIN - CellComponent ---------- protein complex - LOCATEDIN - membrane
+ProteinDomain - FROMSPECIES - Eukaryote ---------- domain - FROMSPECIES - yeast
+ProteinDomain - HASFUNCTION - Function ---------- AF-2 - HASFUNCTION - activity
+ProteinDomain - HASFUNCTION - TranscriptionActivatorActivity ---------- EPcA domain - HASFUNCTION - transcription activating ability
+ProteinDomain - HASFUNCTION - TranscriptionRepressorActivity ---------- domains - HASFUNCTION - repression
+ProteinDomain - HASPART - AminoAcid ---------- HECT domain - HASPART - cysteine residue
+ProteinDomain - HASPART - MolecularStructure ---------- wing 2 - HASPART - alpha-helix
+ProteinDomain - HASPART - Peptide ---------- C-terminal region - HASPART - NoS
+ProteinDomain - HASPART - ProteinDomain ---------- extracellular domain - HASPART - Link module the prototypic HA binding domain
+ProteinDomain - HASPART - Sequence ---------- C-terminus - HASPART - sequences
+ProteinDomain - HASPART - ZincCoordinatingDomain ---------- peptide domain - HASPART - zinc finger
+ProteinDomain - LOCATEDIN - CellComponent ---------- prothymosin alpha domains - LOCATEDIN - bodies
+ProteinSubunit - FROMSPECIES - Eukaryote ---------- alpha-subunit - FROMSPECIES - human
+ProteinSubunit - FROMSPECIES - Prokaryote ---------- beta-subunit - FROMSPECIES - prokaryotic
+ProteinSubunit - HASFUNCTION - CatalyticActivity ---------- alpha-subunit - HASFUNCTION - catalytic
+ProteinSubunit - HASPART - AminoAcid ---------- ISGF3 gamma - HASPART - residues
+ProteinSubunit - HASPART - DNABindingDomainOfProtein ---------- E4TF1-60 - HASPART - ETS domain
+ProteinSubunit - HASPART - Peptide ---------- ISGF3 alpha - HASPART - polypeptides
+ProteinSubunit - HASPART - PrimaryStructure ---------- ISGF3 gamma - HASPART - structural motif
+ProteinSubunit - HASPART - ProteinDomain ---------- beta-subunit - HASPART - domains
+ProteinSubunit - LOCATEDIN - Cell ---------- ISGF3 gamma - LOCATEDIN - HeLa cells
+ProteinSubunit - LOCATEDIN - Chromosome ---------- hsRPB7 - LOCATEDIN - chromosomal
+RNA - LOCATEDIN - Cell ---------- RNA - LOCATEDIN - breast cancer cell lines
+RNAPolymerase - FROMSPECIES - Eukaryote ---------- RNA polymerase III - FROMSPECIES - human
+RNAPolymerase - HASPART - ProteinSubunit ---------- RNA Pol III - HASPART - subunits
+RNAPolymeraseII - HASPART - ProteinSubunit ---------- RNA polymerase II - HASPART - hsRPB7
+RegulatoryDNARegion - FROMSPECIES - Virus ---------- regulatory elements - FROMSPECIES - human immunodeficiency virus type 2
+ReporterGene - FROMSPECIES - Virus ---------- reporter plasmid - FROMSPECIES - HIV
+ReporterGene - HASFUNCTION - Function ---------- reporter plasmid - HASFUNCTION - Functional
+ReporterGene - HASPART - DNARegion ---------- reporter plasmid - HASPART - PU boxes
+ReporterGene - HASPART - Promoter ---------- luciferase reporter gene - HASPART - promoter
+ReporterGene - LOCATEDIN - Prokaryote ---------- reporter gene - LOCATEDIN - Escherichia coli tester strain
+ReporterGeneConstruction - HASPART - ReporterGene ---------- fused - HASPART - luciferase reporter gene
+Sequence - ENCODES - ProteinDomain ---------- sequences - ENCODES - transmembrane domains 3 and 7
+Sequence - FROMSPECIES - Eukaryote ---------- sequence - FROMSPECIES - human
+Sequence - FROMSPECIES - Virus ---------- sequences - FROMSPECIES - HBV
+Sequence - LOCATEDIN - Cell ---------- sequences - LOCATEDIN - hepatocellular carcinoma cells
+Sequence - LOCATEDIN - ChromosomalDNA ---------- sequences - LOCATEDIN - chromosomal DNA
+Stress - LOCATEDIN - Tissue ---------- Oxidative stress - LOCATEDIN - retinal tissue
+Substrate - LOCATEDIN - CellComponent ---------- substrate - LOCATEDIN - ER lumen
+Tissue - FROMSPECIES - Eukaryote ---------- heart - FROMSPECIES - human
+Transcript - ENCODES - Enzyme ---------- transcripts - ENCODES - P5CS
+Transcript - ENCODES - Ligand ---------- transcripts - ENCODES - jagged1
+Transcript - ENCODES - Protein ---------- transcripts - ENCODES - UCP4
+Transcript - ENCODES - TranscriptionFactor ---------- transcripts - ENCODES - NERF
+Transcript - HASPART - OpenReadingFrame ---------- transcript - HASPART - open reading frame
+Transcript - LOCATEDIN - Cell ---------- transcripts - LOCATEDIN - breast tumour cell line
+Transcript - LOCATEDIN - CellComponent ---------- transcripts - LOCATEDIN - cytoplasm
+Transcript - LOCATEDIN - Nucleus ---------- transcripts - LOCATEDIN - nucleus
+Transcript - LOCATEDIN - Tissue ---------- transcript - LOCATEDIN - lesioned area
+TranscriptionActivator - FROMSPECIES - Virus ---------- transactivators - FROMSPECIES - lentiviral
+TranscriptionActivator - HASPART - Peptide ---------- transactivators - HASPART - nucleolar targeting signals
+TranscriptionCoactivator - HASPART - MolecularStructure ---------- CIITA protein - HASPART - alpha-helices
+TranscriptionCoactivator - HASPART - ProteinDomain ---------- CIITA - HASPART - activation domain
+TranscriptionCoactivator - LOCATEDIN - Cell ---------- coactivator - LOCATEDIN - B cell
+TranscriptionFactor - FROMSPECIES - Eukaryote ---------- Nrf3 - FROMSPECIES - human
+TranscriptionFactor - HASFUNCTION - TranscriptionActivatorActivity ---------- SOX9's - HASFUNCTION - ability to transactivate
+TranscriptionFactor - HASFUNCTION - TranscriptionFactorActivity ---------- Sox9 - HASFUNCTION - activity
+TranscriptionFactor - HASPART - AminoAcid ---------- SOX9 - HASPART - sites
+TranscriptionFactor - HASPART - DNABindingDomainOfProtein ---------- transcription factor hUBF - HASPART - DNA-binding motif
+TranscriptionFactor - HASPART - Enzyme ---------- TFIIH - HASPART - XPB
+TranscriptionFactor - HASPART - ForkheadWingedHelix ---------- FOXO proteins - HASPART - forkhead domain
+TranscriptionFactor - HASPART - Gene ---------- NF-kappa B - HASPART - RelA(p65)
+TranscriptionFactor - HASPART - HMG ---------- TCF-1 - HASPART - HMG
+TranscriptionFactor - HASPART - Promoter ---------- PU.1 - HASPART - promoter elements
+TranscriptionFactor - HASPART - Protein ---------- NF-kappa B - HASPART - I kappa B alpha
+TranscriptionFactor - HASPART - ProteinDomain ---------- transcription factor - HASPART - motif
+TranscriptionFactor - HASPART - ProteinSubunit ---------- NF-E2 - HASPART - p45
+TranscriptionFactor - HASPART - Sequence ---------- E4BP4 - HASPART - sequences
+TranscriptionFactor - HASPART - bZIPTF ---------- transcription factors - HASPART - bZIP family
+TranscriptionFactor - LOCATEDIN - Cell ---------- NF-E2 - LOCATEDIN - erythroid
+TranscriptionFactor - LOCATEDIN - CellComponent ---------- transcription factor hUBF - LOCATEDIN - Nucleolar
+TranscriptionFactor - LOCATEDIN - Chromosome ---------- Nrf3 - LOCATEDIN - 7p14-15
+TranscriptionFactor - LOCATEDIN - Nucleus ---------- NF-kappa B - LOCATEDIN - nuclear
+TranscriptionFactorComplex - HASPART - ProteinSubunit ---------- NF-kappa B - HASPART - subunits
+TranscriptionRegulator - FROMSPECIES - Eukaryote ---------- NF-E1 - FROMSPECIES - human
+TranscriptionRegulator - FROMSPECIES - Virus ---------- TATA element modulatory factor - FROMSPECIES - HIV-1
+TranscriptionRegulator - HASFUNCTION - Function ---------- this protein - HASFUNCTION - function
+TranscriptionRegulator - HASPART - AminoAcid ---------- this protein - HASPART - amino acid
+TranscriptionRegulator - HASPART - Sequence ---------- TATA element modulatory factor - HASPART - sequence
+TranscriptionRepressor - FROMSPECIES - Eukaryote ---------- transcriptional repressors - FROMSPECIES - eukaryotic
+TranscriptionRepressor - HASPART - ProteinDomain ---------- transcriptional repressors - HASPART - domains
+TranscriptionRepressor - HASPART - ZincCoordinatingDomain ---------- transcriptional repressor - HASPART - BTB/POZ-zinc-finger
+TranscriptionRepressor - LOCATEDIN - CellComponent ---------- RFP - LOCATEDIN - matrix
+TranslationFactor - FROMSPECIES - Eukaryote ---------- translation initiation factor-2alpha - FROMSPECIES - eukaryotic
+TranslationFactor - HASFUNCTION - CatalyticActivity ---------- eIF-2alpha - HASFUNCTION - kinase activity
+UpstreamRegulatorySequence - HASPART - Promoter ---------- upstream genomic sequences - HASPART - promoter
+Virus - HASPART - DNARegion ---------- HIV-1 - HASPART - long terminal repeat
+Virus - HASPART - Virus ---------- viral - HASPART - human immunodeficiency virus type I
+bHLHTF - LOCATEDIN - Tissue ---------- bHLH-EC2 - LOCATEDIN - mesodermal
+bZIPTF - HASPART - TranscriptionFactor ---------- bZIP family - HASPART - E4BP4
+tRNA - ENCODES - Transcript ---------- pre-tRNA - ENCODES - transcripts
+tRNA - FROMSPECIES - Eukaryote ---------- pre-tRNA - FROMSPECIES - human
+tRNA - HASPART - Intron ---------- tRNA precursors - HASPART - intron
 
 --------------------------------------------------------------------
 
@@ -662,10 +662,10 @@ DATASET
 ('bionlp_st_2013_pc', 'bionlp_st_2013_pc_bigbio_kb') - train - 260
 
 ENTITIES:
+Simple_chemical
+Gene_or_gene_product
 Complex
 Cellular_component
-Gene_or_gene_product
-Simple_chemical
 
 RELATIONS:
 
@@ -675,14 +675,14 @@ DATASET
 ('bionlp_st_2019_bb', 'bionlp_st_2019_bb_bigbio_kb') - train - 133
 
 ENTITIES:
-Habitat
 Phenotype
+Habitat
 Microorganism
 
 RELATIONS:
-Microorganism - LIVES_IN - Microorganism
-Microorganism - LIVES_IN - Habitat
-Microorganism - EXHIBITS - Phenotype
+Microorganism - EXHIBITS - Phenotype ---------- Streptococcus pyogenes - EXHIBITS - glycoprotein-binding activity
+Microorganism - LIVES_IN - Habitat ---------- Salmonellae - LIVES_IN - egg products
+Microorganism - LIVES_IN - Microorganism ---------- Φ st1 - LIVES_IN - S. Hadar
 
 --------------------------------------------------------------------
 
@@ -690,57 +690,57 @@ DATASET
 ('biored', 'biored_bigbio_kb') - train - 400
 
 ENTITIES:
-GeneOrGeneProduct
-SequenceVariant
-OrganismTaxon
 DiseaseOrPhenotypicFeature
-CellLine
+OrganismTaxon
+SequenceVariant
 ChemicalEntity
+CellLine
+GeneOrGeneProduct
 
 RELATIONS:
-ChemicalEntity - POSITIVE_CORRELATION - SequenceVariant
-DiseaseOrPhenotypicFeature - ASSOCIATION - SequenceVariant
-ChemicalEntity - ASSOCIATION - DiseaseOrPhenotypicFeature
-SequenceVariant - ASSOCIATION - GeneOrGeneProduct
-DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - GeneOrGeneProduct
-DiseaseOrPhenotypicFeature - ASSOCIATION - GeneOrGeneProduct
-ChemicalEntity - NEGATIVE_CORRELATION - ChemicalEntity
-ChemicalEntity - NEGATIVE_CORRELATION - GeneOrGeneProduct
-DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - GeneOrGeneProduct
-GeneOrGeneProduct - ASSOCIATION - DiseaseOrPhenotypicFeature
-GeneOrGeneProduct - NEGATIVE_CORRELATION - GeneOrGeneProduct
-DiseaseOrPhenotypicFeature - ASSOCIATION - ChemicalEntity
-ChemicalEntity - POSITIVE_CORRELATION - GeneOrGeneProduct
-GeneOrGeneProduct - BIND - GeneOrGeneProduct
-ChemicalEntity - COMPARISON - ChemicalEntity
-ChemicalEntity - DRUG_INTERACTION - ChemicalEntity
-GeneOrGeneProduct - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
-GeneOrGeneProduct - NEGATIVE_CORRELATION - ChemicalEntity
-ChemicalEntity - CONVERSION - ChemicalEntity
-ChemicalEntity - ASSOCIATION - GeneOrGeneProduct
-ChemicalEntity - POSITIVE_CORRELATION - ChemicalEntity
-SequenceVariant - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
-GeneOrGeneProduct - ASSOCIATION - ChemicalEntity
-ChemicalEntity - BIND - GeneOrGeneProduct
-SequenceVariant - NEGATIVE_CORRELATION - ChemicalEntity
-GeneOrGeneProduct - ASSOCIATION - GeneOrGeneProduct
-GeneOrGeneProduct - POSITIVE_CORRELATION - GeneOrGeneProduct
-GeneOrGeneProduct - BIND - ChemicalEntity
-SequenceVariant - ASSOCIATION - DiseaseOrPhenotypicFeature
-ChemicalEntity - ASSOCIATION - SequenceVariant
-ChemicalEntity - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
-DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - ChemicalEntity
-SequenceVariant - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature
-DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - ChemicalEntity
-DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - SequenceVariant
-ChemicalEntity - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
-GeneOrGeneProduct - POSITIVE_CORRELATION - ChemicalEntity
-SequenceVariant - ASSOCIATION - SequenceVariant
-ChemicalEntity - ASSOCIATION - ChemicalEntity
-SequenceVariant - POSITIVE_CORRELATION - ChemicalEntity
-SequenceVariant - ASSOCIATION - ChemicalEntity
-ChemicalEntity - COTREATMENT - ChemicalEntity
-GeneOrGeneProduct - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature
+ChemicalEntity - ASSOCIATION - ChemicalEntity ---------- serotonin - ASSOCIATION - 5,7-dihydroxytryptamine
+ChemicalEntity - ASSOCIATION - DiseaseOrPhenotypicFeature ---------- glucose - ASSOCIATION - type II diabetes
+ChemicalEntity - ASSOCIATION - GeneOrGeneProduct ---------- 8-hydroxyguanine - ASSOCIATION - hOGG1
+ChemicalEntity - ASSOCIATION - SequenceVariant ---------- glucose - ASSOCIATION - rs1155794
+ChemicalEntity - BIND - GeneOrGeneProduct ---------- prostaglandin A2 - BIND - EP4
+ChemicalEntity - COMPARISON - ChemicalEntity ---------- valdecoxib - COMPARISON - nonsteroidal antiinflammatory agents
+ChemicalEntity - CONVERSION - ChemicalEntity ---------- phosphatidylethanolamine - CONVERSION - phosphatidylcholine
+ChemicalEntity - COTREATMENT - ChemicalEntity ---------- garcinielliptone FC - COTREATMENT - pilocarpine
+ChemicalEntity - DRUG_INTERACTION - ChemicalEntity ---------- paroxetine - DRUG_INTERACTION - alprazolam
+ChemicalEntity - NEGATIVE_CORRELATION - ChemicalEntity ---------- Apomorphine - NEGATIVE_CORRELATION - levodopa
+ChemicalEntity - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- Apomorphine - NEGATIVE_CORRELATION - dyskinesias
+ChemicalEntity - NEGATIVE_CORRELATION - GeneOrGeneProduct ---------- Chloroacetaldehyde - NEGATIVE_CORRELATION - cysteine proteases
+ChemicalEntity - POSITIVE_CORRELATION - ChemicalEntity ---------- 5-Fluorouracil - POSITIVE_CORRELATION - alpha-fluoro-beta-alanine
+ChemicalEntity - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- levodopa - POSITIVE_CORRELATION - dyskinesias
+ChemicalEntity - POSITIVE_CORRELATION - GeneOrGeneProduct ---------- glucose - POSITIVE_CORRELATION - insulin
+ChemicalEntity - POSITIVE_CORRELATION - SequenceVariant ---------- thyroxine - POSITIVE_CORRELATION - E333D
+DiseaseOrPhenotypicFeature - ASSOCIATION - ChemicalEntity ---------- nephropathy - ASSOCIATION - TBARs
+DiseaseOrPhenotypicFeature - ASSOCIATION - GeneOrGeneProduct ---------- uterine sarcoma - ASSOCIATION - Rab6c
+DiseaseOrPhenotypicFeature - ASSOCIATION - SequenceVariant ---------- hypercholesterolemia - ASSOCIATION - D374Y
+DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - ChemicalEntity ---------- cardiac symptoms - NEGATIVE_CORRELATION - S-1
+DiseaseOrPhenotypicFeature - NEGATIVE_CORRELATION - GeneOrGeneProduct ---------- VLCAD-deficient - NEGATIVE_CORRELATION - very-long-chain acyl-coenzyme A dehydrogenase
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - ChemicalEntity ---------- hepatorenal syndrome - POSITIVE_CORRELATION - creatinine
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - GeneOrGeneProduct ---------- status epilepticus - POSITIVE_CORRELATION - CCR2
+DiseaseOrPhenotypicFeature - POSITIVE_CORRELATION - SequenceVariant ---------- breast or ovarian cancer - POSITIVE_CORRELATION - 5382insC
+GeneOrGeneProduct - ASSOCIATION - ChemicalEntity ---------- PCSK9 - ASSOCIATION - cholesterol
+GeneOrGeneProduct - ASSOCIATION - DiseaseOrPhenotypicFeature ---------- Hepatocyte nuclear factor-6 - ASSOCIATION - type II diabetes
+GeneOrGeneProduct - ASSOCIATION - GeneOrGeneProduct ---------- IL1B - ASSOCIATION - nuclear factor of kappa B
+GeneOrGeneProduct - BIND - ChemicalEntity ---------- Langerin - BIND - mannose
+GeneOrGeneProduct - BIND - GeneOrGeneProduct ---------- CCL2 - BIND - CCR2
+GeneOrGeneProduct - NEGATIVE_CORRELATION - ChemicalEntity ---------- calcineurin - NEGATIVE_CORRELATION - tacrolimus
+GeneOrGeneProduct - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- BCHE - NEGATIVE_CORRELATION - Butyrylcholinesterase deficiency
+GeneOrGeneProduct - NEGATIVE_CORRELATION - GeneOrGeneProduct ---------- glucagon - NEGATIVE_CORRELATION - Ghrelin
+GeneOrGeneProduct - POSITIVE_CORRELATION - ChemicalEntity ---------- Rab6c - POSITIVE_CORRELATION - vincristine
+GeneOrGeneProduct - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- hOGG1 - POSITIVE_CORRELATION - squamous- and small-cell lung cancers
+GeneOrGeneProduct - POSITIVE_CORRELATION - GeneOrGeneProduct ---------- adipsin - POSITIVE_CORRELATION - ASP
+SequenceVariant - ASSOCIATION - ChemicalEntity ---------- V175M - ASSOCIATION - phosphatidylcholine
+SequenceVariant - ASSOCIATION - DiseaseOrPhenotypicFeature ---------- rs1155974 - ASSOCIATION - obesity
+SequenceVariant - ASSOCIATION - GeneOrGeneProduct ---------- rs6232 - ASSOCIATION - insulin
+SequenceVariant - ASSOCIATION - SequenceVariant ---------- -1123 G>C - ASSOCIATION - +2740 A>G
+SequenceVariant - NEGATIVE_CORRELATION - ChemicalEntity ---------- rs4704559 - NEGATIVE_CORRELATION - levodopa
+SequenceVariant - NEGATIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- D90A - NEGATIVE_CORRELATION - amyotrophic lateral sclerosis
+SequenceVariant - POSITIVE_CORRELATION - ChemicalEntity ---------- -652 6N del - POSITIVE_CORRELATION - camptothecin
+SequenceVariant - POSITIVE_CORRELATION - DiseaseOrPhenotypicFeature ---------- 5382insC - POSITIVE_CORRELATION - breast-ovarian cancer
 
 --------------------------------------------------------------------
 
@@ -748,158 +748,158 @@ DATASET
 ('biorelex', 'biorelex_bigbio_kb') - train - 1405
 
 ENTITIES:
-organism
-protein-complex
-chemical
-gene
-process
-organelle
-protein-isoform
-reagent
-protein-motif
-parameter
-amino-acid
 protein-family
+fusion-protein
+organelle
+protein-RNA-complex
+brand
+disease
+amino-acid
+tissue
+process
+experiment-tag
+reagent
+RNA-family
+organism
+protein-isoform
 cell
 drug
-brand
-DNA
-protein-DNA-complex
-experiment-tag
-tissue
+experimental-construct
 assay
-mutation
-disease
-protein
+gene
 protein-domain
 peptide
-protein-region
-fusion-protein
+DNA
+parameter
 RNA
-protein-RNA-complex
-experimental-construct
-RNA-family
+chemical
+protein-motif
+protein-DNA-complex
+protein-region
+mutation
+protein
+protein-complex
 
 RELATIONS:
-fusion-protein - BIND - protein
-DNA - BIND - protein-family
-experiment-tag - BIND - protein-domain
-RNA-family - BIND - protein-family
-protein-family - BIND - protein-motif
-protein-DNA-complex - BIND - protein
-reagent - BIND - chemical
-protein-isoform - BIND - protein
-protein-family - BIND - DNA
-protein - BIND - protein-DNA-complex
-DNA - BIND - protein-domain
-protein-complex - BIND - chemical
-chemical - BIND - DNA
-reagent - BIND - experimental-construct
-experiment-tag - BIND - reagent
-protein-domain - BIND - protein-complex
-organelle - BIND - experimental-construct
-experimental-construct - BIND - protein-family
-protein-family - BIND - organelle
-DNA - BIND - fusion-protein
-drug - BIND - protein-family
-protein-complex - BIND - protein-isoform
-protein-family - BIND - protein-family
-protein-region - BIND - chemical
-protein-family - BIND - protein
-protein-complex - BIND - reagent
-protein-complex - BIND - protein-complex
-experiment-tag - BIND - protein
-experimental-construct - BIND - experiment-tag
-protein-isoform - BIND - protein-complex
-protein-family - BIND - peptide
-protein-family - BIND - chemical
-experimental-construct - BIND - protein-region
-RNA - BIND - protein-RNA-complex
-experiment-tag - BIND - protein-family
-protein-family - BIND - RNA
-chemical - BIND - protein-isoform
-chemical - BIND - protein-domain
-experimental-construct - BIND - protein
-protein-motif - BIND - protein
-protein-region - BIND - experiment-tag
-DNA - BIND - protein-motif
-peptide - BIND - chemical
-protein-domain - BIND - RNA
-experiment-tag - BIND - experimental-construct
-RNA - BIND - RNA
-protein - BIND - reagent
-protein - BIND - protein-domain
-amino-acid - BIND - chemical
-reagent - BIND - protein
-protein-family - BIND - protein-isoform
-protein-family - BIND - fusion-protein
-DNA - BIND - drug
-protein-complex - BIND - DNA
-protein-region - BIND - protein-region
-protein - BIND - RNA
-experimental-construct - BIND - reagent
-RNA - BIND - protein-motif
-protein - BIND - gene
-chemical - BIND - protein-complex
-protein-complex - BIND - organelle
-protein-region - BIND - protein-complex
-experimental-construct - BIND - experimental-construct
-protein - BIND - experimental-construct
-DNA - BIND - protein
-protein-domain - BIND - DNA
-protein-domain - BIND - protein-family
-protein - BIND - chemical
-protein-motif - BIND - protein-motif
-DNA - BIND - protein-complex
-protein - BIND - DNA
-protein-domain - BIND - protein
-protein - BIND - protein-complex
-protein-family - BIND - reagent
-protein-complex - BIND - protein-family
-protein-isoform - BIND - chemical
-drug - BIND - DNA
-protein-family - BIND - protein-domain
-protein-complex - BIND - RNA
-chemical - BIND - protein
-chemical - BIND - peptide
-protein-domain - BIND - chemical
-protein - BIND - peptide
-fusion-protein - BIND - fusion-protein
-protein - BIND - protein-region
-protein - BIND - protein
-gene - BIND - DNA
-protein-family - BIND - protein-complex
-organelle - BIND - protein-complex
-protein-motif - BIND - protein-family
-protein-isoform - BIND - protein-family
-protein-RNA-complex - BIND - DNA
-protein-family - BIND - protein-DNA-complex
-chemical - BIND - fusion-protein
-RNA - BIND - protein
-chemical - BIND - protein-family
-DNA - BIND - protein-region
-protein - BIND - experiment-tag
-protein-family - BIND - experiment-tag
-protein-complex - BIND - protein
-peptide - BIND - protein-complex
-protein-region - BIND - protein
-protein-RNA-complex - BIND - RNA
-protein - BIND - protein-motif
-protein-motif - BIND - DNA
-peptide - BIND - protein-family
-protein - BIND - organelle
-protein-family - BIND - protein-region
-protein - BIND - protein-isoform
-protein - BIND - amino-acid
-protein-motif - BIND - protein-domain
-RNA - BIND - protein-complex
-protein-region - BIND - DNA
-protein - BIND - protein-family
-peptide - BIND - protein
-protein-family - BIND - experimental-construct
-RNA - BIND - protein-domain
-protein - BIND - fusion-protein
-protein-domain - BIND - protein-domain
+DNA - BIND - drug ---------- DNA - BIND - MGTs
+DNA - BIND - fusion-protein ---------- LRP-2 promoter - BIND - f:TFIID
+DNA - BIND - protein ---------- DNA - BIND - NF-κB
+DNA - BIND - protein-complex ---------- Inr - BIND - RNA polymerase II
+DNA - BIND - protein-domain ---------- PAX6 consensus binding site - BIND - PD
+DNA - BIND - protein-family ---------- pyrimidine tract - BIND - U2AF
+DNA - BIND - protein-motif ---------- DNA - BIND - HTH
+DNA - BIND - protein-region ---------- DNA - BIND - GAL4 WT
+RNA - BIND - RNA ---------- pre-mRNA - BIND - U2
+RNA - BIND - protein ---------- tRNA - BIND - GCN2
+RNA - BIND - protein-RNA-complex ---------- Thioredoxin 3′-UTRs - BIND - A18 hnRNP
+RNA - BIND - protein-complex ---------- SRP RNA - BIND - SRP 9/14-kDa heterodimer
+RNA - BIND - protein-domain ---------- tRNA - BIND - HisRS-like
+RNA - BIND - protein-motif ---------- RNA - BIND - RGG-box
+RNA-family - BIND - protein-family ---------- roX RNAs - BIND - MSL
+amino-acid - BIND - chemical ---------- lysine - BIND - ATP
+chemical - BIND - DNA ---------- DB[a,l]PDE - BIND - DNA
+chemical - BIND - fusion-protein ---------- TNP-ATP - BIND - MBP_1.1C
+chemical - BIND - peptide ---------- Zn - BIND - Abeta1-42
+chemical - BIND - protein ---------- GTP - BIND - eIF5B
+chemical - BIND - protein-complex ---------- GDP - BIND - eIF2
+chemical - BIND - protein-domain ---------- NAD+ - BIND - dI
+chemical - BIND - protein-family ---------- GMP - BIND - guanylate kinase
+chemical - BIND - protein-isoform ---------- heparin - BIND - apoE3
+drug - BIND - DNA ---------- Dm - BIND - DNA
+drug - BIND - protein-family ---------- salicylate - BIND - HSF
+experiment-tag - BIND - experimental-construct ---------- GST - BIND - MBP-RBP26
+experiment-tag - BIND - protein ---------- GST - BIND - Paxillin
+experiment-tag - BIND - protein-domain ---------- GST - BIND - C2A
+experiment-tag - BIND - protein-family ---------- [3H]BTA-1 - BIND - tau
+experiment-tag - BIND - reagent ---------- GST - BIND - GT-agarose beads
+experimental-construct - BIND - experiment-tag ---------- MBP-Sec3p - BIND - GST
+experimental-construct - BIND - experimental-construct ---------- GST-GTPase - BIND - glutathione-Sepharose
+experimental-construct - BIND - protein ---------- poly(rI) poly(rC)-agarose - BIND - mPKR
+experimental-construct - BIND - protein-family ---------- 125I-Tiam1 - BIND - ankyrin
+experimental-construct - BIND - protein-region ---------- GST-CBP1891-2175 - BIND - Smad3210-425
+experimental-construct - BIND - reagent ---------- 35S-labeled Arr2 - BIND - control beads
+fusion-protein - BIND - fusion-protein ---------- rhIKK-1 - BIND - rhIKK-2
+fusion-protein - BIND - protein ---------- rhIKK-i - BIND - IkappaBalpha
+gene - BIND - DNA ---------- hairy-wing - BIND - gypsy
+organelle - BIND - experimental-construct ---------- ECM - BIND - 125I-bFGF
+organelle - BIND - protein-complex ---------- MTs - BIND - dynactin
+peptide - BIND - chemical ---------- Abeta1-42 - BIND - Cu2+
+peptide - BIND - protein ---------- ovalbumin peptide - BIND - Ad
+peptide - BIND - protein-complex ---------- Disintegrin - BIND - integrin αIIbβ3
+peptide - BIND - protein-family ---------- CBP - BIND - calmodulin
+protein - BIND - DNA ---------- CES-1 - BIND - Snail-binding sites/E-boxes
+protein - BIND - RNA ---------- She2p - BIND - ASH1 transcript
+protein - BIND - amino-acid ---------- F-actin - BIND - Arg
+protein - BIND - chemical ---------- Rap1 - BIND - GTP
+protein - BIND - experiment-tag ---------- hsp90 - BIND - GST537C
+protein - BIND - experimental-construct ---------- GDNF - BIND - GFRalpha2-Fc
+protein - BIND - fusion-protein ---------- B7.1 - BIND - CTLA4-Ig
+protein - BIND - gene ---------- CES-1 - BIND - egl-1 locus
+protein - BIND - organelle ---------- ELP70 - BIND - MTs
+protein - BIND - peptide ---------- apoE - BIND - Abeta
+protein - BIND - protein ---------- Db - BIND - Ly49C
+protein - BIND - protein-DNA-complex ---------- NF-1 - BIND - MMTV chromatin
+protein - BIND - protein-complex ---------- α - BIND - proteasome
+protein - BIND - protein-domain ---------- TFIIA - BIND - TAF
+protein - BIND - protein-family ---------- fascin - BIND - actin
+protein - BIND - protein-isoform ---------- filamin-B - BIND - β1A
+protein - BIND - protein-motif ---------- Axin - BIND - Armadillo
+protein - BIND - protein-region ---------- TnI - BIND - C-lobe of  TnC
+protein - BIND - reagent ---------- Bor56 - BIND - IgM
+protein-DNA-complex - BIND - protein ---------- HIV-1 mononucleosomes - BIND - Sp1
+protein-RNA-complex - BIND - DNA ---------- U7 snRNP - BIND - HDE
+protein-RNA-complex - BIND - RNA ---------- A18 hnRNP - BIND - RPA2
+protein-complex - BIND - DNA ---------- MCM - BIND - DNA
+protein-complex - BIND - RNA ---------- 43S complex - BIND - mRNA
+protein-complex - BIND - chemical ---------- VacA - BIND - cholesterol
+protein-complex - BIND - organelle ---------- VacA - BIND - DRM
+protein-complex - BIND - protein ---------- dynein - BIND - p150 Glued
+protein-complex - BIND - protein-complex ---------- dynein - BIND - dynactin
+protein-complex - BIND - protein-family ---------- RNA polymerase II - BIND - ELL
+protein-complex - BIND - protein-isoform ---------- DM-DO - BIND - DR4
+protein-complex - BIND - reagent ---------- myosin - BIND - nitrocellulose
+protein-domain - BIND - DNA ---------- TAFs - BIND - Inr
+protein-domain - BIND - RNA ---------- HisRS - BIND - tRNA
+protein-domain - BIND - chemical ---------- PH - BIND - PI(4,5) P2
+protein-domain - BIND - protein ---------- RII - BIND - DAKAP200
+protein-domain - BIND - protein-complex ---------- C2-B - BIND - clathrin-coated vesicle protein complex
+protein-domain - BIND - protein-domain ---------- SH3 - BIND - GK
+protein-domain - BIND - protein-family ---------- C2-B - BIND - syntaxins
+protein-family - BIND - DNA ---------- USF - BIND - E1
+protein-family - BIND - RNA ---------- SR family proteins - BIND - pre-mRNA
+protein-family - BIND - chemical ---------- PKC - BIND - calcium
+protein-family - BIND - experiment-tag ---------- calmodulin - BIND - GST
+protein-family - BIND - experimental-construct ---------- collagen - BIND - 125I-GST-α2-I
+protein-family - BIND - fusion-protein ---------- calmodulin - BIND - GST-dUNC13
+protein-family - BIND - organelle ---------- kinesin - BIND - MT
+protein-family - BIND - peptide ---------- rat mast cell receptors - BIND - NT
+protein-family - BIND - protein ---------- IP3 receptors - BIND - FKBP12
+protein-family - BIND - protein-DNA-complex ---------- Ets - BIND - dimer
+protein-family - BIND - protein-complex ---------- MYPT - BIND - myosin
+protein-family - BIND - protein-domain ---------- syntaxin - BIND - C2A domain
+protein-family - BIND - protein-family ---------- actin - BIND - Profilin
+protein-family - BIND - protein-isoform ---------- Synaptotagmin - BIND - beta-SNAP
+protein-family - BIND - protein-motif ---------- TCF - BIND - Armadillo
+protein-family - BIND - protein-region ---------- Nck - BIND - PXXP
+protein-family - BIND - reagent ---------- LRP - BIND - BSA
+protein-isoform - BIND - chemical ---------- beta - BIND - estriol
+protein-isoform - BIND - protein ---------- PNT-P2 - BIND - MAE
+protein-isoform - BIND - protein-complex ---------- amphiphysin 1 - BIND - AP-2
+protein-isoform - BIND - protein-family ---------- alpha-SNAP - BIND - Synaptotagmin
+protein-motif - BIND - DNA ---------- HTH - BIND - EXD-HOX binding sites
+protein-motif - BIND - protein ---------- CRIB - BIND - Cdc42
+protein-motif - BIND - protein-domain ---------- COOH-terminal motifs - BIND - PDZ domain
+protein-motif - BIND - protein-family ---------- NLS - BIND - importin-α
+protein-motif - BIND - protein-motif ---------- PLDLS - BIND - PLASS
+protein-region - BIND - DNA ---------- DB·AD - BIND - DNA
+protein-region - BIND - chemical ---------- MAP-2 MTBR-123 - BIND - thioflavin-S
+protein-region - BIND - experiment-tag ---------- Smad3210-425 - BIND - GST
+protein-region - BIND - protein ---------- Arg688-1182 - BIND - F-actin
+protein-region - BIND - protein-complex ---------- HMG-1(A-B) - BIND - TBP/TATA complex
+protein-region - BIND - protein-region ---------- hTcf-4-(1–80) - BIND - Armadillo repeats
+reagent - BIND - chemical ---------- Calcofluor White - BIND - chitin
+reagent - BIND - experimental-construct ---------- PIP3 beads - BIND - 35S-labeled Arr2
+reagent - BIND - protein ---------- 16N7C2 - BIND - β3 integrin
 
 --------------------------------------------------------------------
 
@@ -917,12 +917,12 @@ DATASET
 ('cellfinder', 'cellfinder_bigbio_kb') - train - 5
 
 ENTITIES:
-GeneProtein
-CellType
 Anatomy
 CellComponent
-CellLine
+GeneProtein
 Species
+CellLine
+CellType
 
 RELATIONS:
 
@@ -932,12 +932,12 @@ DATASET
 ('cellfinder', 'cellfinder_splits_bigbio_kb') - test - 27
 
 ENTITIES:
-GeneProtein
-CellType
 Anatomy
 CellComponent
-CellLine
+GeneProtein
 Species
+CellLine
+CellType
 
 RELATIONS:
 
@@ -947,23 +947,23 @@ DATASET
 ('chebi_nactem', 'chebi_nactem_abstr_ann1_bigbio_kb') - train - 199
 
 ENTITIES:
-Chemical
+Metabolite
 Protein
 Biological_Activity
-Spectral_Data
-Metabolite
 Species
+Spectral_Data
+Chemical
 
 RELATIONS:
-Metabolite - ASSOCIATED_WITH - Biological_Activity
-Metabolite - METABOLITE_OF - Chemical
-Chemical - ASSOCIATED_WITH - Spectral_Data
-Chemical - BINDS_WITH - Protein
-Chemical - ISOLATED_FROM - Species
-Metabolite - BINDS_WITH - Protein
-Metabolite - ASSOCIATED_WITH - Spectral_Data
-Metabolite - ISOLATED_FROM - Species
-Chemical - ASSOCIATED_WITH - Biological_Activity
+Chemical - ASSOCIATED_WITH - Biological_Activity ---------- PLP - ASSOCIATED_WITH - coenzyme
+Chemical - ASSOCIATED_WITH - Spectral_Data ---------- 5-hydroxy-4-(glutathion-S-yl)diclofenac - ASSOCIATED_WITH - LC/MS/MS
+Chemical - BINDS_WITH - Protein ---------- sulfaphenazole - BINDS_WITH - Cytochrome P450 2C9
+Chemical - ISOLATED_FROM - Species ---------- diperamycin - ISOLATED_FROM - Streptomyces griseoaurantiacus MK393-AF2
+Metabolite - ASSOCIATED_WITH - Biological_Activity ---------- gamma-amino-butyric acid - ASSOCIATED_WITH - neurotransmitter
+Metabolite - ASSOCIATED_WITH - Spectral_Data ---------- reactive metabolites - ASSOCIATED_WITH - LC/MS/MS
+Metabolite - BINDS_WITH - Protein ---------- GABA - BINDS_WITH - GABA receptors
+Metabolite - ISOLATED_FROM - Species ---------- masoprocol - ISOLATED_FROM - Larrea tridentata
+Metabolite - METABOLITE_OF - Chemical ---------- benzoquinone imines - METABOLITE_OF - diclofenac
 
 --------------------------------------------------------------------
 
@@ -971,25 +971,25 @@ DATASET
 ('chebi_nactem', 'chebi_nactem_abstr_ann2_bigbio_kb') - train - 199
 
 ENTITIES:
-Chemical
+Metabolite
 Protein
 Biological_Activity
-Spectral_Data
-Metabolite
 Species
+Spectral_Data
+Chemical
 
 RELATIONS:
-Chemical - HAS_STRUCTURE - Biological_Activity
-Metabolite - ASSOCIATED_WITH - Biological_Activity
-Metabolite - METABOLITE_OF - Chemical
-Chemical - ASSOCIATED_WITH - Spectral_Data
-Chemical - BINDS_WITH - Protein
-Chemical - ISOLATED_FROM - Species
-Metabolite - BINDS_WITH - Protein
-Metabolite - ASSOCIATED_WITH - Spectral_Data
-Chemical - ASSOCIATED_WITH - Chemical
-Metabolite - ISOLATED_FROM - Species
-Chemical - ASSOCIATED_WITH - Biological_Activity
+Chemical - ASSOCIATED_WITH - Biological_Activity ---------- PLP - ASSOCIATED_WITH - coenzyme
+Chemical - ASSOCIATED_WITH - Chemical ---------- DDE - ASSOCIATED_WITH - AR ligands
+Chemical - ASSOCIATED_WITH - Spectral_Data ---------- conjugated diene - ASSOCIATED_WITH - UV absorbance
+Chemical - BINDS_WITH - Protein ---------- troleandomycin - BINDS_WITH - P450 3A4
+Chemical - HAS_STRUCTURE - Biological_Activity ---------- Raloxifene hydrochloride - HAS_STRUCTURE - antagonist
+Chemical - ISOLATED_FROM - Species ---------- masoprocol - ISOLATED_FROM - creosote bush
+Metabolite - ASSOCIATED_WITH - Biological_Activity ---------- casimiroedine - ASSOCIATED_WITH - activation
+Metabolite - ASSOCIATED_WITH - Spectral_Data ---------- metabolites - ASSOCIATED_WITH - LC/MS/MS
+Metabolite - BINDS_WITH - Protein ---------- histamine derivatives - BINDS_WITH - H1-histaminergic receptors
+Metabolite - ISOLATED_FROM - Species ---------- benzoquinone imines - ISOLATED_FROM - rats
+Metabolite - METABOLITE_OF - Chemical ---------- benzoquinone imines - METABOLITE_OF - diclofenac
 
 --------------------------------------------------------------------
 
@@ -997,24 +997,24 @@ DATASET
 ('chebi_nactem', 'chebi_nactem_fullpaper_bigbio_kb') - train - 100
 
 ENTITIES:
-Chemical
+Metabolite
 Protein
 Biological_Activity
-Spectral_Data
-Metabolite
-Chemical_Structure
 Species
+Spectral_Data
+Chemical_Structure
+Chemical
 
 RELATIONS:
-Metabolite - ASSOCIATED_WITH - Biological_Activity
-Chemical - ASSOCIATED_WITH - Spectral_Data
-Chemical - BINDS_WITH - Protein
-Chemical - ISOLATED_FROM - Species
-Metabolite - BINDS_WITH - Protein
-Metabolite - ASSOCIATED_WITH - Spectral_Data
-Metabolite - ISOLATED_FROM - Species
-Metabolite - METABOLITE_OF - Chemical
-Chemical - ASSOCIATED_WITH - Biological_Activity
+Chemical - ASSOCIATED_WITH - Biological_Activity ---------- oxygen metabolites - ASSOCIATED_WITH - toxic
+Chemical - ASSOCIATED_WITH - Spectral_Data ---------- N -methylproline - ASSOCIATED_WITH - bidimensional NMR
+Chemical - BINDS_WITH - Protein ---------- Peptide - BINDS_WITH - MHC I
+Chemical - ISOLATED_FROM - Species ---------- Se-LA - ISOLATED_FROM - inhibitory effect
+Metabolite - ASSOCIATED_WITH - Biological_Activity ---------- oxygen metabolites - ASSOCIATED_WITH - toxic
+Metabolite - ASSOCIATED_WITH - Spectral_Data ---------- N -methylproline - ASSOCIATED_WITH - bidimensional NMR
+Metabolite - BINDS_WITH - Protein ---------- arachidonoylethanolamide - BINDS_WITH - cannabinol receptor
+Metabolite - ISOLATED_FROM - Species ---------- Flavonoids - ISOLATED_FROM - plants
+Metabolite - METABOLITE_OF - Chemical ---------- reactive oxygen metabolites - METABOLITE_OF - oxygen
 
 --------------------------------------------------------------------
 
@@ -1037,27 +1037,27 @@ GENE-Y
 GENE-N
 
 RELATIONS:
-CHEMICAL - COFACTOR - GENE-N
-CHEMICAL - NOT - GENE-N
-CHEMICAL - UPREGULATOR - GENE-N
-CHEMICAL - DOWNREGULATOR - GENE-N
-CHEMICAL - MODULATOR - GENE-Y
-CHEMICAL - PART_OF - GENE-N
-CHEMICAL - UNDEFINED - GENE-Y
-CHEMICAL - SUBSTRATE - GENE-N
-CHEMICAL - SUBSTRATE - GENE-Y
-CHEMICAL - PART_OF - GENE-Y
-CHEMICAL - ANTAGONIST - GENE-N
-CHEMICAL - COFACTOR - GENE-Y
-CHEMICAL - DOWNREGULATOR - GENE-Y
-CHEMICAL - AGONIST - GENE-N
-CHEMICAL - ANTAGONIST - GENE-Y
-CHEMICAL - AGONIST - GENE-Y
-CHEMICAL - REGULATOR - GENE-Y
-CHEMICAL - NOT - GENE-Y
-CHEMICAL - REGULATOR - GENE-N
-CHEMICAL - UPREGULATOR - GENE-Y
-CHEMICAL - MODULATOR - GENE-N
+CHEMICAL - AGONIST - GENE-N ---------- mitiglinide - AGONIST - K(ATP) channel
+CHEMICAL - AGONIST - GENE-Y ---------- isoprenaline - AGONIST - beta 1-adrenoceptor
+CHEMICAL - ANTAGONIST - GENE-N ---------- topiramate - ANTAGONIST - kainate-receptor
+CHEMICAL - ANTAGONIST - GENE-Y ---------- alprenolol - ANTAGONIST - beta 1-adrenoceptor
+CHEMICAL - COFACTOR - GENE-N ---------- (6R)-5,6,7,8-tetrahydro-L-biopterin - COFACTOR - NOS
+CHEMICAL - COFACTOR - GENE-Y ---------- tetrahydrobiopterin - COFACTOR - TPH
+CHEMICAL - DOWNREGULATOR - GENE-N ---------- CI-1033 - DOWNREGULATOR - tyrosine kinase
+CHEMICAL - DOWNREGULATOR - GENE-Y ---------- CI-1033 - DOWNREGULATOR - erbB
+CHEMICAL - MODULATOR - GENE-N ---------- androgen - MODULATOR - nuclear receptors
+CHEMICAL - MODULATOR - GENE-Y ---------- Lu AF21934 - MODULATOR - mGlu₄
+CHEMICAL - NOT - GENE-N ---------- imatinib - NOT - D816V
+CHEMICAL - NOT - GENE-Y ---------- mitiglinide - NOT - Kir6.2
+CHEMICAL - PART_OF - GENE-N ---------- lysine - PART_OF - Glc-T
+CHEMICAL - PART_OF - GENE-Y ---------- loperamide - PART_OF - HSA
+CHEMICAL - REGULATOR - GENE-N ---------- glucose - REGULATOR - insulin
+CHEMICAL - REGULATOR - GENE-Y ---------- loperamide - REGULATOR - Apolipoprotein E
+CHEMICAL - SUBSTRATE - GENE-N ---------- UDP-Glc - SUBSTRATE - Glc-T
+CHEMICAL - SUBSTRATE - GENE-Y ---------- adenosine monophosphate - SUBSTRATE - Adenine phosphoribosyltransferase
+CHEMICAL - UNDEFINED - GENE-Y ---------- gefitinib - UNDEFINED - EGFR
+CHEMICAL - UPREGULATOR - GENE-N ---------- lysine - UPREGULATOR - glucosyltransferase
+CHEMICAL - UPREGULATOR - GENE-Y ---------- KAD-1229 - UPREGULATOR - insulin
 
 --------------------------------------------------------------------
 
@@ -1065,277 +1065,277 @@ DATASET
 ('chia', 'chia_bigbio_kb') - train - 2000
 
 ENTITIES:
-Drug
-Scope
-Qualifier
-Condition
-Visit
-Mood
+Procedure
+Negation
 Observation
+Reference_point
+Condition
+Qualifier
 Measurement
-Temporal
+Mood
+Scope
+Value
+Visit
 Device
 Multiplier
-Value
-Procedure
-Reference_point
-Negation
+Temporal
+Drug
 Person
 
 RELATIONS:
-Measurement - AND - Drug
-Drug - AND - Drug
-Value - HAS_INDEX - Reference_point
-Negation - HAS_SCOPE - Scope
-Person - AND - Measurement
-Person - AND - Device
-Drug - HAS_MOOD - Observation
-Scope - AND - Drug
-Value - SUBSUMES - Measurement
-Multiplier - HAS_QUALIFIER - Qualifier
-Scope - AND - Visit
-Condition - AND - Visit
-Observation - HAS_QUALIFIER - Qualifier
-Scope - HAS_MOOD - Mood
-Qualifier - HAS_MULTIPLIER - Multiplier
-Multiplier - AND - Person
-Procedure - AND - Visit
-Scope - SUBSUMES - Temporal
-Measurement - HAS_MULTIPLIER - Multiplier
-Scope - AND - Device
-Observation - HAS_TEMPORAL - Temporal
-Device - AND - Device
-Qualifier - HAS_VALUE - Value
-Condition - AND - Measurement
-Multiplier - AND - Condition
-Drug - AND - Device
-Condition - AND - Device
-Visit - HAS_TEMPORAL - Temporal
-Observation - HAS_MULTIPLIER - Multiplier
-Person - HAS_SCOPE - Scope
-Drug - HAS_MULTIPLIER - Multiplier
-Drug - SUBSUMES - Drug
-Measurement - AND - Device
-Observation - SUBSUMES - Scope
-Observation - SUBSUMES - Qualifier
-Drug - HAS_NEGATION - Negation
-Reference_point - SUBSUMES - Reference_point
-Scope - HAS_INDEX - Reference_point
-Value - HAS_VALUE - Value
-Device - HAS_MOOD - Mood
-Scope - HAS_NEGATION - Negation
-Temporal - HAS_MOOD - Mood
-Qualifier - AND - Condition
-Negation - AND - Condition
-Visit - HAS_SCOPE - Scope
-Scope - AND - Procedure
-Device - SUBSUMES - Scope
-Measurement - HAS_TEMPORAL - Temporal
-Procedure - HAS_MULTIPLIER - Multiplier
-Measurement - SUBSUMES - Measurement
-Condition - HAS_SCOPE - Scope
-Temporal - HAS_VALUE - Value
-Procedure - SUBSUMES - Condition
-Scope - SUBSUMES - Drug
-Device - HAS_MULTIPLIER - Multiplier
-Mood - HAS_MULTIPLIER - Multiplier
-Qualifier - SUBSUMES - Value
-Procedure - AND - Condition
-Value - HAS_NEGATION - Negation
-Condition - AND - Procedure
-Mood - HAS_SCOPE - Scope
-Qualifier - AND - Device
-Scope - SUBSUMES - Multiplier
-Condition - SUBSUMES - Procedure
-Observation - HAS_SCOPE - Scope
-Multiplier - HAS_MULTIPLIER - Multiplier
-Measurement - AND - Measurement
-Scope - SUBSUMES - Condition
-Mood - HAS_QUALIFIER - Qualifier
-Measurement - SUBSUMES - Value
-Observation - SUBSUMES - Condition
-Drug - AND - Visit
-Drug - AND - Procedure
-Scope - SUBSUMES - Measurement
-Condition - HAS_MOOD - Observation
-Value - HAS_MULTIPLIER - Multiplier
-Scope - HAS_VALUE - Value
-Observation - AND - Visit
-Measurement - AND - Procedure
-Temporal - HAS_SCOPE - Scope
-Temporal - SUBSUMES - Scope
-Observation - AND - Person
-Temporal - HAS_INDEX - Reference_point
-Scope - HAS_MOOD - Observation
-Qualifier - HAS_TEMPORAL - Temporal
-Procedure - OR - Procedure
-Qualifier - SUBSUMES - Condition
-Person - SUBSUMES - Scope
-Scope - SUBSUMES - Device
-Device - HAS_SCOPE - Scope
-Condition - AND - Drug
-Measurement - HAS_NEGATION - Negation
-Mood - HAS_NEGATION - Negation
-Visit - HAS_MULTIPLIER - Multiplier
-Person - HAS_MULTIPLIER - Multiplier
-Drug - SUBSUMES - Condition
-Value - HAS_TEMPORAL - Temporal
-Condition - HAS_TEMPORAL - Observation
-Measurement - SUBSUMES - Procedure
-Scope - HAS_TEMPORAL - Temporal
-Value - AND - Measurement
-Condition - HAS_MOOD - Mood
-Qualifier - AND - Drug
-Multiplier - HAS_VALUE - Value
-Measurement - AND - Person
-Procedure - HAS_SCOPE - Scope
-Reference_point - AND - Drug
-Multiplier - HAS_TEMPORAL - Temporal
-Value - AND - Person
-Person - AND - Procedure
-Condition - AND - Person
-Visit - AND - Measurement
-Temporal - HAS_TEMPORAL - Temporal
-Device - AND - Condition
-Visit - AND - Drug
-Reference_point - AND - Procedure
-Measurement - SUBSUMES - Scope
-Value - AND - Drug
-Observation - AND - Drug
-Person - HAS_MOOD - Mood
-Procedure - HAS_TEMPORAL - Temporal
-Condition - HAS_MULTIPLIER - Multiplier
-Value - AND - Condition
-Measurement - HAS_VALUE - Value
-Procedure - SUBSUMES - Scope
-Procedure - HAS_NEGATION - Negation
-Measurement - HAS_TEMPORAL - Observation
-Procedure - HAS_QUALIFIER - Qualifier
-Value - HAS_SCOPE - Scope
-Device - HAS_VALUE - Value
-Observation - AND - Device
-Person - HAS_TEMPORAL - Temporal
-Person - HAS_VALUE - Value
-Multiplier - SUBSUMES - Multiplier
-Condition - SUBSUMES - Scope
-Scope - AND - Person
-Device - HAS_TEMPORAL - Observation
-Temporal - SUBSUMES - Temporal
-Value - AND - Procedure
-Value - SUBSUMES - Scope
-Procedure - OR - Scope
-Condition - SUBSUMES - Value
-Qualifier - SUBSUMES - Procedure
-Condition - SUBSUMES - Temporal
-Procedure - AND - Procedure
-Device - HAS_NEGATION - Negation
-Drug - AND - Measurement
-Visit - AND - Visit
-Scope - AND - Measurement
-Measurement - AND - Condition
-Visit - AND - Condition
-Condition - HAS_NEGATION - Negation
-Temporal - AND - Procedure
-Visit - SUBSUMES - Visit
-Condition - SUBSUMES - Observation
-Drug - HAS_QUALIFIER - Qualifier
-Procedure - HAS_VALUE - Value
-Device - AND - Drug
-Procedure - AND - Device
-Temporal - HAS_QUALIFIER - Qualifier
-Observation - AND - Condition
-Qualifier - SUBSUMES - Temporal
-Temporal - AND - Visit
-Temporal - HAS_MOOD - Observation
-Visit - HAS_MOOD - Mood
-Scope - SUBSUMES - Observation
-Device - HAS_TEMPORAL - Temporal
-Qualifier - AND - Procedure
-Scope - HAS_SCOPE - Scope
-Observation - HAS_NEGATION - Negation
-Temporal - AND - Drug
-Procedure - HAS_MOOD - Mood
-Scope - HAS_TEMPORAL - Observation
-Qualifier - HAS_SCOPE - Scope
-Device - HAS_QUALIFIER - Qualifier
-Observation - AND - Procedure
-Procedure - SUBSUMES - Procedure
-Drug - HAS_VALUE - Value
-Device - SUBSUMES - Device
-Multiplier - SUBSUMES - Value
-Scope - HAS_QUALIFIER - Qualifier
-Observation - SUBSUMES - Temporal
-Qualifier - HAS_INDEX - Reference_point
-Procedure - AND - Drug
-Observation - HAS_TEMPORAL - Observation
-Scope - AND - Condition
-Qualifier - SUBSUMES - Multiplier
-Person - AND - Condition
-Value - SUBSUMES - Qualifier
-Qualifier - AND - Measurement
-Procedure - SUBSUMES - Measurement
-Multiplier - HAS_NEGATION - Negation
-Qualifier - HAS_QUALIFIER - Qualifier
-Device - AND - Procedure
-Visit - HAS_QUALIFIER - Qualifier
-Condition - SUBSUMES - Measurement
-Qualifier - SUBSUMES - Qualifier
-Multiplier - HAS_MOOD - Mood
-Procedure - HAS_INDEX - Reference_point
-Qualifier - HAS_NEGATION - Negation
-Drug - AND - Condition
-Drug - SUBSUMES - Scope
-Drug - HAS_TEMPORAL - Observation
-Procedure - AND - Measurement
-Value - SUBSUMES - Condition
-Drug - HAS_MOOD - Mood
-Condition - HAS_QUALIFIER - Qualifier
-Drug - HAS_SCOPE - Scope
-Condition - SUBSUMES - Condition
-Measurement - HAS_MOOD - Mood
-Observation - AND - Measurement
-Person - HAS_QUALIFIER - Qualifier
-Person - AND - Person
-Scope - HAS_MULTIPLIER - Multiplier
-Procedure - HAS_TEMPORAL - Observation
-Observation - HAS_MOOD - Mood
-Value - SUBSUMES - Value
-Multiplier - SUBSUMES - Scope
-Condition - OR - Condition
-Reference_point - AND - Condition
-Observation - HAS_VALUE - Value
-Person - SUBSUMES - Person
-Procedure - SUBSUMES - Device
-Multiplier - AND - Measurement
-Temporal - SUBSUMES - Value
-Temporal - HAS_MULTIPLIER - Multiplier
-Qualifier - SUBSUMES - Scope
-Condition - SUBSUMES - Qualifier
-Negation - HAS_QUALIFIER - Qualifier
-Measurement - HAS_SCOPE - Scope
-Procedure - HAS_MOOD - Observation
-Drug - HAS_TEMPORAL - Temporal
-Condition - HAS_VALUE - Value
-Condition - OR - Procedure
-Negation - HAS_MULTIPLIER - Multiplier
-Scope - SUBSUMES - Scope
-Multiplier - AND - Procedure
-Condition - SUBSUMES - Drug
-Scope - SUBSUMES - Person
-Value - HAS_QUALIFIER - Qualifier
-Person - HAS_NEGATION - Negation
-Condition - AND - Condition
-Observation - SUBSUMES - Observation
-Procedure - SUBSUMES - Drug
-Temporal - AND - Condition
-Condition - HAS_INDEX - Reference_point
-Qualifier - SUBSUMES - Measurement
-Measurement - SUBSUMES - Qualifier
-Person - AND - Visit
-Condition - HAS_TEMPORAL - Temporal
-Measurement - HAS_QUALIFIER - Qualifier
-Mood - HAS_TEMPORAL - Temporal
-Scope - SUBSUMES - Qualifier
+Condition - AND - Condition ---------- Fetus - AND - IUGR
+Condition - AND - Device ---------- Pressure sores - AND - harness
+Condition - AND - Drug ---------- severe cardiac insufficiency - AND - Coumadin
+Condition - AND - Measurement ---------- unresolved diarrhea - AND - Grade
+Condition - AND - Person ---------- child-bearing potential - AND - Women
+Condition - AND - Procedure ---------- brain metastases - AND - treated
+Condition - AND - Visit ---------- OCD - AND - Outpatient
+Condition - HAS_INDEX - Reference_point ---------- tumor - HAS_INDEX - target knee
+Condition - HAS_MOOD - Mood ---------- vitamin B12 deficiency - HAS_MOOD - suspected
+Condition - HAS_MOOD - Observation ---------- pregnant - HAS_MOOD - plan
+Condition - HAS_MULTIPLIER - Multiplier ---------- febrile convulsion - HAS_MULTIPLIER - single
+Condition - HAS_NEGATION - Negation ---------- non-melanomatous skin cancer - HAS_NEGATION - other than
+Condition - HAS_QUALIFIER - Qualifier ---------- CNS metastases - HAS_QUALIFIER - symptomatic
+Condition - HAS_SCOPE - Scope ---------- uncontrolled infection - HAS_SCOPE - active or suspected acute or chronic
+Condition - HAS_TEMPORAL - Observation ---------- another malignancy - HAS_TEMPORAL - history of
+Condition - HAS_TEMPORAL - Temporal ---------- another malignancy - HAS_TEMPORAL - within 5 years prior to study entry
+Condition - HAS_VALUE - Value ---------- Left main stenosis - HAS_VALUE - 50% or more
+Condition - OR - Condition ---------- lactose-intolerance - OR - allergies to cow-milk
+Condition - OR - Procedure ---------- postmenopausal - OR - bilateral oophorectomy
+Condition - SUBSUMES - Condition ---------- Metastatic disease - SUBSUMES - (M1)/stage 4
+Condition - SUBSUMES - Drug ---------- non-invasive ventilation - SUBSUMES - beta-1-agonists
+Condition - SUBSUMES - Measurement ---------- Significant stenosis - SUBSUMES - stenosis
+Condition - SUBSUMES - Observation ---------- Unable to walk - SUBSUMES - wheelchair subjects
+Condition - SUBSUMES - Procedure ---------- infection - SUBSUMES - HIV infection
+Condition - SUBSUMES - Qualifier ---------- contraindications - SUBSUMES - Ventavis Summary of Product Characteristics and patient package insert
+Condition - SUBSUMES - Scope ---------- uncontrolled infection - SUBSUMES - abcesses or fistulae
+Condition - SUBSUMES - Temporal ---------- pulmonary exacerbation - SUBSUMES - in the two weeks prior to Visit 2
+Condition - SUBSUMES - Value ---------- Normal menstrual cycles - SUBSUMES - 25-34 days
+Device - AND - Condition ---------- medical implants - AND - interact with MRI
+Device - AND - Device ---------- pacemaker leads - AND - MRI conditional
+Device - AND - Drug ---------- Artificial heart valves - AND - anticoagulant
+Device - AND - Procedure ---------- central venous line - AND - PN
+Device - HAS_MOOD - Mood ---------- epidural catheter - HAS_MOOD - Refusal
+Device - HAS_MULTIPLIER - Multiplier ---------- forms of contraception - HAS_MULTIPLIER - two
+Device - HAS_NEGATION - Negation ---------- pacemaker - HAS_NEGATION - without
+Device - HAS_QUALIFIER - Qualifier ---------- diaphragm - HAS_QUALIFIER - with spermicide
+Device - HAS_SCOPE - Scope ---------- CICC placed - HAS_SCOPE - in the internal jugular vein or subclavian vein position
+Device - HAS_TEMPORAL - Observation ---------- cochlear implant - HAS_TEMPORAL - History
+Device - HAS_TEMPORAL - Temporal ---------- intrauterine device - HAS_TEMPORAL - for at least 3 months prior to the start of the study
+Device - HAS_VALUE - Value ---------- spectacle cylinder - HAS_VALUE - ≥1.00D
+Device - SUBSUMES - Device ---------- forms of contraception - SUBSUMES - barrier method
+Device - SUBSUMES - Scope ---------- barrier contraceptives - SUBSUMES - condom, diaphragm with spermicide
+Drug - AND - Condition ---------- pregabalin - AND - partial seizure
+Drug - AND - Device ---------- vasoactive drugs - AND - central venous catheter
+Drug - AND - Drug ---------- vaccination - AND - H5N1 vaccine
+Drug - AND - Measurement ---------- medications - AND - thyroid function
+Drug - AND - Procedure ---------- product - AND - use
+Drug - AND - Visit ---------- Mifeprex(r) - AND - study clinical site
+Drug - HAS_MOOD - Mood ---------- contraception - HAS_MOOD - unwilling
+Drug - HAS_MOOD - Observation ---------- vaccine - HAS_MOOD - planned receipt
+Drug - HAS_MULTIPLIER - Multiplier ---------- primary chemotherapy regimen - HAS_MULTIPLIER - more than one
+Drug - HAS_NEGATION - Negation ---------- warfarin - HAS_NEGATION - with the exception of
+Drug - HAS_QUALIFIER - Qualifier ---------- warfarin - HAS_QUALIFIER - low dose
+Drug - HAS_SCOPE - Scope ---------- Systemic corticosteroids - HAS_SCOPE - topical or inhaled steroids are allowed
+Drug - HAS_TEMPORAL - Observation ---------- systemic antibiotic - HAS_TEMPORAL - history
+Drug - HAS_TEMPORAL - Temporal ---------- epothilone - HAS_TEMPORAL - previously
+Drug - HAS_VALUE - Value ---------- PI - HAS_VALUE - for more than 2 weeks
+Drug - SUBSUMES - Condition ---------- psychotropic nutraceutical - SUBSUMES - St John's wort
+Drug - SUBSUMES - Drug ---------- Sandostatin Lar - SUBSUMES - long acting somatostatin analogue
+Drug - SUBSUMES - Scope ---------- medications - SUBSUMES - benzodiazepines, sedative hypnotics, antipsychotics, and antidepressants
+Measurement - AND - Condition ---------- WHO pulmonary hypertension function - AND - non-responder to calcium channel blockers
+Measurement - AND - Device ---------- distance visual acuity - AND - study contact lenses
+Measurement - AND - Drug ---------- urine toxicology - AND - illicit substance
+Measurement - AND - Measurement ---------- renal function - AND - calculated creatinine clearance
+Measurement - AND - Person ---------- body mass index - AND - women
+Measurement - AND - Procedure ---------- daily pain rating - AND - 0-to-10 numerical pain rating scale
+Measurement - HAS_MOOD - Mood ---------- last - HAS_MOOD - expected
+Measurement - HAS_MULTIPLIER - Multiplier ---------- criteria - HAS_MULTIPLIER - all
+Measurement - HAS_NEGATION - Negation ---------- hepatitis B serologies - HAS_NEGATION - Absence of
+Measurement - HAS_QUALIFIER - Qualifier ---------- radiotherapy - HAS_QUALIFIER - Initial
+Measurement - HAS_SCOPE - Scope ---------- ECOG performance status - HAS_SCOPE - 0,1, or 2
+Measurement - HAS_TEMPORAL - Observation ---------- LVEF - HAS_TEMPORAL - History
+Measurement - HAS_TEMPORAL - Temporal ---------- serum pregnancy test - HAS_TEMPORAL - at screening
+Measurement - HAS_VALUE - Value ---------- Grade - HAS_VALUE - greater than
+Measurement - SUBSUMES - Measurement ---------- positron emission tomography - SUBSUMES - PET
+Measurement - SUBSUMES - Procedure ---------- pregnancy test - SUBSUMES - urine β-hCG
+Measurement - SUBSUMES - Qualifier ---------- North American working group definition - SUBSUMES - epithelial denudation is clearly Visible at one place and the bed of de-epithelialized ulcer can be seen; Ulcerations distal to the proximal interphalangeal joint, not associated with calcinosis or bony relief
+Measurement - SUBSUMES - Scope ---------- Body Mass Index - SUBSUMES - BMI, weight in kg divided by the square of height in meters
+Measurement - SUBSUMES - Value ---------- Body Mass Index - SUBSUMES - > 32
+Mood - HAS_MULTIPLIER - Multiplier ---------- risk factors - HAS_MULTIPLIER - multiple
+Mood - HAS_NEGATION - Negation ---------- willing to continue practicing - HAS_NEGATION - not
+Mood - HAS_QUALIFIER - Qualifier ---------- recommended - HAS_QUALIFIER - Treating surgeon
+Mood - HAS_SCOPE - Scope ---------- suspected - HAS_SCOPE - medical history and/or clinical examination
+Mood - HAS_TEMPORAL - Temporal ---------- planned - HAS_TEMPORAL - within the study period
+Multiplier - AND - Condition ---------- only site(s) of measurable disease - AND - bone metastases
+Multiplier - AND - Measurement ---------- frequency of agitation /aggression - AND - NPI
+Multiplier - AND - Person ---------- 20g/day - AND - women
+Multiplier - AND - Procedure ---------- at least two - AND - chemotherapy regimens
+Multiplier - HAS_MOOD - Mood ---------- >24 hours in duration - HAS_MOOD - expected to be
+Multiplier - HAS_MULTIPLIER - Multiplier ---------- more than 2g a day - HAS_MULTIPLIER - 5 times a week to everyday
+Multiplier - HAS_NEGATION - Negation ---------- lasted for more than 6 months - HAS_NEGATION - not
+Multiplier - HAS_QUALIFIER - Qualifier ---------- therapeutic dose - HAS_QUALIFIER - stable
+Multiplier - HAS_TEMPORAL - Temporal ---------- at least one - HAS_TEMPORAL - within the last 12 months prior to screening
+Multiplier - HAS_VALUE - Value ---------- dosages - HAS_VALUE - =0.5 mg/kg/d
+Multiplier - SUBSUMES - Multiplier ---------- 4 - SUBSUMES - 400mcg
+Multiplier - SUBSUMES - Scope ---------- high dose - SUBSUMES - doses of prednisone higher than 10 mg/day
+Multiplier - SUBSUMES - Value ---------- low dose - SUBSUMES - ≤10 mg/d
+Negation - AND - Condition ---------- no - AND - chronic atopic dermatitis
+Negation - HAS_MULTIPLIER - Multiplier ---------- discontinued - HAS_MULTIPLIER - permanently
+Negation - HAS_QUALIFIER - Qualifier ---------- other than - HAS_QUALIFIER - associated with their pain diagnosis
+Negation - HAS_SCOPE - Scope ---------- not - HAS_SCOPE - inhaled or topical steroids
+Observation - AND - Condition ---------- history of - AND - brain metastases
+Observation - AND - Device ---------- tattoos - AND - metallic dyes
+Observation - AND - Drug ---------- Planned - AND - vaccine
+Observation - AND - Measurement ---------- frequency of apathy - AND - NPI
+Observation - AND - Person ---------- Condomless sex - AND - male partners
+Observation - AND - Procedure ---------- potentially amenable - AND - stent implantation
+Observation - AND - Visit ---------- treatment plan - AND - OHSU
+Observation - HAS_MOOD - Mood ---------- entry into this study - HAS_MOOD - inappropriate for
+Observation - HAS_MULTIPLIER - Multiplier ---------- cigarettes - HAS_MULTIPLIER - no more than 10
+Observation - HAS_NEGATION - Negation ---------- growth factor use - HAS_NEGATION - without
+Observation - HAS_QUALIFIER - Qualifier ---------- progression of disease - HAS_QUALIFIER - biochemically
+Observation - HAS_SCOPE - Scope ---------- treatment - HAS_SCOPE - topotecan or gemcitabine
+Observation - HAS_TEMPORAL - Observation ---------- noncompliance to medical regimens - HAS_TEMPORAL - History of
+Observation - HAS_TEMPORAL - Temporal ---------- progression - HAS_TEMPORAL - since the radiation therapy
+Observation - HAS_VALUE - Value ---------- life expectancy - HAS_VALUE - greater than three (3) months
+Observation - SUBSUMES - Condition ---------- Death expected - SUBSUMES - moribund
+Observation - SUBSUMES - Observation ---------- managed at home - SUBSUMES - outpatients
+Observation - SUBSUMES - Qualifier ---------- situation - SUBSUMES - anatomical malformation
+Observation - SUBSUMES - Scope ---------- documented - SUBSUMES - treadmill exercise test, radionuclide scintigraphy, stress echocardiography, Holter tape
+Observation - SUBSUMES - Temporal ---------- breastfed - SUBSUMES - at the time of inclusion
+Person - AND - Condition ---------- Females - AND - childbearing potential
+Person - AND - Device ---------- women - AND - mechanical valve replacement
+Person - AND - Measurement ---------- Female - AND - serum pregnancy test
+Person - AND - Person ---------- Female - AND - years
+Person - AND - Procedure ---------- female - AND - contraception
+Person - AND - Visit ---------- Veteran - AND - Veterans Health Administration healthcare system
+Person - HAS_MOOD - Mood ---------- Participants - HAS_MOOD - not
+Person - HAS_MULTIPLIER - Multiplier ---------- male partners - HAS_MULTIPLIER - one or more
+Person - HAS_NEGATION - Negation ---------- health insurance - HAS_NEGATION - without
+Person - HAS_QUALIFIER - Qualifier ---------- patient - HAS_QUALIFIER - Unstable
+Person - HAS_SCOPE - Scope ---------- Female - HAS_SCOPE - postmenopausal or must have had a bilateral oophorectomy or must have been surgically sterilized or hysterectomized at least 6 months prior to screening
+Person - HAS_TEMPORAL - Temporal ---------- of age - HAS_TEMPORAL - at the time of the first vaccination
+Person - HAS_VALUE - Value ---------- age - HAS_VALUE - 18 years
+Person - SUBSUMES - Person ---------- Adults - SUBSUMES - 18 and older
+Person - SUBSUMES - Scope ---------- Adult - SUBSUMES - =18 years
+Procedure - AND - Condition ---------- Structured Clinical Interview for DSM-IV Personality Disorders (SCID-II) - AND - BPD
+Procedure - AND - Device ---------- treatment - AND - device other than percutaneous transluminal coronary angioplasty (PTCA)
+Procedure - AND - Drug ---------- treatment - AND - fibroblast growth factor
+Procedure - AND - Measurement ---------- Transmural myocardial infarction - AND - CK
+Procedure - AND - Procedure ---------- therapy - AND - treatment
+Procedure - AND - Visit ---------- managed - AND - at home
+Procedure - HAS_INDEX - Reference_point ---------- knee surgery - HAS_INDEX - target knee
+Procedure - HAS_MOOD - Mood ---------- treat - HAS_MOOD - Intention to
+Procedure - HAS_MOOD - Observation ---------- cardiac transplantation - HAS_MOOD - plan
+Procedure - HAS_MULTIPLIER - Multiplier ---------- oxygen therapy - HAS_MULTIPLIER - long term
+Procedure - HAS_NEGATION - Negation ---------- treated - HAS_NEGATION - unless
+Procedure - HAS_QUALIFIER - Qualifier ---------- Shielding - HAS_QUALIFIER - esophagus
+Procedure - HAS_SCOPE - Scope ---------- hepatic artery chemoembolization - HAS_SCOPE - within the last 6 months (one month if there are other sites of measurable disease
+Procedure - HAS_TEMPORAL - Observation ---------- heart surgery - HAS_TEMPORAL - history of
+Procedure - HAS_TEMPORAL - Temporal ---------- radioactive directed therapies - HAS_TEMPORAL - previously
+Procedure - HAS_VALUE - Value ---------- biopsy - HAS_VALUE - proven
+Procedure - OR - Procedure ---------- surgically sterilized - OR - hysterectomized
+Procedure - OR - Scope ---------- bilateral oophorectomy - OR - surgically sterilized or hysterectomized
+Procedure - SUBSUMES - Condition ---------- primary CT - SUBSUMES - hypervascularity
+Procedure - SUBSUMES - Device ---------- cardiac surgery - SUBSUMES - prosthetic valves
+Procedure - SUBSUMES - Drug ---------- Immunosuppressive therapy - SUBSUMES - cytotoxic agents
+Procedure - SUBSUMES - Measurement ---------- biopsy - SUBSUMES - alpha-fetoprotein
+Procedure - SUBSUMES - Procedure ---------- Shielding - SUBSUMES - posterior spinal cord shielding
+Procedure - SUBSUMES - Scope ---------- coronary revascularization - SUBSUMES - angioplasty or CABG
+Qualifier - AND - Condition ---------- for primary pulmonary hypertension - AND - primary pulmonary hypertension
+Qualifier - AND - Device ---------- not associated - AND - catheter
+Qualifier - AND - Drug ---------- estrogen-containing - AND - estrogen
+Qualifier - AND - Measurement ---------- unresectable - AND - Pathologically
+Qualifier - AND - Procedure ---------- bone - AND - radiation
+Qualifier - HAS_INDEX - Reference_point ---------- same side as the lesion - HAS_INDEX - the lesion
+Qualifier - HAS_MULTIPLIER - Multiplier ---------- esophagus - HAS_MULTIPLIER - any part of
+Qualifier - HAS_NEGATION - Negation ---------- bone - HAS_NEGATION - other than
+Qualifier - HAS_QUALIFIER - Qualifier ---------- measurable disease - HAS_QUALIFIER - outside the radiation field
+Qualifier - HAS_SCOPE - Scope ---------- esophagus - HAS_SCOPE - greater than or equal to 30%
+Qualifier - HAS_TEMPORAL - Temporal ---------- been stable for - HAS_TEMPORAL - at least six months prior to study start
+Qualifier - HAS_VALUE - Value ---------- bone - HAS_VALUE - more than 10%
+Qualifier - SUBSUMES - Condition ---------- shows signs of severe clinical infection - SUBSUMES - pus
+Qualifier - SUBSUMES - Measurement ---------- stable - SUBSUMES - Canadian Cardiovascular Society
+Qualifier - SUBSUMES - Multiplier ---------- Clinically significant - SUBSUMES - > 4 Tablespoons per day
+Qualifier - SUBSUMES - Procedure ---------- highly exuding - SUBSUMES - change of dressing
+Qualifier - SUBSUMES - Qualifier ---------- Unresectable - SUBSUMES - locally advanced
+Qualifier - SUBSUMES - Scope ---------- uni-dimensionally measurable - SUBSUMES - at least longest diameter 2 cm on conventional CT scan, x-ray or physical examination, or 1cm on spiral CT scan
+Qualifier - SUBSUMES - Temporal ---------- Chronic - SUBSUMES - more than 14 days
+Qualifier - SUBSUMES - Value ---------- stable - SUBSUMES - <3 kg weight change
+Reference_point - AND - Condition ---------- the ST segment elevation myocardial infarction (STEMI) - AND - ST segment elevation myocardial infarction (STEMI)
+Reference_point - AND - Drug ---------- receiving lidocaine - AND - lidocaine
+Reference_point - AND - Procedure ---------- completion of treatment - AND - treatment
+Reference_point - SUBSUMES - Reference_point ---------- the HCG triggering day - SUBSUMES - Day O/Randomization
+Scope - AND - Condition ---------- biopsy-proven metastatic carcinoid tumors or other neuroendocrine tumors (Islet cell, Gastrinomas and VIPomas) - AND - measurable lesion
+Scope - AND - Device ---------- severe cardiac insufficiency patients taking Coumadin or other warfarin-containing agents with the exception of low dose warfarin (1 mg or less) - AND - in-dwelling lines
+Scope - AND - Drug ---------- Coumadin or other warfarin-containing agents - AND - warfarin
+Scope - AND - Measurement ---------- active hepatitis C - AND - liver tests
+Scope - AND - Person ---------- systolic BP < 150 and diastolic BP < 90 mmHg - AND - aged
+Scope - AND - Procedure ---------- history of brain metastases - AND - head CT with contrast
+Scope - AND - Visit ---------- tonsillectomy or adenotonsillectomy - AND - Children's Healthcare of Atlanta Egleston
+Scope - HAS_INDEX - Reference_point ---------- within 30 days or within 5 half-lives of the investigational drug - HAS_INDEX - of the investigational drug
+Scope - HAS_MOOD - Mood ---------- understand and sign the Informed Consent, and comply with all aspects of the protocol - HAS_MOOD - be able to
+Scope - HAS_MOOD - Observation ---------- sunny holiday, UV-light therapy or solarium use - HAS_MOOD - planning
+Scope - HAS_MULTIPLIER - Multiplier ---------- fluoxetine 80 mg/day, paroxetine 60 mg/day, fluvoxamine 300 mg/day, clomipramine 250 mg/day, sertraline 200 mg/day, citalopram 60 mg/day, escitalopram 30 mg/day - HAS_MULTIPLIER - one the following
+Scope - HAS_NEGATION - Negation ---------- non-melanoma skin cancer, prostate cancer, or cervical cancer in situ - HAS_NEGATION - except
+Scope - HAS_QUALIFIER - Qualifier ---------- non-melanoma skin cancer, prostate cancer, or cervical cancer in situ - HAS_QUALIFIER - curatively treated
+Scope - HAS_SCOPE - Scope ---------- fungal infection or pulmonary infiltrates - HAS_SCOPE - prior treated disease stable for 2 weeks is allowable
+Scope - HAS_TEMPORAL - Observation ---------- dysphagia or conditions predisposing to dysphagia - HAS_TEMPORAL - history of
+Scope - HAS_TEMPORAL - Temporal ---------- chemotherapy, radiotherapy, or surgery - HAS_TEMPORAL - Prior
+Scope - HAS_VALUE - Value ---------- positron emission tomography [PET], computed tomography [CT] scan or ultrasound - HAS_VALUE - greater than 100 ml in volume
+Scope - SUBSUMES - Condition ---------- negative PPD patch test - SUBSUMES - allergic contact dermatitis
+Scope - SUBSUMES - Device ---------- single or dual chamber MRI conditional pacemaker - SUBSUMES - BSCI
+Scope - SUBSUMES - Drug ---------- clopidogrel or ticagrelor - SUBSUMES - any of its components
+Scope - SUBSUMES - Measurement ---------- moderate or severe - SUBSUMES - Child Pugh
+Scope - SUBSUMES - Multiplier ---------- exclusively or predominantly - SUBSUMES - >50% meals
+Scope - SUBSUMES - Observation ---------- IIEF = 21 - SUBSUMES - IIEF-6
+Scope - SUBSUMES - Person ---------- Women of child-bearing potential - SUBSUMES - WCBP
+Scope - SUBSUMES - Qualifier ---------- de novo or restenotic - SUBSUMES - in-stent restenotic
+Scope - SUBSUMES - Scope ---------- major impairment of renal or hepatic function - SUBSUMES - total bilirubin <1.5 X ULN; AST, ALT<2.5X ULN (<5 X ULN if liver metastases are present)
+Scope - SUBSUMES - Temporal ---------- Female sterilization (have had surgical bilateral oophorectomy with or without hysterectomy) or tubal ligation - SUBSUMES - at least six weeks before taking study treatment
+Temporal - AND - Condition ---------- six (6) months or more - AND - menstrual period
+Temporal - AND - Drug ---------- within 7 days of first dose - AND - 852A
+Temporal - AND - Procedure ---------- after stimulation - AND - stimulation
+Temporal - AND - Visit ---------- at the inclusion visit - AND - inclusion visit
+Temporal - HAS_INDEX - Reference_point ---------- since the radiation therapy - HAS_INDEX - radiation therapy
+Temporal - HAS_MOOD - Mood ---------- within the next 6 months - HAS_MOOD - planned
+Temporal - HAS_MOOD - Observation ---------- within the first six weeks of the study period - HAS_MOOD - planned use
+Temporal - HAS_MULTIPLIER - Multiplier ---------- 12-month periods - HAS_MULTIPLIER - 2 consecutive
+Temporal - HAS_QUALIFIER - Qualifier ---------- 3-min constant rate shuttle walking test - HAS_QUALIFIER - V3
+Temporal - HAS_SCOPE - Scope ---------- the night before a PET/MRI or clinic ratings visit. - HAS_SCOPE - PET/MRI or clinic ratings visit.
+Temporal - HAS_TEMPORAL - Temporal ---------- six (6) months or more - HAS_TEMPORAL - immediately prior to screening visit
+Temporal - HAS_VALUE - Value ---------- up to 30 days - HAS_VALUE - second
+Temporal - SUBSUMES - Scope ---------- in the current depressive episode - SUBSUMES - at least 6 weeks of treatment at a daily dose of 10mg or higher
+Temporal - SUBSUMES - Temporal ---------- Chronic - SUBSUMES - more than 14 days
+Temporal - SUBSUMES - Value ---------- brief - SUBSUMES - < 24 hrs
+Value - AND - Condition ---------- <5 X ULN - AND - liver metastases
+Value - AND - Drug ---------- >=1000 mg/day - AND - metformin
+Value - AND - Measurement ---------- positive - AND - HCV ribonucleic acid [RNA] PCR test
+Value - AND - Person ---------- 21 and older - AND - age
+Value - AND - Procedure ---------- 2 - AND - treatment regimens
+Value - HAS_INDEX - Reference_point ---------- older than 40 years - HAS_INDEX - older
+Value - HAS_MULTIPLIER - Multiplier ---------- > 160 mmHg - HAS_MULTIPLIER - on 2 consecutive measurements
+Value - HAS_NEGATION - Negation ---------- normal - HAS_NEGATION - has not returned
+Value - HAS_QUALIFIER - Qualifier ---------- at least one - HAS_QUALIFIER - site other than bone-only
+Value - HAS_SCOPE - Scope ---------- stage 5 - HAS_SCOPE - at eather on-time or off-time
+Value - HAS_TEMPORAL - Temporal ---------- 2 - HAS_TEMPORAL - consecutive
+Value - HAS_VALUE - Value ---------- 2 - HAS_VALUE - rises
+Value - SUBSUMES - Condition ---------- ≤ 2.5 x ULN - SUBSUMES - liver metastases
+Value - SUBSUMES - Measurement ---------- abnormal - SUBSUMES - creatinine
+Value - SUBSUMES - Qualifier ---------- E1 or E2 - SUBSUMES - involvement not exceeding 25 cm from the anal margin
+Value - SUBSUMES - Scope ---------- Adequate - SUBSUMES - absolute neutrophil count [ANC] ≥1,500/µL, hemoglobin ≥9.0 g/dL,and platelets ≥100,000/µL
+Value - SUBSUMES - Value ---------- positive - SUBSUMES - ≥ 2x the normal upper limit
+Visit - AND - Condition ---------- outpatient - AND - Obsessive-Compulsive Disorder
+Visit - AND - Drug ---------- Indian sites - AND - oral poliomyelitis vaccine (OPV)
+Visit - AND - Measurement ---------- ICUs - AND - average length of stay
+Visit - AND - Visit ---------- inpatient - AND - hospitalization
+Visit - HAS_MOOD - Mood ---------- interventional radiology department - HAS_MOOD - referred to
+Visit - HAS_MULTIPLIER - Multiplier ---------- emergency department visits - HAS_MULTIPLIER - >4
+Visit - HAS_QUALIFIER - Qualifier ---------- hospital - HAS_QUALIFIER - another
+Visit - HAS_SCOPE - Scope ---------- Indian sites - HAS_SCOPE - Moderate or severe acute illness/infection (according to investigator judgment) on the day of vaccination or febrile illness (temperature ≥ 38.0°C)
+Visit - HAS_TEMPORAL - Temporal ---------- hospitalization - HAS_TEMPORAL - recent
+Visit - SUBSUMES - Visit ---------- Ambulatory status - SUBSUMES - outpatient
 
 --------------------------------------------------------------------
 
@@ -1343,9 +1343,9 @@ DATASET
 ('citation_gia_test_collection', 'citation_gia_test_collection_bigbio_kb') - test - 151
 
 ENTITIES:
-DomainMotif
-Gene
 FamilyName
+Gene
+DomainMotif
 
 RELATIONS:
 
@@ -1367,9 +1367,9 @@ DATASET
 
 ENTITIES:
 CHEM
-PROC
-DISO
 ANAT
+DISO
+PROC
 
 RELATIONS:
 
@@ -1380,9 +1380,9 @@ DATASET
 
 ENTITIES:
 CHEM
-PROC
-DISO
 ANAT
+DISO
+PROC
 
 RELATIONS:
 
@@ -1392,57 +1392,57 @@ DATASET
 ('ddi_corpus', 'ddi_corpus_bigbio_kb') - train - 714
 
 ENTITIES:
+DRUG
 GROUP
 BRAND
-DRUG
 DRUG_N
 
 RELATIONS:
-BRAND - INT - GROUP
-DRUG - EFFECT - BRAND
-GROUP - MECHANISM - DRUG
-DRUG - INT - DRUG
-DRUG - ADVISE - BRAND
-GROUP - EFFECT - GROUP
-DRUG_N - EFFECT - DRUG
-BRAND - MECHANISM - DRUG
-BRAND - ADVISE - DRUG
-DRUG - ADVISE - GROUP
-GROUP - INT - GROUP
-BRAND - EFFECT - GROUP
-GROUP - EFFECT - DRUG_N
-DRUG - MECHANISM - DRUG_N
-GROUP - ADVISE - GROUP
-DRUG - MECHANISM - GROUP
-GROUP - INT - DRUG
-DRUG_N - EFFECT - GROUP
-GROUP - EFFECT - DRUG
-BRAND - INT - DRUG
-GROUP - EFFECT - BRAND
-DRUG - ADVISE - DRUG
-BRAND - ADVISE - BRAND
-GROUP - MECHANISM - DRUG_N
-DRUG - EFFECT - DRUG
-BRAND - MECHANISM - GROUP
-BRAND - MECHANISM - BRAND
-GROUP - ADVISE - BRAND
-DRUG_N - EFFECT - BRAND
-BRAND - EFFECT - BRAND
-DRUG - INT - BRAND
-DRUG_N - MECHANISM - GROUP
-DRUG_N - EFFECT - DRUG_N
-DRUG - MECHANISM - BRAND
-GROUP - MECHANISM - GROUP
-BRAND - EFFECT - DRUG
-BRAND - ADVISE - GROUP
-GROUP - MECHANISM - BRAND
-DRUG - EFFECT - DRUG_N
-DRUG_N - MECHANISM - DRUG
-DRUG - INT - DRUG_N
-DRUG - INT - GROUP
-DRUG - MECHANISM - DRUG
-DRUG - EFFECT - GROUP
-GROUP - ADVISE - DRUG
+BRAND - ADVISE - BRAND ---------- PEGANONE - ADVISE - Phenurone
+BRAND - ADVISE - DRUG ---------- EQUETROTM - ADVISE - alcohol
+BRAND - ADVISE - GROUP ---------- EQUETROTM - ADVISE - centrally acting drugs
+BRAND - EFFECT - BRAND ---------- aspirin - EFFECT - CELEBREX
+BRAND - EFFECT - DRUG ---------- Innovar Vet - EFFECT - ouabain
+BRAND - EFFECT - GROUP ---------- Nalfon - EFFECT - loop diuretics
+BRAND - INT - DRUG ---------- HUMORSOL - INT - succinylcholine
+BRAND - INT - GROUP ---------- HUMORSOL - INT - anticholinesterase agents
+BRAND - MECHANISM - BRAND ---------- aspirin - MECHANISM - Nalfon
+BRAND - MECHANISM - DRUG ---------- EQUETROTM - MECHANISM - Acetazolamide
+BRAND - MECHANISM - GROUP ---------- EQUETROTM - MECHANISM - azole antifungals
+DRUG - ADVISE - BRAND ---------- phenobarbital - ADVISE - Nalfon
+DRUG - ADVISE - DRUG ---------- sirolimus - ADVISE - diltiazem
+DRUG - ADVISE - GROUP ---------- Sildenafil - ADVISE - long-acting nitrates
+DRUG - EFFECT - BRAND ---------- ouabain - EFFECT - Innovar
+DRUG - EFFECT - DRUG ---------- acetaminophen - EFFECT - caffeine
+DRUG - EFFECT - DRUG_N ---------- 1,25(OH)2D3 - EFFECT - TAM
+DRUG - EFFECT - GROUP ---------- carbamazepine - EFFECT - tricyclic antidepressant
+DRUG - INT - BRAND ---------- Bentiromide - INT - Tylenol
+DRUG - INT - DRUG ---------- prostaglandin F2alpha - INT - oxytocin
+DRUG - INT - DRUG_N ---------- Bentiromide - INT - para-aminobenzoic acid
+DRUG - INT - GROUP ---------- warfarin - INT - sedatives
+DRUG - MECHANISM - BRAND ---------- fenoprofen - MECHANISM - aspirin
+DRUG - MECHANISM - DRUG ---------- Amprenavir - MECHANISM - rifabutin
+DRUG - MECHANISM - DRUG_N ---------- Vitamin D3 - MECHANISM - arsenate
+DRUG - MECHANISM - GROUP ---------- trovafloxacin - MECHANISM - opiate
+DRUG_N - EFFECT - BRAND ---------- heroin - EFFECT - Valium
+DRUG_N - EFFECT - DRUG ---------- TAM - EFFECT - 1,25(OH)2D3
+DRUG_N - EFFECT - DRUG_N ---------- neurotensin - EFFECT - enkephalins
+DRUG_N - EFFECT - GROUP ---------- GL - EFFECT - antibiotics
+DRUG_N - MECHANISM - DRUG ---------- Misonidazole - MECHANISM - CCNU
+DRUG_N - MECHANISM - GROUP ---------- mineral oil - MECHANISM - vitamin K
+GROUP - ADVISE - BRAND ---------- Estrogen - ADVISE - ARIMIDEX
+GROUP - ADVISE - DRUG ---------- Thyroid - ADVISE - digoxin
+GROUP - ADVISE - GROUP ---------- antiretroviral - ADVISE - antineoplastic drugs
+GROUP - EFFECT - BRAND ---------- nitric oxide donor compounds - EFFECT - INOmax
+GROUP - EFFECT - DRUG ---------- nitrate - EFFECT - sildenafil
+GROUP - EFFECT - DRUG_N ---------- glucocorticoids - EFFECT - EGF
+GROUP - EFFECT - GROUP ---------- macrolide antibiotics - EFFECT - hydroxymethylglutaryl coenzyme A (HMG-CoA) reductase inhibitors
+GROUP - INT - DRUG ---------- hydantoin antiepileptic - INT - phenytoin
+GROUP - INT - GROUP ---------- antidepressant drugs - INT - hypoglycemic agents
+GROUP - MECHANISM - BRAND ---------- volatile inhalation anesthetics - MECHANISM - ALFENTA
+GROUP - MECHANISM - DRUG ---------- penicillins - MECHANISM - probenecid
+GROUP - MECHANISM - DRUG_N ---------- hormonal contraceptives - MECHANISM - clofibric acid
+GROUP - MECHANISM - GROUP ---------- vitamin D analogues - MECHANISM - corticosteroids
 
 --------------------------------------------------------------------
 
@@ -1470,23 +1470,23 @@ DATASET
 ('ebm_pico', 'ebm_pico_bigbio_kb') - train - 4746
 
 ENTITIES:
-Outcome_Physical
-Outcome_Mental
 Outcome_Other
+Outcome_Mental
 Intervention_Pharmacological
-Intervention_Control
 Participant_Sex
-Intervention_Educational
-Intervention_Physical
-Outcome_Adverse-effects
-Intervention_Surgical
-Intervention_Other
 Intervention_Psychological
 Outcome_Pain
-Participant_Condition
 Participant_Age
+Outcome_Adverse-effects
+Participant_Condition
 Participant_Sample-size
+Intervention_Physical
+Intervention_Surgical
+Intervention_Control
+Outcome_Physical
+Intervention_Educational
 Outcome_Mortality
+Intervention_Other
 
 RELATIONS:
 
@@ -1498,14 +1498,14 @@ DATASET
 ENTITIES:
 
 Diseases & Disorders
-Genes & Molecular Sequences
 SNP & Sequence variations
 Chemicals & Drugs
+Genes & Molecular Sequences
 
 RELATIONS:
- - PA - 
- - SA - 
- - NA - 
+ - NA -  ---------- oxcarbazepine - NA - major side effects
+ - PA -  ---------- oxcarbazepine - PA - perioperative seizures
+ - SA -  ---------- antiepileptic agents - SA - perioperative seizures
 
 --------------------------------------------------------------------
 
@@ -1555,166 +1555,166 @@ DATASET
 
 ENTITIES:
 
-DNA_substructure
 (BUT_NOT protein_family_or_group protein_family_or_group)
-(OR polynucleotide polynucleotide)
-(AND cell_line cell_line)
-(OR other_organic_compound other_organic_compound other_organic_compound)
-protein_molecule
-(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
-(AND virus virus)
-(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
-(AND amino_acid_monomer amino_acid_monomer)
-RNA_substructure
-(BUT_NOT DNA_domain_or_region DNA_domain_or_region)
-DNA_N/A
-(AND amino_acid_monomer amino_acid_monomer amino_acid_monomer)
-(AS_WELL_AS DNA_domain_or_region DNA_domain_or_region)
-(AND protein_substructure protein_substructure)
-(OR cell_line cell_line cell_line)
-(AND cell_line cell_line cell_line cell_line cell_line cell_line)
-RNA_domain_or_region
-(AND peptide peptide)
-(OR tissue tissue)
-DNA_domain_or_region
-(AND protein_subunit protein_subunit)
-lipid
-(AND (OR other_name other_name) (OR other_name other_name))
-virus
-(AND peptide peptide peptide)
-RNA_N/A
-(AND/OR other_name other_name)
-(OR RNA_molecule RNA_molecule)
-(AND DNA_family_or_group DNA_family_or_group)
-(OR virus virus)
-(AND other_name other_name other_name other_name)
-cell_component
-(AND atom atom)
-(AND carbohydrate carbohydrate)
-(OR RNA_family_or_group RNA_family_or_group)
-(OR other_name other_name other_name other_name)
-(AND nucleotide nucleotide nucleotide nucleotide nucleotide)
-(OR DNA_family_or_group DNA_family_or_group)
-(AND cell_type cell_type cell_type cell_type)
-(AND cell_line (OR cell_line cell_line))
-inorganic
-(AND multi_cell multi_cell)
-(BUT_NOT other_name (OR other_name other_name other_name))
-(OR DNA_molecule DNA_molecule DNA_molecule DNA_molecule DNA_molecule)
-(AND other_organic_compound other_organic_compound)
-(OR other_organic_compound other_organic_compound)
-(AND protein_N/A protein_N/A)
-nucleotide
-(AND protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
-(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
-(AND_NOT cell_line cell_line)
-RNA_family_or_group
-(AND RNA_family_or_group RNA_family_or_group)
-(AND/OR RNA_molecule RNA_molecule)
-body_part
-(AND protein_family_or_group protein_family_or_group)
-(AND RNA_molecule RNA_molecule RNA_molecule)
-(AND DNA_domain_or_region DNA_domain_or_region)
-(AND other_name other_name other_name)
-(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
-(AND DNA_molecule DNA_molecule)
-(AND nucleotide nucleotide nucleotide nucleotide)
-(OR cell_type cell_type)
-(OR nucleotide nucleotide nucleotide)
-(AND cell_type cell_type cell_type cell_type cell_type cell_type)
-other_organic_compound
-(TO other_name other_name)
-(AND protein_complex protein_complex protein_complex protein_complex)
-polynucleotide
-(VERSUS protein_subunit protein_subunit)
-peptide
-(OR DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
-(OR DNA_domain_or_region DNA_domain_or_region)
-(AND other_name other_name)
-cell_line
-(OR cell_line cell_line)
-DNA_molecule
-(NOT_ONLY_BUT_ALSO (OR other_name other_name) other_name)
-DNA_family_or_group
-(OR other_name other_name other_name)
-(AND RNA_molecule RNA_molecule)
-other_name
-(OR inorganic inorganic)
-(AS_WELL_AS other_name other_name)
 (BUT_NOT protein_molecule protein_molecule)
-(TO cell_type cell_type)
-(AND protein_domain_or_region protein_domain_or_region)
-RNA_molecule
-(AND cell_type cell_type)
-(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
-(OR protein_subunit protein_subunit)
-(BUT_NOT cell_type cell_type)
-carbohydrate
-(OR protein_molecule protein_molecule protein_molecule)
-(AND body_part body_part body_part)
-(OR DNA_substructure DNA_substructure)
-(OR DNA_molecule DNA_molecule DNA_molecule)
-(AND tissue tissue)
-(AND cell_component cell_component cell_component)
-(AND polynucleotide polynucleotide)
-amino_acid_monomer
-tissue
-(AND DNA_family_or_group DNA_family_or_group DNA_family_or_group)
-(AND protein_domain_or_region protein_domain_or_region protein_domain_or_region protein_domain_or_region)
-(AND protein_molecule protein_molecule protein_molecule protein_molecule)
-(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
-(OR other_name other_name)
-(AND other_artificial_source other_artificial_source)
-(AND RNA_N/A RNA_N/A)
-(OR (AND protein_complex protein_complex) (AND protein_complex protein_complex))
-protein_domain_or_region
-(OR protein_complex protein_complex)
-atom
-(AND cell_type cell_type cell_type)
-protein_substructure
-(OR protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
-protein_subunit
-(AND protein_family_or_group protein_family_or_group protein_family_or_group)
-(AND (AND other_name other_name) (AND other_name other_name))
-(OR DNA_molecule DNA_molecule)
-protein_N/A
-(BUT_NOT (AND cell_type cell_type) (OR cell_type cell_type))
-(OR protein_molecule protein_molecule)
-(AND protein_molecule protein_molecule protein_molecule)
-(OR multi_cell multi_cell)
-(OR protein_family_or_group protein_family_or_group)
-(AND other_name other_name other_name other_name other_name)
-(AND/OR DNA_domain_or_region DNA_domain_or_region)
-(BUT_NOT RNA_molecule RNA_molecule)
-(AND cell_line cell_line cell_line cell_line)
-mono_cell
-multi_cell
-(AND multi_cell multi_cell multi_cell)
-(AND cell_type cell_type cell_type cell_type cell_type)
-(OR protein_domain_or_region protein_domain_or_region protein_domain_or_region)
-(AND cell_line cell_line cell_line)
-(NEITHER_NOR RNA_molecule RNA_molecule)
-(BUT_NOT other_name other_name)
-protein_family_or_group
-other_artificial_source
-(BUT_NOT protein_molecule (OR protein_molecule protein_molecule))
-(AND protein_complex protein_complex)
 (THAN cell_type cell_type)
-(OR lipid lipid lipid)
-(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
-protein_complex
-(BUT_NOT cell_line cell_line)
-(AND_NOT cell_type cell_type)
-(OR protein_domain_or_region protein_domain_or_region)
-cell_type
-(AND body_part body_part)
-(BUT_NOT cell_line (AND cell_line cell_line cell_line))
-(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
-(AND/OR protein_family_or_group protein_family_or_group)
-(AND lipid lipid)
-(AND/OR cell_type cell_type)
-(AND protein_molecule protein_molecule)
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
+(OR cell_line cell_line)
+(OR other_organic_compound other_organic_compound other_organic_compound)
+RNA_N/A
+(OR protein_family_or_group protein_family_or_group)
+protein_substructure
+carbohydrate
+(AND polynucleotide polynucleotide)
+(AND other_artificial_source other_artificial_source)
+(AND DNA_molecule DNA_molecule)
+(OR cell_line cell_line cell_line)
+(AND/OR DNA_domain_or_region DNA_domain_or_region)
+other_organic_compound
+(AND RNA_family_or_group RNA_family_or_group)
+(AND protein_family_or_group protein_family_or_group)
+protein_subunit
+(AND RNA_molecule RNA_molecule RNA_molecule)
+(AND protein_complex protein_complex protein_complex protein_complex)
+other_name
+(AND carbohydrate carbohydrate)
+(BUT_NOT other_name (OR other_name other_name other_name))
+(AND protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
+(AND cell_line cell_line)
+(OR multi_cell multi_cell)
+(OR protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group)
 (AND cell_component cell_component)
+amino_acid_monomer
+(BUT_NOT other_name other_name)
+(AND lipid lipid)
+protein_complex
+(AND cell_component cell_component cell_component)
+(AND multi_cell multi_cell multi_cell)
+(VERSUS protein_subunit protein_subunit)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(OR protein_domain_or_region protein_domain_or_region)
+(AND DNA_family_or_group DNA_family_or_group)
+(AND protein_domain_or_region protein_domain_or_region)
+(AND protein_N/A protein_N/A)
+(AND_NOT cell_type cell_type)
+(AND/OR RNA_molecule RNA_molecule)
+DNA_family_or_group
+(AND cell_line cell_line cell_line cell_line cell_line cell_line)
+(OR protein_subunit protein_subunit)
+(BUT_NOT cell_line cell_line)
+cell_component
+(AND protein_substructure protein_substructure)
+(OR tissue tissue)
+(OR (AND protein_complex protein_complex) (AND protein_complex protein_complex))
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
+(AND nucleotide nucleotide nucleotide nucleotide)
+RNA_substructure
+(AND multi_cell multi_cell)
+(AND protein_subunit protein_subunit)
+(AND other_name other_name other_name other_name)
+(OR protein_molecule protein_molecule)
+(AND/OR protein_family_or_group protein_family_or_group)
+lipid
+(OR DNA_molecule DNA_molecule DNA_molecule)
+(OR DNA_substructure DNA_substructure)
+(TO other_name other_name)
+(AND other_name other_name)
+virus
+protein_molecule
+(AND protein_molecule protein_molecule protein_molecule protein_molecule)
+cell_line
+(OR DNA_molecule DNA_molecule DNA_molecule DNA_molecule DNA_molecule)
+(OR other_name other_name other_name)
+(BUT_NOT RNA_molecule RNA_molecule)
+(OR lipid lipid lipid)
+(OR inorganic inorganic)
+mono_cell
+(OR other_name other_name)
+other_artificial_source
+polynucleotide
+(BUT_NOT cell_line (AND cell_line cell_line cell_line))
+(OR cell_type cell_type)
+(AND peptide peptide peptide)
+(OR protein_molecule protein_molecule protein_molecule)
+(OR polynucleotide polynucleotide)
+(AND amino_acid_monomer amino_acid_monomer amino_acid_monomer)
+(OR other_name other_name other_name other_name)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule RNA_molecule)
+(AND atom atom)
+(AND cell_type cell_type)
+(AND cell_line (OR cell_line cell_line))
+tissue
+(AND protein_complex protein_complex)
+(AND RNA_N/A RNA_N/A)
+protein_N/A
+(AND protein_family_or_group protein_family_or_group protein_family_or_group)
+(AND_NOT cell_line cell_line)
+(TO cell_type cell_type)
+body_part
+(OR protein_complex protein_complex)
+protein_domain_or_region
+(AND (OR other_name other_name) (OR other_name other_name))
+protein_family_or_group
+(AS_WELL_AS DNA_domain_or_region DNA_domain_or_region)
+(AND protein_molecule protein_molecule)
+(AND nucleotide nucleotide nucleotide nucleotide nucleotide)
+(BUT_NOT protein_molecule (OR protein_molecule protein_molecule))
+(AND tissue tissue)
+(NEITHER_NOR RNA_molecule RNA_molecule)
+inorganic
+(AND (AND other_name other_name) (AND other_name other_name))
+DNA_domain_or_region
+(AND body_part body_part body_part)
+(AND cell_line cell_line cell_line cell_line)
+(OR virus virus)
+(AND cell_line cell_line cell_line)
+(NOT_ONLY_BUT_ALSO (OR other_name other_name) other_name)
+RNA_molecule
+(OR DNA_molecule DNA_molecule)
+DNA_substructure
+(AND cell_type cell_type cell_type cell_type cell_type cell_type)
+(OR DNA_family_or_group DNA_family_or_group)
+(AND amino_acid_monomer amino_acid_monomer)
+(OR DNA_domain_or_region DNA_domain_or_region)
+(AND protein_molecule protein_molecule protein_molecule)
+(AND cell_type cell_type cell_type cell_type)
+(AND peptide peptide)
+(AND virus virus)
+(AND other_organic_compound other_organic_compound)
+(AND DNA_domain_or_region DNA_domain_or_region)
+(OR RNA_family_or_group RNA_family_or_group)
+(AND other_name other_name other_name other_name other_name)
+(AND DNA_family_or_group DNA_family_or_group DNA_family_or_group)
+(AND body_part body_part)
+(AND/OR other_name other_name)
+(AND cell_type cell_type cell_type)
+DNA_molecule
+multi_cell
+DNA_N/A
+(OR protein_domain_or_region protein_domain_or_region protein_domain_or_region)
+RNA_domain_or_region
+(AND other_name other_name other_name)
+(BUT_NOT cell_type cell_type)
+RNA_family_or_group
+(OR DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule)
+(OR other_organic_compound other_organic_compound)
+(BUT_NOT (AND cell_type cell_type) (OR cell_type cell_type))
+peptide
+(BUT_NOT DNA_domain_or_region DNA_domain_or_region)
+(AND RNA_molecule RNA_molecule)
+nucleotide
+(AND/OR cell_type cell_type)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region)
+(AS_WELL_AS other_name other_name)
+(AND cell_type cell_type cell_type cell_type cell_type)
+cell_type
+atom
+(AND protein_domain_or_region protein_domain_or_region protein_domain_or_region protein_domain_or_region)
+(OR RNA_molecule RNA_molecule)
+(OR nucleotide nucleotide nucleotide)
 
 RELATIONS:
 
@@ -1724,9 +1724,9 @@ DATASET
 ('gnormplus', 'gnormplus_bigbio_kb') - train - 432
 
 ENTITIES:
-DomainMotif
-Gene
 FamilyName
+Gene
+DomainMotif
 
 RELATIONS:
 
@@ -1739,7 +1739,7 @@ ENTITIES:
 protein
 
 RELATIONS:
-protein - PPI - protein
+protein - PPI - protein ---------- monocyte chemotactic protein-1 - PPI - CCR2
 
 --------------------------------------------------------------------
 
@@ -1750,7 +1750,7 @@ ENTITIES:
 
 
 RELATIONS:
- - PPI - 
+ - PPI -  ---------- Oxytocin - PPI - IP3
 
 --------------------------------------------------------------------
 
@@ -1758,17 +1758,17 @@ DATASET
 ('jnlpba', 'jnlpba_bigbio_kb') - train - 18546
 
 ENTITIES:
+0
+9
+10
+5
+1
+7
+3
+2
 8
 6
 4
-5
-9
-2
-0
-3
-7
-10
-1
 
 RELATIONS:
 
@@ -1807,27 +1807,27 @@ DATASET
 ('meddocan', 'meddocan_bigbio_kb') - train - 500
 
 ENTITIES:
-NOMBRE_PERSONAL_SANITARIO
-FAMILIARES_SUJETO_ASISTENCIA
-SEXO_SUJETO_ASISTENCIA
-ID_CONTACTO_ASISTENCIAL
-NUMERO_FAX
-ID_ASEGURAMIENTO
-HOSPITAL
-CALLE
-CORREO_ELECTRONICO
-OTROS_SUJETO_ASISTENCIA
-NUMERO_TELEFONO
-CENTRO_SALUD
-EDAD_SUJETO_ASISTENCIA
-INSTITUCION
-NOMBRE_SUJETO_ASISTENCIA
 ID_TITULACION_PERSONAL_SANITARIO
-FECHAS
-PROFESION
-PAIS
-TERRITORIO
 ID_SUJETO_ASISTENCIA
+INSTITUCION
+CALLE
+NUMERO_TELEFONO
+CORREO_ELECTRONICO
+FECHAS
+ID_ASEGURAMIENTO
+PROFESION
+NOMBRE_SUJETO_ASISTENCIA
+NOMBRE_PERSONAL_SANITARIO
+NUMERO_FAX
+CENTRO_SALUD
+FAMILIARES_SUJETO_ASISTENCIA
+HOSPITAL
+OTROS_SUJETO_ASISTENCIA
+SEXO_SUJETO_ASISTENCIA
+EDAD_SUJETO_ASISTENCIA
+PAIS
+ID_CONTACTO_ASISTENCIAL
+TERRITORIO
 
 RELATIONS:
 
@@ -1837,133 +1837,133 @@ DATASET
 ('medmentions', 'medmentions_full_bigbio_kb') - train - 2635
 
 ENTITIES:
-T097
-T109
-T051
-T099
-T200
-T055
+T095
+T072
+T070
+T045
 T192
-T007
-T021
-T053
-T030
-T010
 T047
-T090
-T012
-T031
-T002
-T067
-T014
-T054
-T168
-T126
-T025
-T042
-T091
-T101
-T203
-T196
-T080
-T083
-T098
-T201
-T185
-T038
-T037
-T093
-T085
-T121
-T096
-T197
-T005
-T195
+T130
 T081
-T087
+UnknownType
+T021
+T017
+T100
+T008
+T116
+T196
+T184
+T096
+T064
+T012
+T197
+T016
+T171
+T022
+T067
+T185
+T068
+T029
+T050
+T101
+T046
+T038
+T109
+T042
+T041
+T082
+T024
+T126
+T002
+T071
+T025
+T063
+T053
+T195
+T191
+T066
+T077
+T201
+T052
+T013
+T055
+T001
+T015
+T023
 T011
 T122
-T167
-T074
-T082
-T028
-T114
-T023
-T015
-T062
-T024
-T125
 T169
+T020
+T033
+T114
+T094
+T102
+T200
+T083
+T127
+T018
+T030
+T092
+T065
 T060
-T184
-T130
-T001
-T104
-T029
+T039
+T097
+T075
+T131
+T056
+T040
+T049
+T010
+T032
+T005
+T167
+T061
+T099
+T090
+T098
+T057
+T103
+T091
+T170
+T048
+T087
+T062
+T123
+T014
+T059
+T089
+T125
+T190
+T168
+T051
+T120
+T121
 T073
+T028
+T058
 T078
 T044
-T045
-T032
-T063
-T033
-T050
-T075
-T086
-T052
-T077
-T170
-T039
-T103
-T019
-T194
-T066
-T171
-T064
-T046
-T048
-T116
 T204
-T065
-T079
-T049
-T071
-UnknownType
-T191
-T127
-T100
-T056
-T089
-T058
-T092
-T057
-T059
-T131
-T043
-T061
-T070
-T120
-T013
-T040
-T016
-T008
-T095
-T022
-T190
-T034
-T123
-T102
-T018
+T085
+T037
+T093
 T004
-T129
-T068
-T017
-T094
-T020
-T041
-T072
-T069
 T026
+T069
+T194
+T203
+T104
+T007
+T031
+T043
+T129
+T079
+T086
+T034
+T019
+T054
+T080
+T074
 
 RELATIONS:
 
@@ -1973,27 +1973,27 @@ DATASET
 ('medmentions', 'medmentions_st21pv_bigbio_kb') - train - 2635
 
 ENTITIES:
-T098
-T097
-T038
-T201
-T037
-T007
-T005
-T092
-T058
-T074
-T082
 T033
-T031
-T022
-T062
 T168
+T038
+T058
+T082
+T092
+T204
+T097
+T037
 T017
-T170
+T005
+T007
+T031
+T098
 T103
 T091
-T204
+T201
+T170
+T022
+T062
+T074
 
 RELATIONS:
 
@@ -2004,11 +2004,11 @@ DATASET
 
 ENTITIES:
 Genes/Proteins
-Specific_miRNAs
-Relation_Trigger
-Non-Specific_miRNAs
 Diseases
 Species
+Specific_miRNAs
+Non-Specific_miRNAs
+Relation_Trigger
 
 RELATIONS:
 
@@ -2018,33 +2018,33 @@ DATASET
 ('mlee', 'mlee_bigbio_kb') - train - 131
 
 ENTITIES:
-Organism_subdivision
 Tissue
-Organism_substance
-Developing_anatomical_structure
-Pathological_formation
+Gene_or_gene_product
 Immaterial_anatomical_entity
+Organism
 Cellular_component
-Multi-tissue_structure
-Organ
+Cell
 Protein_domain_or_region
-DNA_domain_or_region
+Pathological_formation
+Developing_anatomical_structure
 Drug_or_compound
 Anatomical_system
-Cell
-Gene_or_gene_product
-Organism
+Organ
+DNA_domain_or_region
+Multi-tissue_structure
+Organism_substance
+Organism_subdivision
 
 RELATIONS:
-Multi-tissue_structure - FRAG - Multi-tissue_structure
-Tissue - FRAG - Tissue
-Organism - FRAG - Organism
-Pathological_formation - FRAG - Pathological_formation
-Cell - FRAG - Cell
-Cellular_component - FRAG - Cellular_component
-Gene_or_gene_product - FRAG - Gene_or_gene_product
-Drug_or_compound - FRAG - Drug_or_compound
-Organism_subdivision - FRAG - Organism_subdivision
+Cell - FRAG - Cell ---------- CD8(+) - FRAG - NK cells
+Cellular_component - FRAG - Cellular_component ---------- endothelial cell-substrate - FRAG - cell-cell contacts
+Drug_or_compound - FRAG - Drug_or_compound ---------- trans-10 - FRAG - cis-12 CLA isomers
+Gene_or_gene_product - FRAG - Gene_or_gene_product ---------- VEGFR-2 - FRAG - antibodies to the extracellular domain of VEGFR-1
+Multi-tissue_structure - FRAG - Multi-tissue_structure ---------- peripheral - FRAG - coronary artery
+Organism - FRAG - Organism ---------- E7 - FRAG - HPV-16 E6
+Organism_subdivision - FRAG - Organism_subdivision ---------- ischemic - FRAG - normal limb
+Pathological_formation - FRAG - Pathological_formation ---------- pancreatic - FRAG - non-small cell lung (NCI-H460) tumor xenograft
+Tissue - FRAG - Tissue ---------- visceral - FRAG - subcutaneous adipose tissue
 
 --------------------------------------------------------------------
 
@@ -2055,49 +2055,49 @@ ENTITIES:
 umlsterm
 
 RELATIONS:
-umlsterm - EVALUATION_OF - umlsterm
-umlsterm - AFFECTS - umlsterm
-umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
-umlsterm - MANIFESTATION_OF - umlsterm
-umlsterm - PRECEDES - umlsterm
-umlsterm - PART_OF - umlsterm
-umlsterm - ADJACENT_TO - umlsterm
-umlsterm - ASSOCIATED_WITH - umlsterm
-umlsterm - CONSISTS_OF - umlsterm
-umlsterm - MEASUREMENT_OF - umlsterm
-umlsterm - CAUSES - umlsterm
-umlsterm - ANALYZES - umlsterm
-umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
-umlsterm - DISRUPTS - umlsterm
-umlsterm - ISSUE_IN - umlsterm
-umlsterm - DERIVATIVE_OF - umlsterm
-umlsterm - INGREDIENT_OF - umlsterm
-umlsterm - CONCEPTUAL_PART_OF - umlsterm
-umlsterm - INTERACTS_WITH - umlsterm
-umlsterm - CONTAINS - umlsterm
-umlsterm - USES - umlsterm
-umlsterm - DIAGNOSES - umlsterm
-umlsterm - LOCATION_OF - umlsterm
-umlsterm - CONNECTED_TO - umlsterm
-umlsterm - DEGREE_OF - umlsterm
-umlsterm - ISA - umlsterm
-umlsterm - OCCURS_IN - umlsterm
-umlsterm - EXHIBITS - umlsterm
-umlsterm - MEASURES - umlsterm
-umlsterm - PRODUCES - umlsterm
-umlsterm - METHOD_OF - umlsterm
-umlsterm - CARRIES_OUT - umlsterm
-umlsterm - RESULT_OF - umlsterm
-umlsterm - INDICATES - umlsterm
-umlsterm - PROPERTY_OF - umlsterm
-umlsterm - ASSESSES_EFFECT_OF - umlsterm
-umlsterm - TREATS - umlsterm
-umlsterm - MANAGES - umlsterm
-umlsterm - PERFORMS - umlsterm
-umlsterm - CO-OCCURS_WITH - umlsterm
-umlsterm - COMPLICATES - umlsterm
-umlsterm - SURROUNDS - umlsterm
-umlsterm - INTERCONNECTS - umlsterm
+umlsterm - ADJACENT_TO - umlsterm ---------- blood vessels - ADJACENT_TO - blood
+umlsterm - AFFECTS - umlsterm ---------- age - AFFECTS - function
+umlsterm - ANALYZES - umlsterm ---------- orthopedic - ANALYZES - tears
+umlsterm - ASSESSES_EFFECT_OF - umlsterm ---------- operation - ASSESSES_EFFECT_OF - questionnaires
+umlsterm - ASSOCIATED_WITH - umlsterm ---------- surgical - ASSOCIATED_WITH - treatment
+umlsterm - CARRIES_OUT - umlsterm ---------- pathology - CARRIES_OUT - bone
+umlsterm - CAUSES - umlsterm ---------- OATS - CAUSES - treatment
+umlsterm - CO-OCCURS_WITH - umlsterm ---------- hemarthrosis - CO-OCCURS_WITH - NMR
+umlsterm - COMPLICATES - umlsterm ---------- orthopedic - COMPLICATES - tears
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm ---------- life - CONCEPTUALLY_RELATED_TO - sex
+umlsterm - CONCEPTUAL_PART_OF - umlsterm ---------- joint - CONCEPTUAL_PART_OF - knee joint
+umlsterm - CONNECTED_TO - umlsterm ---------- knee - CONNECTED_TO - vessels
+umlsterm - CONSISTS_OF - umlsterm ---------- ligament - CONSISTS_OF - blood
+umlsterm - CONTAINS - umlsterm ---------- stem cell - CONTAINS - blood
+umlsterm - DEGREE_OF - umlsterm ---------- foreign body reaction - DEGREE_OF - adhesive
+umlsterm - DERIVATIVE_OF - umlsterm ---------- ligament - DERIVATIVE_OF - fibrocartilage
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm ---------- blood - DEVELOPMENTAL_FORM_OF - vessels
+umlsterm - DIAGNOSES - umlsterm ---------- tenodesis - DIAGNOSES - surgical
+umlsterm - DISRUPTS - umlsterm ---------- vessels - DISRUPTS - blood
+umlsterm - EVALUATION_OF - umlsterm ---------- rehabilitation - EVALUATION_OF - range of motion
+umlsterm - EXHIBITS - umlsterm ---------- rat - EXHIBITS - treatments
+umlsterm - INDICATES - umlsterm ---------- sesamoid bone - INDICATES - bone
+umlsterm - INGREDIENT_OF - umlsterm ---------- factor VIII - INGREDIENT_OF - prothrombin complex
+umlsterm - INTERACTS_WITH - umlsterm ---------- joint - INTERACTS_WITH - vessels
+umlsterm - INTERCONNECTS - umlsterm ---------- blood - INTERCONNECTS - joint
+umlsterm - ISA - umlsterm ---------- knee - ISA - function
+umlsterm - ISSUE_IN - umlsterm ---------- fibrocartilage - ISSUE_IN - blood vessels
+umlsterm - LOCATION_OF - umlsterm ---------- blood vessels - LOCATION_OF - vessels
+umlsterm - MANAGES - umlsterm ---------- arthroscopy - MANAGES - incorporation
+umlsterm - MANIFESTATION_OF - umlsterm ---------- unprotected sex - MANIFESTATION_OF - drug use
+umlsterm - MEASUREMENT_OF - umlsterm ---------- joint - MEASUREMENT_OF - function
+umlsterm - MEASURES - umlsterm ---------- treatment - MEASURES - surgical
+umlsterm - METHOD_OF - umlsterm ---------- treatment - METHOD_OF - surgical
+umlsterm - OCCURS_IN - umlsterm ---------- tenodesis - OCCURS_IN - injury
+umlsterm - PART_OF - umlsterm ---------- blood - PART_OF - blood vessels
+umlsterm - PERFORMS - umlsterm ---------- knee - PERFORMS - MFL
+umlsterm - PRECEDES - umlsterm ---------- tears - PRECEDES - MRI
+umlsterm - PRODUCES - umlsterm ---------- blood - PRODUCES - vessels
+umlsterm - PROPERTY_OF - umlsterm ---------- Survey - PROPERTY_OF - quality of life
+umlsterm - RESULT_OF - umlsterm ---------- joint - RESULT_OF - function
+umlsterm - SURROUNDS - umlsterm ---------- vessels - SURROUNDS - knee
+umlsterm - TREATS - umlsterm ---------- patella - TREATS - graft
+umlsterm - USES - umlsterm ---------- proprioception - USES - joint
 
 --------------------------------------------------------------------
 
@@ -2108,48 +2108,48 @@ ENTITIES:
 umlsterm
 
 RELATIONS:
-umlsterm - EVALUATION_OF - umlsterm
-umlsterm - AFFECTS - umlsterm
-umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
-umlsterm - MANIFESTATION_OF - umlsterm
-umlsterm - PRECEDES - umlsterm
-umlsterm - PART_OF - umlsterm
-umlsterm - ADJACENT_TO - umlsterm
-umlsterm - ASSOCIATED_WITH - umlsterm
-umlsterm - CONSISTS_OF - umlsterm
-umlsterm - MEASUREMENT_OF - umlsterm
-umlsterm - CAUSES - umlsterm
-umlsterm - ANALYZES - umlsterm
-umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
-umlsterm - DISRUPTS - umlsterm
-umlsterm - ISSUE_IN - umlsterm
-umlsterm - DERIVATIVE_OF - umlsterm
-umlsterm - CONCEPTUAL_PART_OF - umlsterm
-umlsterm - INTERACTS_WITH - umlsterm
-umlsterm - CONTAINS - umlsterm
-umlsterm - USES - umlsterm
-umlsterm - DIAGNOSES - umlsterm
-umlsterm - LOCATION_OF - umlsterm
-umlsterm - CONNECTED_TO - umlsterm
-umlsterm - DEGREE_OF - umlsterm
-umlsterm - ISA - umlsterm
-umlsterm - OCCURS_IN - umlsterm
-umlsterm - EXHIBITS - umlsterm
-umlsterm - MEASURES - umlsterm
-umlsterm - PRODUCES - umlsterm
-umlsterm - METHOD_OF - umlsterm
-umlsterm - CARRIES_OUT - umlsterm
-umlsterm - RESULT_OF - umlsterm
-umlsterm - INDICATES - umlsterm
-umlsterm - PROPERTY_OF - umlsterm
-umlsterm - ASSESSES_EFFECT_OF - umlsterm
-umlsterm - TREATS - umlsterm
-umlsterm - MANAGES - umlsterm
-umlsterm - PERFORMS - umlsterm
-umlsterm - CO-OCCURS_WITH - umlsterm
-umlsterm - COMPLICATES - umlsterm
-umlsterm - SURROUNDS - umlsterm
-umlsterm - INTERCONNECTS - umlsterm
+umlsterm - ADJACENT_TO - umlsterm ---------- Kreuzbandplastik - ADJACENT_TO - Therapie
+umlsterm - AFFECTS - umlsterm ---------- Kanalsklerose - AFFECTS - Komplikation
+umlsterm - ANALYZES - umlsterm ---------- Kniegelenkverletzungen - ANALYZES - Kniegelenkverletzungen
+umlsterm - ASSESSES_EFFECT_OF - umlsterm ---------- Verhalten - ASSESSES_EFFECT_OF - Techniken
+umlsterm - ASSOCIATED_WITH - umlsterm ---------- Unfallursache - ASSOCIATED_WITH - Methode
+umlsterm - CARRIES_OUT - umlsterm ---------- Sensitivitaet und Spezifitaet - CARRIES_OUT - Diagnostik
+umlsterm - CAUSES - umlsterm ---------- Kanalsklerose - CAUSES - Komplikation
+umlsterm - CO-OCCURS_WITH - umlsterm ---------- Haemarthros - CO-OCCURS_WITH - Schmerz
+umlsterm - COMPLICATES - umlsterm ---------- Xylit - COMPLICATES - Proteinsynthese
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm ---------- verhaltensorientierte - CONCEPTUALLY_RELATED_TO - Lebensqualitaet
+umlsterm - CONCEPTUAL_PART_OF - umlsterm ---------- Standardroentgenaufnahmen - CONCEPTUAL_PART_OF - Magnetresonanztomographie
+umlsterm - CONNECTED_TO - umlsterm ---------- Bandes - CONNECTED_TO - Blutgefaesse
+umlsterm - CONSISTS_OF - umlsterm ---------- Wundblut - CONSISTS_OF - Interleukin-6
+umlsterm - CONTAINS - umlsterm ---------- Embryotransfer - CONTAINS - Embryotransfer
+umlsterm - DEGREE_OF - umlsterm ---------- Blutungen - DEGREE_OF - Therapie
+umlsterm - DERIVATIVE_OF - umlsterm ---------- Diagnose - DERIVATIVE_OF - Arthroskopie
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm ---------- Faserknorpelzone - DEVELOPMENTAL_FORM_OF - Blutgefaesse
+umlsterm - DIAGNOSES - umlsterm ---------- Gelenkkapsel - DIAGNOSES - Lasertherapie
+umlsterm - DISRUPTS - umlsterm ---------- Faserknorpelzone - DISRUPTS - Bandes
+umlsterm - EVALUATION_OF - umlsterm ---------- Muskelatrophie - EVALUATION_OF - Arthroskopie
+umlsterm - EXHIBITS - umlsterm ---------- Strassentauben - EXHIBITS - Rolle
+umlsterm - INDICATES - umlsterm ---------- Antikoerpertests - INDICATES - HIV-Infektion
+umlsterm - INTERACTS_WITH - umlsterm ---------- Faserknorpelzone - INTERACTS_WITH - Bandes
+umlsterm - INTERCONNECTS - umlsterm ---------- Blutgefaesse - INTERCONNECTS - Bandes
+umlsterm - ISA - umlsterm ---------- Patienten - ISA - Patienten
+umlsterm - ISSUE_IN - umlsterm ---------- Faserknorpelzone - ISSUE_IN - Bandes
+umlsterm - LOCATION_OF - umlsterm ---------- Chirurgie - LOCATION_OF - Verwendung
+umlsterm - MANAGES - umlsterm ---------- Kniegelenke - MANAGES - Patienten
+umlsterm - MANIFESTATION_OF - umlsterm ---------- Rolle - MANIFESTATION_OF - Amnesie
+umlsterm - MEASUREMENT_OF - umlsterm ---------- Propriozeption - MEASUREMENT_OF - Kniegelenks
+umlsterm - MEASURES - umlsterm ---------- Diagnose - MEASURES - Magnetresonanztomographie
+umlsterm - METHOD_OF - umlsterm ---------- Chirurgie - METHOD_OF - Techniken
+umlsterm - OCCURS_IN - umlsterm ---------- Therapie - OCCURS_IN - Methode
+umlsterm - PART_OF - umlsterm ---------- Knochenkanal - PART_OF - Techniken
+umlsterm - PERFORMS - umlsterm ---------- Unfall - PERFORMS - Schmerz
+umlsterm - PRECEDES - umlsterm ---------- Magnetresonanztomographie - PRECEDES - Diagnose
+umlsterm - PRODUCES - umlsterm ---------- Bandes - PRODUCES - Faserknorpelzone
+umlsterm - PROPERTY_OF - umlsterm ---------- Deutschland - PROPERTY_OF - Viren
+umlsterm - RESULT_OF - umlsterm ---------- Kniegelenks - RESULT_OF - Propriozeption
+umlsterm - SURROUNDS - umlsterm ---------- Blutgefaesse - SURROUNDS - Faserknorpelzone
+umlsterm - TREATS - umlsterm ---------- Unfall - TREATS - Schmerz
+umlsterm - USES - umlsterm ---------- Chirurgie - USES - Sekundaerstabilisatoren
 
 --------------------------------------------------------------------
 
@@ -2160,49 +2160,49 @@ ENTITIES:
 umlsterm
 
 RELATIONS:
-umlsterm - EVALUATION_OF - umlsterm
-umlsterm - AFFECTS - umlsterm
-umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm
-umlsterm - MANIFESTATION_OF - umlsterm
-umlsterm - PRECEDES - umlsterm
-umlsterm - PART_OF - umlsterm
-umlsterm - ADJACENT_TO - umlsterm
-umlsterm - ASSOCIATED_WITH - umlsterm
-umlsterm - CONSISTS_OF - umlsterm
-umlsterm - MEASUREMENT_OF - umlsterm
-umlsterm - CAUSES - umlsterm
-umlsterm - ANALYZES - umlsterm
-umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm
-umlsterm - DISRUPTS - umlsterm
-umlsterm - ISSUE_IN - umlsterm
-umlsterm - DERIVATIVE_OF - umlsterm
-umlsterm - INGREDIENT_OF - umlsterm
-umlsterm - CONCEPTUAL_PART_OF - umlsterm
-umlsterm - INTERACTS_WITH - umlsterm
-umlsterm - CONTAINS - umlsterm
-umlsterm - USES - umlsterm
-umlsterm - DIAGNOSES - umlsterm
-umlsterm - LOCATION_OF - umlsterm
-umlsterm - CONNECTED_TO - umlsterm
-umlsterm - DEGREE_OF - umlsterm
-umlsterm - ISA - umlsterm
-umlsterm - OCCURS_IN - umlsterm
-umlsterm - EXHIBITS - umlsterm
-umlsterm - MEASURES - umlsterm
-umlsterm - PRODUCES - umlsterm
-umlsterm - METHOD_OF - umlsterm
-umlsterm - CARRIES_OUT - umlsterm
-umlsterm - RESULT_OF - umlsterm
-umlsterm - INDICATES - umlsterm
-umlsterm - PROPERTY_OF - umlsterm
-umlsterm - ASSESSES_EFFECT_OF - umlsterm
-umlsterm - TREATS - umlsterm
-umlsterm - MANAGES - umlsterm
-umlsterm - PERFORMS - umlsterm
-umlsterm - CO-OCCURS_WITH - umlsterm
-umlsterm - COMPLICATES - umlsterm
-umlsterm - SURROUNDS - umlsterm
-umlsterm - INTERCONNECTS - umlsterm
+umlsterm - ADJACENT_TO - umlsterm ---------- blood vessels - ADJACENT_TO - blood
+umlsterm - AFFECTS - umlsterm ---------- age - AFFECTS - function
+umlsterm - ANALYZES - umlsterm ---------- orthopedic - ANALYZES - tears
+umlsterm - ASSESSES_EFFECT_OF - umlsterm ---------- operation - ASSESSES_EFFECT_OF - questionnaires
+umlsterm - ASSOCIATED_WITH - umlsterm ---------- surgical - ASSOCIATED_WITH - treatment
+umlsterm - CARRIES_OUT - umlsterm ---------- pathology - CARRIES_OUT - bone
+umlsterm - CAUSES - umlsterm ---------- OATS - CAUSES - treatment
+umlsterm - CO-OCCURS_WITH - umlsterm ---------- hemarthrosis - CO-OCCURS_WITH - NMR
+umlsterm - COMPLICATES - umlsterm ---------- orthopedic - COMPLICATES - tears
+umlsterm - CONCEPTUALLY_RELATED_TO - umlsterm ---------- life - CONCEPTUALLY_RELATED_TO - sex
+umlsterm - CONCEPTUAL_PART_OF - umlsterm ---------- joint - CONCEPTUAL_PART_OF - knee joint
+umlsterm - CONNECTED_TO - umlsterm ---------- knee - CONNECTED_TO - vessels
+umlsterm - CONSISTS_OF - umlsterm ---------- ligament - CONSISTS_OF - blood
+umlsterm - CONTAINS - umlsterm ---------- stem cell - CONTAINS - blood
+umlsterm - DEGREE_OF - umlsterm ---------- foreign body reaction - DEGREE_OF - adhesive
+umlsterm - DERIVATIVE_OF - umlsterm ---------- ligament - DERIVATIVE_OF - fibrocartilage
+umlsterm - DEVELOPMENTAL_FORM_OF - umlsterm ---------- blood - DEVELOPMENTAL_FORM_OF - vessels
+umlsterm - DIAGNOSES - umlsterm ---------- tenodesis - DIAGNOSES - surgical
+umlsterm - DISRUPTS - umlsterm ---------- vessels - DISRUPTS - blood
+umlsterm - EVALUATION_OF - umlsterm ---------- rehabilitation - EVALUATION_OF - range of motion
+umlsterm - EXHIBITS - umlsterm ---------- rat - EXHIBITS - treatments
+umlsterm - INDICATES - umlsterm ---------- sesamoid bone - INDICATES - bone
+umlsterm - INGREDIENT_OF - umlsterm ---------- factor VIII - INGREDIENT_OF - prothrombin complex
+umlsterm - INTERACTS_WITH - umlsterm ---------- joint - INTERACTS_WITH - vessels
+umlsterm - INTERCONNECTS - umlsterm ---------- blood - INTERCONNECTS - joint
+umlsterm - ISA - umlsterm ---------- knee - ISA - function
+umlsterm - ISSUE_IN - umlsterm ---------- fibrocartilage - ISSUE_IN - blood vessels
+umlsterm - LOCATION_OF - umlsterm ---------- blood vessels - LOCATION_OF - vessels
+umlsterm - MANAGES - umlsterm ---------- arthroscopy - MANAGES - incorporation
+umlsterm - MANIFESTATION_OF - umlsterm ---------- unprotected sex - MANIFESTATION_OF - drug use
+umlsterm - MEASUREMENT_OF - umlsterm ---------- joint - MEASUREMENT_OF - function
+umlsterm - MEASURES - umlsterm ---------- treatment - MEASURES - surgical
+umlsterm - METHOD_OF - umlsterm ---------- treatment - METHOD_OF - surgical
+umlsterm - OCCURS_IN - umlsterm ---------- tenodesis - OCCURS_IN - injury
+umlsterm - PART_OF - umlsterm ---------- blood - PART_OF - blood vessels
+umlsterm - PERFORMS - umlsterm ---------- knee - PERFORMS - MFL
+umlsterm - PRECEDES - umlsterm ---------- tears - PRECEDES - MRI
+umlsterm - PRODUCES - umlsterm ---------- blood - PRODUCES - vessels
+umlsterm - PROPERTY_OF - umlsterm ---------- Survey - PROPERTY_OF - quality of life
+umlsterm - RESULT_OF - umlsterm ---------- joint - RESULT_OF - function
+umlsterm - SURROUNDS - umlsterm ---------- vessels - SURROUNDS - knee
+umlsterm - TREATS - umlsterm ---------- patella - TREATS - graft
+umlsterm - USES - umlsterm ---------- proprioception - USES - joint
 
 --------------------------------------------------------------------
 
@@ -2210,10 +2210,10 @@ DATASET
 ('ncbi_disease', 'ncbi_disease_bigbio_kb') - train - 592
 
 ENTITIES:
-SpecificDisease
-CompositeMention
 Modifier
+CompositeMention
 DiseaseClass
+SpecificDisease
 
 RELATIONS:
 
@@ -2223,11 +2223,11 @@ DATASET
 ('nlm_gene', 'nlm_gene_bigbio_kb') - train - 450
 
 ENTITIES:
+GENERIF
+Other
+Gene
 Domain
 STARGENE
-Gene
-Other
-GENERIF
 
 RELATIONS:
 
@@ -2247,8 +2247,8 @@ DATASET
 ('osiris', 'osiris_bigbio_kb') - train - 105
 
 ENTITIES:
-gene
 variant
+gene
 
 RELATIONS:
 
@@ -2269,10 +2269,10 @@ DATASET
 ('pharmaconer', 'pharmaconer_bigbio_kb') - train - 500
 
 ENTITIES:
-NO_NORMALIZABLES
 PROTEINAS
-UNCLEAR
 NORMALIZABLES
+NO_NORMALIZABLES
+UNCLEAR
 
 RELATIONS:
 
@@ -2282,8 +2282,8 @@ DATASET
 ('pico_extraction', 'pico_extraction_bigbio_kb') - train - 421
 
 ENTITIES:
-intervention
 outcome
+intervention
 participant
 
 RELATIONS:
@@ -2305,14 +2305,14 @@ DATASET
 
 ENTITIES:
 GEOG
-PHEN
-ANAT
 OBJC
 LIVB
+PHEN
+PROC
+ANAT
+DISO
 CHEM
 DEVI
-PROC
-DISO
 PHYS
 
 RELATIONS:
@@ -2324,14 +2324,14 @@ DATASET
 
 ENTITIES:
 GEOG
-PHEN
-ANAT
 OBJC
 LIVB
+PHEN
 PROC
-DEVI
-CHEM
+ANAT
 DISO
+CHEM
+DEVI
 PHYS
 
 RELATIONS:
@@ -2343,12 +2343,12 @@ DATASET
 
 ENTITIES:
 
+TRIVIAL
 IUPAC
 SUM
-ABBREVIATION
-TRIVIAL
-PARTIUPAC
 TRIVIALVAR
+PARTIUPAC
+ABBREVIATION
 MODIFIER
 FAMILY
 
@@ -2360,8 +2360,8 @@ DATASET
 ('scai_disease', 'scai_disease_bigbio_kb') - train - 400
 
 ENTITIES:
-ADVERSE
 DISEASE
+ADVERSE
 
 RELATIONS:
 
@@ -2372,12 +2372,12 @@ DATASET
 
 ENTITIES:
 RS
-SNP
 Gene
+SNP
 
 RELATIONS:
-Gene - EQUALS - Gene
-SNP - ASSOCIATEDTO - Gene
+Gene - EQUALS - Gene ---------- fragile-X mental retardation 1 - EQUALS - FMR1
+SNP - ASSOCIATEDTO - Gene ---------- c.2991+1655A-->G - ASSOCIATEDTO - CEP290
 
 --------------------------------------------------------------------
 
@@ -2385,12 +2385,12 @@ DATASET
 ('spl_adr_200db', 'spl_adr_200db_train_bigbio_kb') - train - 101
 
 ENTITIES:
+Negation
+Severity
+AdverseReaction
 Factor
 Animal
 DrugClass
-AdverseReaction
-Severity
-Negation
 
 RELATIONS:
 
@@ -2431,8 +2431,8 @@ DATASET
 ('swedish_medical_ner', 'swedish_medical_ner_wiki_bigbio_kb') - train - 48720
 
 ENTITIES:
-disorder_finding
 body_structure
+disorder_finding
 
 RELATIONS:
 
@@ -2442,9 +2442,9 @@ DATASET
 ('tmvar_v1', 'tmvar_v1_bigbio_kb') - train - 334
 
 ENTITIES:
+ProteinMutation
 DNAMutation
 SNP
-ProteinMutation
 
 RELATIONS:
 
@@ -2454,9 +2454,9 @@ DATASET
 ('tmvar_v2', 'tmvar_v2_bigbio_kb') - train - 158
 
 ENTITIES:
+ProteinMutation
 DNAMutation
 SNP
-ProteinMutation
 
 RELATIONS:
 
@@ -2466,16 +2466,16 @@ DATASET
 ('tmvar_v3', 'tmvar_v3_bigbio_kb') - test - 500
 
 ENTITIES:
+Gene
+Species
+ProteinAllele
+CellLine
+DNAMutation
 DNAAllele
 OtherMutation
-SNP
-Gene
-ProteinAllele
-AcidChange
 ProteinMutation
-DNAMutation
-CellLine
-Species
+SNP
+AcidChange
 
 RELATIONS:
 
@@ -2495,59 +2495,59 @@ DATASET
 ('verspoor_2013', 'verspoor_2013_bigbio_kb') - train - 120
 
 ENTITIES:
-ethnicity
 gender
 Concepts_Ideas
-gene
-cohort-patient
-size
-mutation
-body-part
-Phenomena
-Disorder
-disease
+ethnicity
 age
+Phenomena
+cohort-patient
+body-part
+gene
+mutation
+disease
+size
+Disorder
 Physiology
 
 RELATIONS:
-Concepts_Ideas - HAS - disease
-mutation - HAS - size
-cohort-patient - HAS - ethnicity
-Phenomena - HAS - disease
-mutation - HAS - cohort-patient
-Concepts_Ideas - HAS - mutation
-cohort-patient - HAS - cohort-patient
-body-part - HAS - Concepts_Ideas
-age - HAS - Concepts_Ideas
-mutation - HAS - disease
-Physiology - HAS - size
-disease - RELATEDTO - mutation
-Disorder - HAS - mutation
-disease - RELATEDTO - gene
-Physiology - HAS - cohort-patient
-body-part - HAS - disease
-gene - HAS - mutation
-cohort-patient - HAS - mutation
-Concepts_Ideas - HAS - gender
-mutation - HAS - gene
-body-part - HAS - cohort-patient
-Disorder - HAS - gene
-Physiology - HAS - mutation
-cohort-patient - HAS - disease
-cohort-patient - HAS - gender
-cohort-patient - HAS - size
-body-part - HAS - Disorder
-Disorder - HAS - disease
-Phenomena - HAS - mutation
-Phenomena - HAS - cohort-patient
-Concepts_Ideas - HAS - cohort-patient
-Physiology - HAS - gene
-Concepts_Ideas - HAS - gene
-Disorder - HAS - cohort-patient
-Phenomena - HAS - gene
-age - HAS - cohort-patient
-Physiology - HAS - disease
-body-part - RELATEDTO - disease
+Concepts_Ideas - HAS - cohort-patient ---------- less frequently men - HAS - Patients
+Concepts_Ideas - HAS - disease ---------- serrated - HAS - adenomas
+Concepts_Ideas - HAS - gender ---------- less frequently men - HAS - men
+Concepts_Ideas - HAS - gene ---------- relatively higher frequency of K-ras mutations in codons 12 and 13 - HAS - K-ras
+Concepts_Ideas - HAS - mutation ---------- relatively higher frequency of K-ras mutations in codons 12 and 13 - HAS - mutations in codons 12 and 13
+Disorder - HAS - cohort-patient ---------- MSI- - HAS - tumors
+Disorder - HAS - disease ---------- hyperplastic - HAS - polyps
+Disorder - HAS - gene ---------- MMR inactivation - HAS - MMR
+Disorder - HAS - mutation ---------- APC- and MUTYH-mutation negative - HAS - mutation
+Phenomena - HAS - cohort-patient ---------- mutation-negative - HAS - mutation-negative patients
+Phenomena - HAS - disease ---------- did not respond to cisplatin/paclitaxel therapy - HAS - carcinomas
+Phenomena - HAS - gene ---------- stained negatively for MSH2 or/and MSH6 - HAS - MSH6
+Phenomena - HAS - mutation ---------- no detected APC mutation - HAS - mutation
+Physiology - HAS - cohort-patient ---------- CIMP- - HAS - tumors
+Physiology - HAS - disease ---------- CIMP+ - HAS - polyps
+Physiology - HAS - gene ---------- MLH1 promoter methylation - HAS - MLH1
+Physiology - HAS - mutation ---------- no BRAF p.Val600Glu mutation - HAS - p.Val600Glu
+Physiology - HAS - size ---------- No MLH1 mutations - HAS - No
+age - HAS - Concepts_Ideas ---------- older - HAS - older
+age - HAS - cohort-patient ---------- between the ages of 55 and 69 years - HAS - women
+body-part - HAS - Concepts_Ideas ---------- epithelial - HAS - epithelial serration
+body-part - HAS - Disorder ---------- colorectal - HAS - dense colorectal polyposis
+body-part - HAS - cohort-patient ---------- adjacent cells with eosinophilic cytoplasm - HAS - Group A
+body-part - HAS - disease ---------- infiltrating lymphocytes - HAS - tumors
+body-part - RELATEDTO - disease ---------- colorectal - RELATEDTO - tumors
+cohort-patient - HAS - cohort-patient ---------- MSI carriers - HAS - patients
+cohort-patient - HAS - disease ---------- patients - HAS - CRC
+cohort-patient - HAS - ethnicity ---------- study population - HAS - Netherlands
+cohort-patient - HAS - gender ---------- women - HAS - women
+cohort-patient - HAS - mutation ---------- tumors - HAS - mutant
+cohort-patient - HAS - size ---------- BRAF mutations - HAS - 43%
+disease - RELATEDTO - gene ---------- tumors - RELATEDTO - BRAF
+disease - RELATEDTO - mutation ---------- tumors - RELATEDTO - mutations
+gene - HAS - mutation ---------- BRAF - HAS - mutation
+mutation - HAS - cohort-patient ---------- both mutations - HAS - polyps
+mutation - HAS - disease ---------- somatic APC mutations - HAS - tumors
+mutation - HAS - gene ---------- somatic APC mutations - HAS - APC
+mutation - HAS - size ---------- mutation - HAS - 70–80%
 
 --------------------------------------------------------------------
 

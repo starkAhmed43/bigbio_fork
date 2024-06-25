@@ -1,0 +1,637 @@
+ ---------- 4
+(AND (AND other_name other_name) (AND other_name other_name)) ---------- 1
+(AND (OR other_name other_name) (OR other_name other_name)) ---------- 1
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND DNA_family_or_group DNA_family_or_group DNA_family_or_group) ---------- 1
+(AND DNA_family_or_group DNA_family_or_group) ---------- 1
+(AND DNA_molecule DNA_molecule) ---------- 1
+(AND RNA_N/A RNA_N/A) ---------- 1
+(AND RNA_family_or_group RNA_family_or_group) ---------- 1
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule RNA_molecule) ---------- 1
+(AND RNA_molecule RNA_molecule RNA_molecule RNA_molecule) ---------- 1
+(AND RNA_molecule RNA_molecule RNA_molecule) ---------- 1
+(AND RNA_molecule RNA_molecule) ---------- 1
+(AND amino_acid_monomer amino_acid_monomer amino_acid_monomer) ---------- 1
+(AND amino_acid_monomer amino_acid_monomer) ---------- 1
+(AND atom atom) ---------- 1
+(AND body_part body_part body_part) ---------- 1
+(AND body_part body_part) ---------- 1
+(AND carbohydrate carbohydrate) ---------- 1
+(AND cell_component cell_component cell_component) ---------- 1
+(AND cell_component cell_component) ---------- 1
+(AND cell_line (OR cell_line cell_line)) ---------- 1
+(AND cell_line cell_line cell_line cell_line cell_line cell_line) ---------- 1
+(AND cell_line cell_line cell_line cell_line) ---------- 1
+(AND cell_line cell_line cell_line) ---------- 1
+(AND cell_line cell_line) ---------- 1
+(AND cell_type cell_type cell_type cell_type cell_type cell_type) ---------- 1
+(AND cell_type cell_type cell_type cell_type cell_type) ---------- 1
+(AND cell_type cell_type cell_type cell_type) ---------- 1
+(AND cell_type cell_type cell_type) ---------- 1
+(AND cell_type cell_type) ---------- 1
+(AND lipid lipid) ---------- 1
+(AND multi_cell multi_cell multi_cell) ---------- 1
+(AND multi_cell multi_cell) ---------- 1
+(AND nucleotide nucleotide nucleotide nucleotide nucleotide) ---------- 1
+(AND nucleotide nucleotide nucleotide nucleotide) ---------- 1
+(AND other_artificial_source other_artificial_source) ---------- 1
+(AND other_name other_name other_name other_name other_name) ---------- 1
+(AND other_name other_name other_name other_name) ---------- 1
+(AND other_name other_name other_name) ---------- 1
+(AND other_name other_name) ---------- 1
+(AND other_organic_compound other_organic_compound) ---------- 1
+(AND peptide peptide peptide) ---------- 1
+(AND peptide peptide) ---------- 1
+(AND polynucleotide polynucleotide) ---------- 1
+(AND protein_N/A protein_N/A) ---------- 1
+(AND protein_complex protein_complex protein_complex protein_complex) ---------- 1
+(AND protein_complex protein_complex) ---------- 1
+(AND protein_domain_or_region protein_domain_or_region protein_domain_or_region protein_domain_or_region) ---------- 1
+(AND protein_domain_or_region protein_domain_or_region) ---------- 1
+(AND protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group) ---------- 1
+(AND protein_family_or_group protein_family_or_group protein_family_or_group) ---------- 1
+(AND protein_family_or_group protein_family_or_group) ---------- 1
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule) ---------- 1
+(AND protein_molecule protein_molecule protein_molecule protein_molecule protein_molecule) ---------- 1
+(AND protein_molecule protein_molecule protein_molecule protein_molecule) ---------- 1
+(AND protein_molecule protein_molecule protein_molecule) ---------- 1
+(AND protein_molecule protein_molecule) ---------- 1
+(AND protein_substructure protein_substructure) ---------- 1
+(AND protein_subunit protein_subunit) ---------- 1
+(AND tissue tissue) ---------- 1
+(AND virus virus) ---------- 1
+(AND/OR DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AND/OR RNA_molecule RNA_molecule) ---------- 1
+(AND/OR cell_type cell_type) ---------- 1
+(AND/OR other_name other_name) ---------- 1
+(AND/OR protein_family_or_group protein_family_or_group) ---------- 1
+(AND_NOT cell_line cell_line) ---------- 1
+(AND_NOT cell_type cell_type) ---------- 1
+(AS_WELL_AS DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(AS_WELL_AS other_name other_name) ---------- 1
+(BUT_NOT (AND cell_type cell_type) (OR cell_type cell_type)) ---------- 1
+(BUT_NOT DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(BUT_NOT RNA_molecule RNA_molecule) ---------- 1
+(BUT_NOT cell_line (AND cell_line cell_line cell_line)) ---------- 1
+(BUT_NOT cell_line cell_line) ---------- 1
+(BUT_NOT cell_type cell_type) ---------- 1
+(BUT_NOT other_name (OR other_name other_name other_name)) ---------- 1
+(BUT_NOT other_name other_name) ---------- 1
+(BUT_NOT protein_family_or_group protein_family_or_group) ---------- 1
+(BUT_NOT protein_molecule (OR protein_molecule protein_molecule)) ---------- 1
+(BUT_NOT protein_molecule protein_molecule) ---------- 1
+(NEITHER_NOR RNA_molecule RNA_molecule) ---------- 1
+(NOT_ONLY_BUT_ALSO (OR other_name other_name) other_name) ---------- 1
+(OR (AND protein_complex protein_complex) (AND protein_complex protein_complex)) ---------- 1
+(OR DNA_domain_or_region DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(OR DNA_domain_or_region DNA_domain_or_region) ---------- 1
+(OR DNA_family_or_group DNA_family_or_group) ---------- 1
+(OR DNA_molecule DNA_molecule DNA_molecule DNA_molecule DNA_molecule) ---------- 1
+(OR DNA_molecule DNA_molecule DNA_molecule) ---------- 1
+(OR DNA_molecule DNA_molecule) ---------- 1
+(OR DNA_substructure DNA_substructure) ---------- 1
+(OR RNA_family_or_group RNA_family_or_group) ---------- 1
+(OR RNA_molecule RNA_molecule) ---------- 1
+(OR cell_line cell_line cell_line) ---------- 1
+(OR cell_line cell_line) ---------- 1
+(OR cell_type cell_type) ---------- 1
+(OR inorganic inorganic) ---------- 1
+(OR lipid lipid lipid) ---------- 1
+(OR multi_cell multi_cell) ---------- 1
+(OR nucleotide nucleotide nucleotide) ---------- 1
+(OR other_name other_name other_name other_name) ---------- 1
+(OR other_name other_name other_name) ---------- 1
+(OR other_name other_name) ---------- 1
+(OR other_organic_compound other_organic_compound other_organic_compound) ---------- 1
+(OR other_organic_compound other_organic_compound) ---------- 1
+(OR polynucleotide polynucleotide) ---------- 1
+(OR protein_complex protein_complex) ---------- 1
+(OR protein_domain_or_region protein_domain_or_region protein_domain_or_region) ---------- 1
+(OR protein_domain_or_region protein_domain_or_region) ---------- 1
+(OR protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group protein_family_or_group) ---------- 1
+(OR protein_family_or_group protein_family_or_group) ---------- 1
+(OR protein_molecule protein_molecule protein_molecule) ---------- 1
+(OR protein_molecule protein_molecule) ---------- 1
+(OR protein_subunit protein_subunit) ---------- 1
+(OR tissue tissue) ---------- 1
+(OR virus virus) ---------- 1
+(THAN cell_type cell_type) ---------- 1
+(TO cell_type cell_type) ---------- 1
+(TO other_name other_name) ---------- 1
+(VERSUS protein_subunit protein_subunit) ---------- 1
+0 ---------- 1
+1 ---------- 1
+10 ---------- 1
+2 ---------- 1
+3 ---------- 1
+4 ---------- 1
+5 ---------- 1
+6 ---------- 1
+7 ---------- 1
+8 ---------- 1
+9 ---------- 1
+ABBREVIATION ---------- 1
+ADVERSE ---------- 1
+ANAT ---------- 4
+AP2EREBPRelatedDomain ---------- 1
+AcidChange ---------- 1
+AdverseReaction ---------- 1
+AminoAcid ---------- 1
+Amino_acid ---------- 1
+Anatomical_system ---------- 4
+Anatomy ---------- 2
+Animal ---------- 1
+AntisenseRNA ---------- 1
+Attenuator ---------- 1
+BRAND ---------- 1
+BasicDomain ---------- 1
+BindingAssay ---------- 1
+BindingSiteOfProtein ---------- 1
+Biological_Activity ---------- 3
+CALLE ---------- 1
+CENTRO_SALUD ---------- 1
+CHEM ---------- 4
+CHEMICAL ---------- 1
+CORREO_ELECTRONICO ---------- 1
+Cancer ---------- 2
+CatalyticActivity ---------- 1
+Cell ---------- 5
+CellComponent ---------- 3
+CellLine ---------- 4
+CellType ---------- 2
+Cellular_component ---------- 5
+Chemical ---------- 8
+ChemicalEntity ---------- 1
+Chemical_Structure ---------- 1
+Chemicals & Drugs ---------- 1
+Chromatin ---------- 1
+ChromosomalDNA ---------- 1
+Chromosome ---------- 1
+Complex ---------- 1
+ComplexMolecularEntity ---------- 1
+ComplexOfProteinAndDNA ---------- 1
+CompositeMention ---------- 1
+Concepts_Ideas ---------- 1
+Condition ---------- 1
+Conformation ---------- 1
+CpGIsland ---------- 1
+DEVI ---------- 2
+DIAGNOSTICO ---------- 1
+DISEASE ---------- 1
+DISO ---------- 4
+DNA ---------- 2
+DNAAllele ---------- 1
+DNABindingDomainOfProtein ---------- 1
+DNABindingSite ---------- 1
+DNAFragment ---------- 1
+DNAMolecule ---------- 1
+DNAMutation ---------- 3
+DNARegion ---------- 1
+DNA_N/A ---------- 1
+DNA_domain_or_region ---------- 3
+DNA_family_or_group ---------- 2
+DNA_molecule ---------- 1
+DNA_substructure ---------- 1
+DRUG ---------- 1
+DRUG_N ---------- 1
+Developing_anatomical_structure ---------- 4
+Device ---------- 1
+Disease ---------- 2
+DiseaseClass ---------- 1
+DiseaseOrPhenotypicFeature ---------- 1
+Diseases & Disorders ---------- 1
+Diseases ---------- 1
+Disorder ---------- 1
+Domain ---------- 1
+DomainMotif ---------- 2
+DoubleStrandDNA ---------- 1
+Drug ---------- 1
+DrugClass ---------- 1
+Drug_or_compound ---------- 1
+EDAD_SUJETO_ASISTENCIA ---------- 1
+ENFERMEDAD ---------- 2
+Enhancer ---------- 1
+Entity ---------- 6
+Enzyme ---------- 1
+Eukaryote ---------- 1
+EukaryoticCell ---------- 1
+Exon ---------- 1
+ExperimentalMethod ---------- 1
+ExpressionProfiling ---------- 1
+FAMILIARES_SUJETO_ASISTENCIA ---------- 1
+FAMILY ---------- 1
+FECHAS ---------- 1
+Factor ---------- 1
+FamilyName ---------- 2
+ForkheadWingedHelix ---------- 1
+ForkheadWingedHelixTF ---------- 1
+Function ---------- 1
+FusionGene ---------- 1
+FusionOfGeneWithReporterGene ---------- 1
+FusionProtein ---------- 1
+GENE-N ---------- 1
+GENE-Y ---------- 1
+GENERIF ---------- 1
+GEOG ---------- 2
+GROUP ---------- 1
+Gene ---------- 7
+Gene/protein/RNA ---------- 1
+GeneOrGeneProduct ---------- 1
+GeneProduct ---------- 1
+GeneProtein ---------- 2
+Gene_or_gene_product ---------- 3
+Genes & Molecular Sequences ---------- 1
+Genes/Proteins ---------- 1
+HMG ---------- 1
+HMGTF ---------- 1
+HOSPITAL ---------- 1
+Habitat ---------- 1
+Heterochromatin ---------- 1
+Histone ---------- 1
+Holoenzyme ---------- 1
+HomeoBox ---------- 1
+HomeoboxTF ---------- 1
+ID_ASEGURAMIENTO ---------- 1
+ID_CONTACTO_ASISTENCIAL ---------- 1
+ID_SUJETO_ASISTENCIA ---------- 1
+ID_TITULACION_PERSONAL_SANITARIO ---------- 1
+INSTITUCION ---------- 1
+IUPAC ---------- 1
+Immaterial_anatomical_entity ---------- 4
+Individual_protein ---------- 1
+InorganicChemical ---------- 1
+Intervention_Control ---------- 1
+Intervention_Educational ---------- 1
+Intervention_Other ---------- 1
+Intervention_Pharmacological ---------- 1
+Intervention_Physical ---------- 1
+Intervention_Psychological ---------- 1
+Intervention_Surgical ---------- 1
+Intron ---------- 1
+Ion ---------- 1
+LIVB ---------- 2
+Ligand ---------- 1
+Lipid ---------- 1
+LivingEntity ---------- 1
+Locus ---------- 1
+MODIFIER ---------- 1
+MORFOLOGIA_NEOPLASIA ---------- 1
+Measurement ---------- 1
+MessengerRNA ---------- 1
+Metabolite ---------- 3
+Microorganism ---------- 2
+Modifier ---------- 1
+MolecularEntity ---------- 1
+MolecularFunction ---------- 1
+MolecularStructure ---------- 1
+Mood ---------- 1
+Multi-tissue_structure ---------- 4
+Multiplier ---------- 1
+MutantProtein ---------- 1
+MutatedProtein ---------- 1
+NEWGENE ---------- 2
+NOMBRE_PERSONAL_SANITARIO ---------- 1
+NOMBRE_SUJETO_ASISTENCIA ---------- 1
+NORMALIZABLES ---------- 1
+NO_NORMALIZABLES ---------- 1
+NUMERO_FAX ---------- 1
+NUMERO_TELEFONO ---------- 1
+Negation ---------- 2
+Non-Specific_miRNAs ---------- 1
+NuclearReceptor ---------- 1
+NucleicAcid ---------- 1
+Nucleotide ---------- 1
+Nucleus ---------- 1
+OBJC ---------- 2
+OTROS_SUJETO_ASISTENCIA ---------- 1
+Observation ---------- 1
+OpenReadingFrame ---------- 1
+Operon ---------- 1
+Organ ---------- 4
+OrganicChemical ---------- 1
+Organism ---------- 3
+OrganismTaxon ---------- 1
+Organism_subdivision ---------- 4
+Organism_substance ---------- 4
+Other ---------- 1
+OtherMutation ---------- 1
+Outcome_Adverse-effects ---------- 1
+Outcome_Mental ---------- 1
+Outcome_Mortality ---------- 1
+Outcome_Other ---------- 1
+Outcome_Pain ---------- 1
+Outcome_Physical ---------- 1
+OxidativeStress ---------- 1
+PAIS ---------- 1
+PARTIUPAC ---------- 1
+PHEN ---------- 2
+PHYS ---------- 2
+PROC ---------- 4
+PROCEDIMIENTO ---------- 1
+PROFESION ---------- 1
+PROTEINAS ---------- 1
+Participant_Age ---------- 1
+Participant_Condition ---------- 1
+Participant_Sample-size ---------- 1
+Participant_Sex ---------- 1
+Pathological_formation ---------- 4
+Peptide ---------- 1
+Person ---------- 1
+Phenomena ---------- 1
+Phenotype ---------- 2
+PhysicalContact ---------- 1
+PhysicalContinuant ---------- 1
+Physiology ---------- 1
+Plant ---------- 1
+Polymerase ---------- 1
+PositiveTranscriptionRegulator ---------- 1
+PrimaryStructure ---------- 1
+Procedure ---------- 1
+Prokaryote ---------- 1
+Promoter ---------- 1
+Protein ---------- 12
+ProteinAllele ---------- 1
+ProteinBindingSiteOfDNA ---------- 1
+ProteinBindingSiteOfProtein ---------- 1
+ProteinCodingDNARegion ---------- 1
+ProteinCodingRegion ---------- 1
+ProteinComplex ---------- 1
+ProteinDomain ---------- 1
+ProteinIdentification ---------- 1
+ProteinMutation ---------- 3
+ProteinSubunit ---------- 1
+Protein_complex ---------- 1
+Protein_domain_or_region ---------- 2
+Protein_family_or_group ---------- 1
+Qualifier ---------- 1
+RNA ---------- 2
+RNA-family ---------- 1
+RNAPolymerase ---------- 1
+RNAPolymeraseII ---------- 1
+RNA_N/A ---------- 1
+RNA_domain_or_region ---------- 1
+RNA_family_or_group ---------- 1
+RNA_molecule ---------- 1
+RNA_substructure ---------- 1
+RS ---------- 1
+Reference_point ---------- 1
+RegulatoryDNARegion ---------- 1
+Regulon-operon ---------- 1
+Relation_Trigger ---------- 1
+ReporterGene ---------- 1
+ReporterGeneConstruction ---------- 1
+RibosomalRNA ---------- 1
+Ribosome ---------- 1
+RuntLikeDomain ---------- 1
+SEXO_SUJETO_ASISTENCIA ---------- 1
+SNP & Sequence variations ---------- 1
+SNP ---------- 4
+STARGENE ---------- 1
+SUM ---------- 1
+Scope ---------- 1
+SecondMessenger ---------- 1
+Sequence ---------- 1
+SequenceHomologyAnalysis ---------- 1
+SequenceVariant ---------- 1
+Severity ---------- 1
+Simple_chemical ---------- 2
+SmallInterferingRNA ---------- 1
+Species ---------- 7
+SpecificDisease ---------- 1
+Specific_miRNAs ---------- 1
+Spectral_Data ---------- 3
+Stress ---------- 1
+Substrate ---------- 1
+T001 ---------- 1
+T002 ---------- 1
+T004 ---------- 1
+T005 ---------- 2
+T007 ---------- 2
+T008 ---------- 1
+T010 ---------- 1
+T011 ---------- 1
+T012 ---------- 1
+T013 ---------- 1
+T014 ---------- 1
+T015 ---------- 1
+T016 ---------- 1
+T017 ---------- 2
+T018 ---------- 1
+T019 ---------- 1
+T020 ---------- 1
+T021 ---------- 1
+T022 ---------- 2
+T023 ---------- 1
+T024 ---------- 1
+T025 ---------- 1
+T026 ---------- 1
+T028 ---------- 1
+T029 ---------- 1
+T030 ---------- 1
+T031 ---------- 2
+T032 ---------- 1
+T033 ---------- 2
+T034 ---------- 1
+T037 ---------- 2
+T038 ---------- 2
+T039 ---------- 1
+T040 ---------- 1
+T041 ---------- 1
+T042 ---------- 1
+T043 ---------- 1
+T044 ---------- 1
+T045 ---------- 1
+T046 ---------- 1
+T047 ---------- 1
+T048 ---------- 1
+T049 ---------- 1
+T050 ---------- 1
+T051 ---------- 1
+T052 ---------- 1
+T053 ---------- 1
+T054 ---------- 1
+T055 ---------- 1
+T056 ---------- 1
+T057 ---------- 1
+T058 ---------- 2
+T059 ---------- 1
+T060 ---------- 1
+T061 ---------- 1
+T062 ---------- 2
+T063 ---------- 1
+T064 ---------- 1
+T065 ---------- 1
+T066 ---------- 1
+T067 ---------- 1
+T068 ---------- 1
+T069 ---------- 1
+T070 ---------- 1
+T071 ---------- 1
+T072 ---------- 1
+T073 ---------- 1
+T074 ---------- 2
+T075 ---------- 1
+T077 ---------- 1
+T078 ---------- 1
+T079 ---------- 1
+T080 ---------- 1
+T081 ---------- 1
+T082 ---------- 2
+T083 ---------- 1
+T085 ---------- 1
+T086 ---------- 1
+T087 ---------- 1
+T089 ---------- 1
+T090 ---------- 1
+T091 ---------- 2
+T092 ---------- 2
+T093 ---------- 1
+T094 ---------- 1
+T095 ---------- 1
+T096 ---------- 1
+T097 ---------- 2
+T098 ---------- 2
+T099 ---------- 1
+T100 ---------- 1
+T101 ---------- 1
+T102 ---------- 1
+T103 ---------- 2
+T104 ---------- 1
+T109 ---------- 1
+T114 ---------- 1
+T116 ---------- 1
+T120 ---------- 1
+T121 ---------- 1
+T122 ---------- 1
+T123 ---------- 1
+T125 ---------- 1
+T126 ---------- 1
+T127 ---------- 1
+T129 ---------- 1
+T130 ---------- 1
+T131 ---------- 1
+T167 ---------- 1
+T168 ---------- 2
+T169 ---------- 1
+T170 ---------- 2
+T171 ---------- 1
+T184 ---------- 1
+T185 ---------- 1
+T190 ---------- 1
+T191 ---------- 1
+T192 ---------- 1
+T194 ---------- 1
+T195 ---------- 1
+T196 ---------- 1
+T197 ---------- 1
+T200 ---------- 1
+T201 ---------- 2
+T203 ---------- 1
+T204 ---------- 2
+TATAbox ---------- 1
+TERRITORIO ---------- 1
+TRIVIAL ---------- 1
+TRIVIALVAR ---------- 1
+Temporal ---------- 1
+ThreeDimensionalMolecularStructure ---------- 1
+Tissue ---------- 5
+Transcript ---------- 1
+TranscriptionActivator ---------- 1
+TranscriptionActivatorActivity ---------- 1
+TranscriptionCoactivator ---------- 1
+TranscriptionCofactor ---------- 1
+TranscriptionCorepressor ---------- 1
+TranscriptionFactor ---------- 1
+TranscriptionFactorActivity ---------- 1
+TranscriptionFactorBindingSiteOfDNA ---------- 1
+TranscriptionFactorComplex ---------- 1
+TranscriptionRegulator ---------- 1
+TranscriptionRepressor ---------- 1
+TranscriptionRepressorActivity ---------- 1
+TranslationFactor ---------- 1
+Two-component-system ---------- 1
+UNCLEAR ---------- 1
+UnknownType ---------- 1
+UpstreamRegulatorySequence ---------- 1
+Value ---------- 1
+Virus ---------- 1
+Visit ---------- 1
+ZincCoordinatingDomain ---------- 1
+ZincCoordinatingDomainTF ---------- 1
+age ---------- 1
+amino-acid ---------- 1
+amino_acid_monomer ---------- 1
+assay ---------- 1
+atom ---------- 1
+bHLH ---------- 1
+bHLHTF ---------- 1
+bZIP ---------- 1
+bZIPTF ---------- 1
+body-part ---------- 1
+body_part ---------- 1
+body_structure ---------- 3
+brand ---------- 1
+carbohydrate ---------- 1
+cell ---------- 1
+cell_component ---------- 1
+cell_line ---------- 1
+cell_type ---------- 1
+chemical ---------- 1
+cohort-patient ---------- 1
+disease ---------- 2
+disorder_finding ---------- 3
+drug ---------- 1
+ethnicity ---------- 1
+experiment-tag ---------- 1
+experimental-construct ---------- 1
+fusion-protein ---------- 1
+gender ---------- 1
+gene ---------- 3
+inorganic ---------- 1
+intervention ---------- 1
+lipid ---------- 1
+mono_cell ---------- 1
+multi_cell ---------- 1
+mutation ---------- 2
+nucleotide ---------- 1
+organelle ---------- 1
+organism ---------- 1
+other_artificial_source ---------- 1
+other_name ---------- 1
+other_organic_compound ---------- 1
+outcome ---------- 1
+parameter ---------- 1
+participant ---------- 1
+peptide ---------- 2
+polynucleotide ---------- 1
+process ---------- 1
+progene_text ---------- 1
+protein ---------- 2
+protein-DNA-complex ---------- 1
+protein-RNA-complex ---------- 1
+protein-complex ---------- 1
+protein-domain ---------- 1
+protein-family ---------- 1
+protein-isoform ---------- 1
+protein-motif ---------- 1
+protein-region ---------- 1
+protein_N/A ---------- 1
+protein_complex ---------- 1
+protein_domain_or_region ---------- 1
+protein_family_or_group ---------- 1
+protein_molecule ---------- 1
+protein_substructure ---------- 1
+protein_subunit ---------- 1
+reagent ---------- 1
+size ---------- 1
+social_media_text ---------- 2
+species ---------- 2
+tRNA ---------- 1
+tissue ---------- 2
+umlsterm ---------- 3
+variant ---------- 1
+virus ---------- 1
